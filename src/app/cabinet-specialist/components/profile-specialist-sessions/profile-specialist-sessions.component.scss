@@ -1,0 +1,582 @@
+.content-wrapper {
+    display: flex;
+    margin-top: 19px;
+
+    content {
+        width: 954px;
+        height: 100%;
+        background: #ffffff;
+        margin-left: 30px;
+        padding-left: 24px;
+        padding-right: 24px;
+        padding-top: 24px;
+        padding-bottom: 24px;
+        border-radius: 14px;
+        
+        .page-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .page-head {
+                font-weight: 500;
+                font-size: 24px;
+                line-height: 140%;
+                color: #005264;                
+            }
+
+            .page-filters {
+                display: flex;
+                align-items: center;
+
+                .filter {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    background: #FAFFFC;
+                    border: 1px solid #D6EDE2;
+                    box-sizing: border-box;
+                    border-radius: 10px;
+                    width: 304px;
+                    height: 46px;
+                    padding-left: 19px;
+                    padding-right: 19px;
+
+                    .filter-title {
+                        font-weight: normal;
+                        font-size: 14px;
+                        line-height: 100%;
+                        color: #9EACA9;
+                    }
+
+                    .filter-values {
+                        display: flex;
+                        align-items: center;
+
+                        .filter-value {
+                            margin-left: 26px;
+                            font-weight: normal;
+                            font-size: 14px;
+                            line-height: 100%;
+                            color: #9EACA9;
+                            cursor: pointer;                           
+
+                            &:first-child {
+                                margin-left: 0;
+                            }
+
+                            &.active {
+                                color: #005264;
+                                cursor: auto;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .page-content {
+            .sessions-list {
+                margin-top: 20px;
+
+                .sessions-list-item {
+                    margin-top: 12px;
+                    padding-top: 12px;
+                    padding-bottom: 20px;
+                    padding-left: 16px;
+                    padding-right: 16px;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    box-sizing: border-box;
+                    border-radius: 10px;
+
+                    &:first-child {
+                        margin-top: 0;
+                    }
+
+                    &.session-active {
+                        background: #FBF9F6;
+                        border: 1px solid #ECE2D4;
+
+                        .session-info {
+                            .session-date {
+                                border: 1px solid #ECE2D4;
+                            }
+
+                            .problem-info {
+                                .title {
+                                    color: #FF8C22;
+                                }
+                            }
+                        }
+                    }
+
+                    &.session-waiting {
+                        background: #ffffff;
+                        border: 1px solid #E6E6E6;
+
+                        .session-info {
+                            .session-date {
+                                border: 1px solid #E6E6E6;
+                            }
+
+                            .problem-info {
+                                .title {
+                                    color: #9EACA9;
+
+                                    .title-inner {
+                                        display: flex;
+                                        align-items: center;
+
+                                        > div {
+                                            margin-left: 7px;
+
+                                            &:first-child {
+                                                margin-left: 0;
+                                            }
+
+                                            &.icon {
+                                                width: 12px;
+                                                height: 14px;
+                                            }
+
+                                            &.time {
+                                                font-family: "Poppins", sans-serif;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    &.session-success {
+                        background: #F6FBF8;
+                        border: 1px solid #CEEADC;
+
+                        .session-info {
+                            .session-date {
+                                border: 1px solid #DBF8E6;
+                            }
+
+                            .problem-info {
+                                .title {
+                                    font-family: "Poppins", sans-serif;
+                                    color: #008F39;
+                                }
+                            }
+                        }
+                    }
+
+                    &.session-refund {
+                        background: #F6FBF8;
+                        border: 1px solid #CEEADC;
+
+                        .session-info {
+                            .session-date {
+                                border: 1px solid #DBF8E6;
+                            }
+
+                            .problem-info {
+                                .title {
+                                    color: #D80815;
+                                }
+                            }
+                        }
+                    }
+
+                    .session-info {
+                        display: flex;
+
+                        .session-date {
+                            width: 54px;
+                            height: 54px;
+                            flex: 0 0 54px;
+                            border-radius: 100px;
+                            background: #FFFFFF;
+                            border: 1px solid #ECE2D4;
+                            box-sizing: border-box;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            align-items: center;
+
+                            .day {
+                                font-family: "Poppins", sans-serif;
+                                font-weight: 300;
+                                font-size: 22px;
+                                line-height: 100%;
+                                color: #364D47;
+                            }
+
+                            .month {
+                                margin-top: 4px;
+                                font-weight: normal;
+                                font-size: 10px;
+                                line-height: 100%;
+                                letter-spacing: 0.18em;
+                                text-transform: uppercase;
+                                color: #C8B69D;
+                            }
+                        }
+
+                        .problem-info {
+                            margin-left: 13px;
+                            margin-top: 6px;
+
+                            .title {
+                                font-weight: normal;
+                                font-size: 12px;
+                                line-height: 140%;
+                                letter-spacing: 0.1em;
+                                text-transform: uppercase;
+                            }
+
+                            .name {
+                                margin-top: 7px;
+                                font-weight: normal;
+                                font-size: 18px;
+                                line-height: 100%;
+                                text-decoration-line: underline;
+                                color: #364D47;
+                                cursor: pointer;
+                            }
+
+                            .text {
+                                margin-top: 10px;
+                                max-width: 338px;
+                                font-weight: normal;
+                                font-size: 14px;
+                                line-height: 140%;
+                                color: #364D47;                                
+                            }
+                        }
+                    }
+
+                    .session-info-mobile {
+                        margin-top: 6px;
+
+                        .client-name {
+                            font-weight: normal;
+                            font-size: 18px;
+                            line-height: 140%;
+                            text-decoration-line: underline;
+                            color: #364D47;
+                            cursor: pointer;
+                        }
+
+                        .problem-text {
+                            margin-top: 12px;
+                            font-weight: normal;
+                            font-size: 14px;
+                            line-height: 140%;
+                            color: #364D47;
+                        }
+                    }
+
+                    .session-actions {
+                        display: flex;
+                        align-items: center;
+                        margin-top: 4px;
+
+                        .session-action {
+                            margin-left: 12px;
+                            display: flex;
+                            align-items: center;
+                            box-sizing: border-box;
+                            border-radius: 10px;
+                            cursor: pointer;
+                            outline: none;
+
+                            &:first-child {
+                                margin-left: 0;
+                            }
+
+                            &.problem-images {
+                                height: 32px;
+                                padding-left: 8px;
+                                padding-right: 8px;
+                                background: #F8F3FF;
+                                border: 1px solid #E7D8FD;
+
+                                .title {
+                                    font-weight: normal;
+                                    font-size: 14px;
+                                    line-height: 100%;
+                                    color: #634F81;
+                                }
+
+                                .icon {
+                                    width: 16px;
+                                    height: 16px;
+                                    margin-left: 8px;
+                                    margin-right: 8px;
+                                    display: flex;
+                                    align-items: center;
+                                }
+
+                                .value {
+                                    font-family: "Poppins", sans-serif;
+                                    font-weight: normal;
+                                    font-size: 16px;
+                                    line-height: 100%;
+                                    color: #634F81;
+                                    margin-top: 2px;                                  
+                                }
+                            }
+
+                            &.problem-resources {
+                                height: 32px;
+                                padding-left: 8px;
+                                padding-right: 8px;
+                                background: #EBFBFF;
+                                border: 1px solid #B5E2ED;
+
+                                .title {
+                                    font-weight: normal;
+                                    font-size: 14px;
+                                    line-height: 100%;
+                                    color: #364D47;
+                                }
+
+                                .icon {
+                                    width: 16px;
+                                    height: 16px;
+                                    margin-left: 8px;
+                                    margin-right: 8px;
+                                    display: flex;
+                                    align-items: center;
+                                }
+
+                                .value {
+                                    font-family: "Poppins", sans-serif;
+                                    font-weight: normal;
+                                    font-size: 16px;
+                                    line-height: 100%;
+                                    color: #364D47;    
+                                    margin-top: 2px;                        
+                                }
+                            }
+
+                            &.review-badge {
+                                height: 32px;
+                                padding-left: 8px;
+                                padding-right: 8px;
+                                border: 1px solid #DDDDDD;
+                                background: transparent;
+
+                                .title {
+                                    font-weight: normal;
+                                    font-size: 14px;
+                                    line-height: 100%;
+                                    color: #364D47;
+                                }
+
+                                .value {
+                                    font-family: "Poppins", sans-serif;
+                                    font-weight: normal;
+                                    font-size: 16px;
+                                    line-height: 100%;
+                                    color: #364D47;
+                                    margin-top: 2px;
+                                    margin-left: 8px;                           
+                                }
+
+                                &.positive {
+                                    background: #CBFADD;
+                                    border: 1px solid #C6E8D3;
+                                }
+
+                                &.neutral {
+                                    background: linear-gradient(90deg, #F0F0F0 0%, #F0F0F0 48.95%, rgba(240, 240, 240, 0) 48.96%, rgba(240, 240, 240, 0) 100%);
+                                    border: 1px solid #DDDDDD;
+                                }
+
+                                &.negative {
+                                    background: linear-gradient(90deg, #F5C9C9 0%, #F5C9C9 41.15%, rgba(255, 255, 255, 0.505208) 41.16%, rgba(255, 255, 255, 0) 100%);
+                                    border: 1px solid #FFBCBC;
+                                }
+                            }
+
+                            &.close-button {
+                                height: 40px;
+                                padding-left: 16px;
+                                padding-right: 16px;
+                                justify-content: center;
+                                background: linear-gradient(180deg, #FFA800 0%, #F27400 100%);
+                                border: 1px solid #DA8300;
+                                font-weight: 500;
+                                font-size: 16px;
+                                line-height: 100%;
+                                color: #FFFFFF;
+                                text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.05);
+                            }
+                        }
+                    }
+                }
+            }
+
+            .sessions-pagination {
+                display: inline-block;
+                margin-top: 24px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1199px) {
+    .content-wrapper {
+        flex-direction: column;
+
+        content {
+            width: 100%;
+            margin-left: 0;
+            margin-top: 16px;
+
+            .page-content {
+                .sessions-list {
+                    .sessions-list-item {
+                        margin-top: 16px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .content-wrapper {
+        content {
+            .page-content {
+                .sessions-list {
+                    margin-top: 16px;
+
+                    .sessions-list-item {
+                        flex-direction: column;
+                        justify-content: flex-start;
+                        align-items: flex-start;
+
+                        &.session-active {
+                            padding-bottom: 16px;
+                        }
+
+                        .session-actions {
+                            margin-top: 20px;
+                            margin-left: 67px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .container {
+        width: 100%;
+        padding-left: 35px;
+        padding-right: 35px;
+    }
+}
+
+@media screen and (min-width: 560px) {
+    .content-wrapper {
+        content {
+            .page-content {
+                .sessions-list {
+                    .sessions-list-item {
+                        .session-info-mobile {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 559px) {
+    .container {
+        width: 100%;
+        padding-left: 19px;
+        padding-right: 19px;
+    }
+
+    .content-wrapper {
+        content {
+            padding: 16px;
+
+            .page-top {
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+
+                .page-filters {
+                    margin-top: 8px;
+
+                    .filter {
+                        width: 188px;
+
+                        .filter-title {
+                            display: none;
+                        }
+                    }
+                }
+            }
+
+            .page-content {
+                .sessions-list {
+                    margin-top: 16px;
+
+                    .sessions-list-item {
+                        padding-bottom: 16px;
+
+                        &.session-active {
+                            .session-info {
+                                .problem-info {
+                                    margin-left: 12px;
+
+                                    .title {
+                                        max-width: 80px;
+                                    }
+                                }
+                            }
+                        }
+
+                        .session-info {
+                            width: 100%;
+
+                            .problem-info {
+                                margin-left: 16px;
+                                margin-top: 0;
+                                align-self: center;
+
+                                .name,
+                                .text {
+                                    display: none;
+                                }
+                            }
+                        }
+
+                        .session-actions {
+                            margin-top: 16px;
+                            margin-left: 0;
+                            flex-direction: column;
+                            align-items: flex-start;
+
+                            .session-action {
+                                margin-left: 0;
+                                margin-top: 16px;
+
+                                &:first-child {
+                                    margin-top: 0;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

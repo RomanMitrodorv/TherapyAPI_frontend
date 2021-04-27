@@ -1,0 +1,28 @@
+<div class="pagination">
+
+    <!-- Prev -->
+    <div class="prev-button" [ngClass]="{'inactive': currentPage == 1}" (click)="prevPage()">
+        <svg width="6" height="8" viewBox="0 0 6 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M0.92831 3.24063L4.63633 0.0756431C4.7618 -0.0140025 4.91762 0.000932952 5.03529 0.000932952C5.50599 0.000932952 5.50391 0.437028 5.50391 0.547511V7.10658C5.50391 7.19998 5.50597 7.65319 5.03529 7.65319C4.91762 7.65319 4.76178 7.66806 4.63633 7.57844L0.928338 4.32524C0.579954 4.07649 0.640152 3.78292 0.640152 3.78292C0.640152 3.78292 0.579926 3.48935 0.92831 3.24063Z"
+                />
+        </svg>
+
+    </div>
+
+    <!-- Pages -->
+    <div class="pages" *ngIf="totalPagesArr">
+        <div class="page" *ngFor="let page of totalPagesArr" [ngClass]="{'active': currentPage == page}"
+            (click)="change(page)">{{ page }}</div>
+    </div>
+
+    <!-- Next -->
+    <div class="next-button" [ngClass]="{'inactive': currentPage == totalPages}" (click)="nextPage()">
+        <svg width="6" height="8" viewBox="0 0 6 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M5.07169 3.24063L1.36367 0.0756431C1.2382 -0.0140025 1.08238 0.000932952 0.964709 0.000932952C0.494006 0.000932952 0.496094 0.437028 0.496094 0.547511V7.10658C0.496094 7.19998 0.494033 7.65319 0.964709 7.65319C1.08238 7.65319 1.23822 7.66806 1.36367 7.57844L5.07166 4.32524C5.42005 4.07649 5.35985 3.78292 5.35985 3.78292C5.35985 3.78292 5.42007 3.48935 5.07169 3.24063Z"
+                />
+        </svg>
+
+    </div>
+</div>

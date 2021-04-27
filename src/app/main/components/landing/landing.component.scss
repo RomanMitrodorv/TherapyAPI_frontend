@@ -1,0 +1,1572 @@
+a {
+    cursor: pointer;
+}
+
+.main-banner {
+    background-color: #F4F9F1;
+
+    .main-banner-present {
+        z-index: 1;
+        width: 588px;
+        display: flex;
+        justify-content: space-between;
+        position: absolute;
+        top: 133px;
+        right: 30px;
+        padding-top: 30px;
+        padding-bottom: 23px;
+        padding-left: 44px;
+        padding-right: 30px;
+        background: rgba(255, 255, 255, 0.7);
+        border: 0.5px solid #D0EEBD;
+        box-sizing: border-box;
+        box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.05);
+        backdrop-filter: blur(30px);
+        border-radius: 16px; 
+        transition: opacity .6s;
+
+        .file-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .size {
+                margin-top: 11px;
+            }
+
+            .length {
+                margin-top: 6px;
+            }
+        }
+
+        .present-text {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+
+            .head {
+                font-weight: 500;
+                font-size: 16px;
+                line-height: 24px;
+                color: #5DB892;
+            }
+
+            .content {
+                margin-top: 11px;
+                font-weight: normal;
+                font-size: 18px;
+                line-height: 29px;
+                color: #000000;
+            }
+        }
+
+        .submit-button {
+            display: flex;
+            align-items: flex-end;
+            
+            a {
+                font-weight: 500;
+                font-size: 16px;
+                line-height: 24px;
+                color: #0DBC5E;
+                text-decoration: none;
+                transition: all .2s;
+
+                &:hover {
+                    color: #28E981;
+                }
+
+                &:active {
+                    color: #08A852;
+                }
+            }
+        }
+    }
+
+    .main-banner-left {
+        z-index: 1;
+
+        .event-row {
+            margin-top: 70px;
+            display: flex;
+            align-items: center;
+
+            .event-title {
+                font-size: 20px;
+                line-height: 32px;
+                color: #005264;
+                margin-right: 22px;
+            }
+
+            .event-date {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                border-left: 1px solid #D6DEDB;
+                border-right: 1px solid #D6DEDB;
+                padding-left: 29px;
+                padding-right: 27px;
+                padding-top: 4px;
+                padding-bottom: 4px;
+
+                .event-day {
+                    font-size: 24px;
+                    line-height: 32px;
+                    color: #005264;
+                }
+
+                .event-month {
+                    font-size: 14px;
+                    color: #A6B9B2;
+                }
+            }
+
+            .event-time {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding-left: 23px;
+                padding-top: 4px;
+                padding-bottom: 4px;
+
+                .event-hour {
+                    font-size: 24px;
+                    line-height: 32px;
+                    color: #005264;
+                }
+
+                .event-timezone {
+                    font-size: 14px;
+                    color: #A6B9B2;
+                }
+            }
+        }
+
+        .event-row-mobile {
+            margin-top: 192px;
+
+            .event-title {
+                font-size: 20px;
+                line-height: 32px;
+                color: #005264;
+            }
+
+            .event-datetime {
+                display: flex;
+                padding-top: 13px;
+
+                .event-date {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    border-right: 1px solid #D6DEDB;
+                    padding-right: 27px;
+                    padding-bottom: 4px;
+    
+                    .event-day {
+                        font-size: 24px;
+                        line-height: 32px;
+                        color: #005264;
+                    }
+    
+                    .event-month {
+                        font-size: 14px;
+                        color: #A6B9B2;
+                    }
+                }
+    
+                .event-time {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    padding-left: 23px;
+                    padding-bottom: 4px;
+    
+                    .event-hour {
+                        font-size: 24px;
+                        line-height: 32px;
+                        color: #005264;
+                    }
+    
+                    .event-timezone {
+                        font-size: 14px;
+                        color: #A6B9B2;
+                    }
+                }
+            }
+        }
+
+        .banner-text {
+            margin-top: 25px;
+
+            .text-top {
+                font-size: 18px;
+                line-height: 25px;
+                color: #2EA966;
+            }
+
+            .text-main {
+                font-weight: bold;
+                font-size: 46px;
+                line-height: 55px;
+                color: #162B1E;
+                max-width: 440px;
+                margin-top: 8px;
+            }
+
+            .text-bottom {
+                font-size: 18px;
+                line-height: 29px;
+                color: #364D47;
+                max-width: 641px;
+                margin-top: 25px;
+            }
+        }
+
+        .banner-button {
+            margin-top: 32px;
+        }
+
+        .banner-button-mobile {
+            margin-top: 24px;
+            display: flex;
+            justify-content: center;
+
+            button {
+                padding-left: 23px;
+                padding-right: 23px;
+            }
+        }
+
+        .main-banner-present-mobile {
+            margin-top: 29px;
+            padding-top: 30px;
+            padding-bottom: 30px;
+            padding-left: 20px;
+            padding-right: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            border: 0.5px solid #D0EEBD;
+            box-sizing: border-box;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.05);
+            backdrop-filter: blur(30px);
+            /* Note: backdrop-filter has minimal browser support */
+            border-radius: 16px;
+
+            .present-text {
+                .head {
+                    font-weight: 500;
+                    font-size: 16px;
+                    line-height: 24px;
+                    color: #5DB892;
+                }
+
+                .content {
+                    margin-top: 12px;
+                    font-weight: normal;
+                    font-size: 18px;
+                    line-height: 29px;
+                    color: #000000;
+                }
+            }
+        }
+    }
+
+    .main-banner-right {
+        .girl {
+            max-width: 751px;
+            width: 100%;
+            height: auto;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+    }
+
+    .main-banner-laptop {
+        .girl-wrapper {
+            display: flex;
+            justify-content: flex-end;
+            position: relative;
+            top: -60px;
+        }
+
+        .container {
+            position: relative;
+        }
+
+        .main-banner-present {
+            left: 0;
+            right: auto;
+            top: 0;
+            z-index: 1;
+            margin-top: 50px;
+            margin-left: 15px;
+        }
+    }
+
+    .main-banner-mobile {
+        max-width: 211px;
+        width: 100%;
+        height: auto;
+        position: absolute;
+        top: 46px;
+        right: 0;
+    }
+}
+
+.what-is {
+    background-color: #F4F9F1;
+    padding-top: 155px;
+
+    .flex-row {
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .illustration-laptop {
+        text-align: center;
+        margin-top: 56px;
+    }
+
+    .what-is-text {
+        .what-is-text-head {
+            padding-left: 30px;
+            font-weight: 500;
+            font-size: 40px;
+            line-height: 60px;
+            color: #162B1E;
+        }
+
+        .what-is-text-bottom {
+            padding-left: 30px;
+            max-width: 560px;
+            margin-top: 27px;
+            font-size: 18px;
+            line-height: 27px;
+            color: #364D47;
+        }
+    }
+}
+
+.idea {
+    padding-top: 60px;
+    padding-bottom: 80px;
+    background-color: #F4F9F1;
+
+    .col-6 {
+        &:first-child {
+            margin-right: 15px;
+        }
+
+        &:last-child {
+            margin-left: 15px;
+        }
+    }
+
+    .idea-block {
+        padding-top: 31px;
+        padding-bottom: 39px;
+        padding-left: 37px;
+        padding-right: 41px;
+        background-color: #F6FFF1;
+        border: 0.5px solid #BCE8A4;
+        box-sizing: border-box;
+        border-radius: 16px;
+
+        .idea-block-head {
+            font-weight: 500;
+            font-size: 26px;
+            line-height: 39px;
+            color: #162B1E;
+            display: flex;
+
+            img {
+                margin-right: 17px;
+            }
+        }
+
+        .idea-block-text {
+            font-size: 18px;
+            line-height: 27px;
+            color: #364D47;
+            margin-top: 25px;
+        }
+    }
+}
+
+.profession {
+    background-color: #1B3940;
+    padding-top: 77px;
+    padding-bottom: 127px;
+
+    .profession-head {
+        font-weight: 500;
+        font-size: 40px;
+        line-height: 60px;
+        color: #FFFFFF;
+    }
+
+    .profession-head-mobile {
+        font-weight: 500;
+        font-size: 26px;
+        line-height: 39px;
+        color: #FFFFFF;
+    }
+
+    .profession-blocks {
+        margin-top: 85px;
+
+        .flex-row {
+            justify-content: space-between;
+
+            .col-3 {
+                margin-left: 15px;
+                margin-right: 15px;
+
+                &:first-child {
+                    margin-left: 0;
+                }
+
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+        }
+
+        .profession-block {
+            .profession-block-head {
+                margin-top: 35px;
+                font-size: 22px;
+                line-height: 31px;
+                color: #FFFFFF;
+            }
+
+            .profession-block-text {
+                margin-top: 22px;
+                font-size: 16px;
+                font-weight: normal;
+                line-height: 22px;
+                color: #FFFFFF;
+            }
+
+            .profession-block-bottom {
+                margin-top: 22px;
+
+                a {
+                    font-weight: normal;
+                    font-size: 16px;
+                    line-height: 22px;
+                    text-decoration-line: underline;
+                    color: #0DBC5E;
+                    transition: all .3s;
+
+                    &:hover {
+                        color: #28E981;
+                    }
+    
+    
+                    &:active {
+                        color: #08A852;
+                    }
+                }
+            }
+        }
+    }
+
+    .profession-blocks-mobile {
+        margin-top: 64px;
+
+        .flex-row {
+            &:last-child {
+                margin-top: 100px;
+            }
+        }
+
+        .profession-block {
+            width: 50%;
+
+            .profession-block-head {
+                margin-top: 35px;
+                font-size: 22px;
+                line-height: 31px;
+                color: #FFFFFF;
+            }
+
+            .profession-block-text {
+                margin-top: 22px;
+                font-size: 16px;
+                font-weight: normal;
+                line-height: 22px;
+                color: #FFFFFF;
+            }
+
+            .profession-block-bottom {
+                margin-top: 22px;
+
+                a {
+                    font-weight: normal;
+                    font-size: 16px;
+                    line-height: 22px;
+                    text-decoration: underline;
+                    color: #3AFFAD;
+
+                    &:hover {
+                        color: #9BFFD6;
+                    }
+    
+    
+                    &:active {
+                        color: #1CC47E;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.webinar-checklist {
+    position: relative;
+    padding-top: 115px;
+    padding-bottom: 123px;
+
+    .webinar-checklist-head {
+        font-weight: 500;
+        font-size: 40px;
+        line-height: 60px;
+        color: #162B1E;
+    }
+
+    .webinar-checklist-content {
+        margin-top: 52px;
+
+        .list-right {
+            margin-left: 36px;
+        }
+
+        .list-item {
+            display: flex;
+            align-items: center;
+            margin-top: 32px;
+
+            &:first-child {
+                margin-top: 0;
+            }
+
+            .icon {
+                margin-right: 14px;
+            }
+
+            .text {
+                font-weight: normal;
+                font-size: 16px;
+                line-height: 22px;
+                color: #364D47;
+            }
+        }
+
+        .webinar-checklist-button {
+            margin-top: 52px;
+        }
+    }
+
+    .webinar-checklist-content-mobile {
+        margin-top: 52px;
+
+        .list-item {
+            display: flex;
+            align-items: center;
+            margin-top: 32px;
+
+            &:first-child {
+                margin-top: 0;
+            }
+
+            .icon {
+                margin-right: 14px;
+            }
+
+            .text {
+                font-weight: normal;
+                font-size: 16px;
+                line-height: 22px;
+                color: #364D47;
+                max-width: 470px;
+            }
+        }
+
+        .webinar-checklist-button {
+            margin-top: 48px;
+        }
+    }
+
+    .webinar-checklist-image {
+        position: absolute;
+        top: 70px;
+        right: 0;
+    }
+
+    .webinar-checklist-image-laptop {
+        position: absolute;
+        top: 140px;
+        right: 0;
+    }
+
+    .webinar-checklist-image-mobile {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+.webinar-presenter {
+    padding-top: 106px;
+    padding-bottom: 99px;
+    background-color: #FFFFFF;
+
+    .flex-row {
+        justify-content: space-between;
+    }
+
+    .webinar-presenter-head {
+        font-weight: 500;
+        font-size: 40px;
+        line-height: 60px;
+        color: #162B1E;
+    }
+
+    .webinar-presenter-checklist {
+        margin-top: 41px;
+
+        .list-wrapper {
+            .list-item {
+                display: flex;
+                align-items: center;
+                margin-top: 24px;
+                max-width: 440px;
+
+                &:first-child {
+                    margin-top: 0;
+                }
+    
+                .icon {
+                    margin-right: 24px;
+                }
+    
+                .text {
+                    font-weight: normal;
+                    font-size: 16px;
+                    line-height: 22px;
+                    color: #364D47;
+                }
+            }
+        }
+
+        .webinar-presenter-card {
+            display: flex;
+            align-items: center;
+            margin-top: 82px;
+    
+            .card-image {
+                margin-right: 29px;
+            }
+    
+            .card-content {
+                .card-head {
+                    font-weight: 500;
+                    font-size: 26px;
+                    line-height: 31px;
+                    color: #162B1E;
+                }
+    
+                .card-text,
+                .card-text-mobile {
+                    margin-top: 12px;
+                    font-weight: normal;
+                    font-size: 16px;
+                    line-height: 22px;
+                    color: #364D47;
+                }
+            }
+        }
+    }
+
+    .webinar-presenter-videos {
+        .video-wrapper {
+            position: relative;
+            margin-top: 61px;
+
+            &:first-child {
+                margin-top: 0;
+            }
+
+            .play-button {
+                position: absolute;
+                left: calc(50% - 36px);
+                top: calc(25% + 36px);
+            }
+        }
+    }
+}
+
+.reviews {
+    padding-top: 48px;
+    padding-bottom: 64px;
+
+    .reviews-head {
+        font-weight: 500;
+        font-size: 40px;
+        line-height: 60px;
+        color: #162B1E;
+    }
+
+    .video-reviews {
+        margin-top: 28px;
+
+        .video-review-player {
+            position: relative;
+        }
+
+        .review-content {
+            margin-left: 55px;
+
+            .reviews-switcher {
+                margin-top: 15px;
+
+                nav {
+                    ul {
+                        li {
+                            display: inline-block;
+                            /* margin-left: 6px;
+                            margin-right: 6px; */
+                            cursor: pointer;
+
+                            &:first-child {
+                                margin-left: 0;
+                            }
+
+                            &:last-child {
+                                margin-right: 0;
+                            }
+
+                            img {
+                                padding: 6px;
+                                border-radius: 32px;
+                                width: 62px;
+                                height: 62px;
+                            }
+
+                            &.active {
+                                img {
+                                    border: 1px solid #5DB892;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .review-text {
+                margin-top: 14px;
+                
+                .reviewer-specialization {
+                    font-weight: normal;
+                    font-size: 14px;
+                    line-height: 20px;
+                    color: #21A26C;
+                }
+
+                .reviewer-name {
+                    font-weight: bold;
+                    font-size: 24px;
+                    line-height: 34px;
+                    color: #000000;          
+                }
+
+                .review-text {
+                    max-width: 505px;
+                    font-weight: normal;
+                    font-size: 16px;
+                    line-height: 22px;
+                    color: #414141;
+                }
+            }
+
+            .consultations-counter {
+                display: inline-block;
+                margin-top: 27px;
+                margin-bottom: 54px;
+                font-weight: normal;
+                font-size: 16px;
+                line-height: 22px;
+                color: #156B47;
+                box-sizing: border-box;
+                border: 1px solid #C5E6D8;
+                border-radius: 16px;
+
+                .title,
+                .title-mobile {
+                    display: inline-block;
+                    padding-top: 19px;
+                    padding-bottom: 19px;
+                    padding-left: 20px;
+                    padding-right: 22px;
+                }
+
+                .counter {
+                    display: inline-block;
+                    padding-top: 19px;
+                    padding-bottom: 19px;
+                    padding-left: 22px;
+                    padding-right: 20px;
+                    border-left: 1px solid #C5E6D8;
+                }
+            }
+        }
+    }
+}
+
+.license {
+    padding-top: 48px;
+    padding-bottom: 64px;
+    background: linear-gradient(180deg, #FFFFFF 0%, #FAFFF8 100%);
+    border: 0.5px solid #D4E8D7;
+    box-sizing: border-box;
+
+    .coat-of-arms {
+        text-align: center;
+    }
+
+    .license-head {
+        margin-top: 24px;
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 34px;
+        color: #162B1E;
+        text-align: center;
+    }
+
+    .license-image {
+        margin-top: 37px;
+        text-align: center;
+    }
+
+    .license-bottom {
+        margin-top: 50px;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 22px;
+        color: #9BA6A0;
+        text-align: center;
+    }
+}
+
+.present {
+    padding-top: 48px;
+    padding-bottom: 64px;
+    background-color: #1B3940;
+
+    .flex-row {
+        align-items: center;
+    }
+
+    .present-image {
+        border: 2px solid #21A26C;
+        box-sizing: border-box;
+        border-radius: 12px;
+        position: relative;
+
+        .present-icon {
+            position: absolute;
+            left: calc(50% - 46.5px);
+            top: calc(25% + 23.25px);
+        }
+    }
+
+    .present-image > img {
+        //box-shadow: inset 0px 4px 20px #FFF3E9;
+        border-radius: 10px;
+        padding-top: 11px;
+        padding-bottom: 9px;
+        padding-left: 11px;
+        padding-right: 11px;
+    }
+
+    .present-info {
+        margin-left: 58px;
+        
+        .present-head {
+            font-weight: 500;
+            font-size: 32px;
+            line-height: 45px;
+            color: #FFFFFF;
+        }
+
+        .present-subhead {
+            margin-top: 23px;
+            font-weight: bold;
+            font-size: 16px;
+            line-height: 26px;
+            color: #80B6A9;
+        }
+
+        .present-text {
+            max-width: 416px;
+            font-weight: normal;
+            font-size: 18px;
+            line-height: 29px;
+            color: #FFFFFF;
+        }
+
+        .present-button,
+        .present-button-mobile {
+            margin-top: 24px;
+        }
+    }
+}
+
+@media screen and (min-width: 300px) {
+    .webinar-presenter {
+        .webinar-presenter-videos {
+            .video-wrapper {
+                height: 200px;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 400px) {
+    .webinar-presenter {
+        .webinar-presenter-videos {
+            .video-wrapper {
+                height: 250px;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 460px) {
+    .webinar-presenter {
+        .webinar-presenter-videos {
+            .video-wrapper {
+                height: 300px;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 576px) {
+    .main-banner {
+        .main-banner-mobile {
+            display: none;
+        }
+
+        .main-banner-left {
+            .event-row-mobile {
+                display: none;
+            }
+
+            .banner-button-mobile {
+                display: none;
+            }
+
+            .main-banner-present-mobile {
+                display: none;
+            }
+        }
+    }
+
+    .webinar-checklist {
+        .webinar-checklist-content-mobile {
+            .webinar-checklist-button-mobile {
+                display: none;
+            }
+        }
+    }
+
+    .reviews {
+        .video-reviews {
+            .review-content {
+                .consultations-counter {
+                    .title-mobile {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+
+    .present {
+        .present-info {
+            .present-button-mobile {
+                display: none;
+            }
+        }
+    }
+
+    .webinar-presenter {
+        .webinar-presenter-videos {
+            .video-wrapper {
+                height: 375px;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 576px) and (max-width: 991px) {
+    .main-banner {
+        .main-banner-right {
+            display: none;
+        }
+
+        .main-banner-mobile {
+            display: none;
+        }
+    }
+
+    .what-is {
+        padding-top: 0;
+
+        .illustration {
+            display: none;
+        }
+
+        .what-is-text {
+            width: 100%;
+
+            .what-is-text-head {
+                padding-left: 0;
+                text-align: center;
+            }
+
+            .what-is-text-bottom {
+                padding-left: 0;
+                max-width: none;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .idea {
+        .flex-row {
+            flex-direction: column;
+
+            .col-6 {
+                width: 100%;
+                margin-left: 0;
+                margin-right: 0;
+
+                &:last-child {
+                    margin-top: 28px;
+                }
+            }
+        }
+    }
+
+    .webinar-presenter {
+        padding-top: 60px;
+        padding-bottom: 60px;
+
+        .flex-row {
+            flex-direction: column;
+        }
+
+        .webinar-presenter-videos {
+            margin-top: 40px;
+
+            .video-wrapper {
+                margin-top: 40px;
+
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    .reviews {
+        padding-top: 57px;
+        padding-bottom: 60px;
+
+        .video-reviews {
+            .flex-row {
+                flex-direction: column-reverse;
+            }
+
+            .video-review-player {
+                .video-image {
+                    width: 100%;
+                }
+            }
+
+            .review-content {
+                margin-left: 0;
+
+                .reviews-switcher {
+                    margin-top: 0;
+                }
+            }
+        }
+    }
+
+    .license {
+        padding-top: 59px;
+        padding-bottom: 57px;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .main-banner {
+        .main-banner-laptop {
+            display: none;
+        }
+    }
+
+    .what-is {
+        .illustration-laptop {
+            display: none;
+        }
+    }
+
+    .reviews {
+        .video-reviews {
+            
+            .video-review-player {
+                width: 530px;
+                height: 300px;
+            }
+
+            .review-content {
+                .consultations-counter {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .webinar-presenter {
+        .webinar-presenter-videos {
+            .video-wrapper {
+                width: 355px;
+                height: 200px;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+    .main-banner {
+        .main-banner-right {
+            .girl {
+                max-width: 500px;
+            }
+        }
+    }
+
+    .what-is {
+        .what-is-text {
+            .what-is-text-head {
+                padding-left: 60px;
+            }
+    
+            .what-is-text-bottom {
+                padding-left: 60px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1199px) {
+    .profession {
+        padding-top: 60px;
+        padding-bottom: 91px;
+
+        .profession-blocks {
+            display: none;
+        }
+    }
+
+    .webinar-checklist {
+        padding-top: 60px;
+        padding-bottom: 77px;
+
+        .webinar-checklist-content {
+            display: none;
+        }
+
+        .webinar-checklist-image {
+            display: none;
+        }
+    }
+
+    .present {
+        padding-top: 85px;
+        padding-bottom: 83px;
+
+        .flex-row {
+            flex-direction: column;
+        }
+
+        .present-info {
+            margin-top: 50px;
+            margin-left: 0;
+        }
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .profession {
+        .profession-blocks-mobile {
+            display: none;
+        }
+    }
+
+    .webinar-checklist {
+        .webinar-checklist-content-mobile {
+            display: none;
+        }
+
+        .webinar-checklist-image-laptop {
+            display: none;
+        }
+    }
+
+    .webinar-presenter {
+        .webinar-presenter-videos {
+            .video-wrapper {
+                width: 500px;
+                height: 280px;
+            }
+        }
+    }
+
+    .reviews {
+        .video-reviews {
+            .video-review-player {
+                width: 610px;
+                height: 343px;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .profession {
+        .profession-head-mobile {
+            display: none;
+        }
+    }
+
+    .webinar-checklist {
+        .webinar-checklist-image-mobile {
+            display: none;
+        }
+    }
+    
+    .webinar-presenter {
+        .webinar-presenter-card {
+            .card-content {
+                .card-text-mobile {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .profession {
+        padding-top: 40px;
+        padding-bottom: 61px;
+
+        .profession-head {
+            display: none;
+        }
+
+        .profession-blocks-mobile {
+            margin-top: 0;
+
+            .flex-row {
+                flex-direction: column;
+
+                &:last-child {
+                    margin-top: 0;
+                }
+            }
+
+            .profession-block {
+                width: 100%;
+                margin-top: 60px;
+            }
+        }
+    }
+
+    .webinar-checklist {
+        padding-top: 39px;
+        padding-bottom: 51px;
+
+        .webinar-checklist-image-laptop {
+            display: none;
+        }
+
+        .webinar-checklist-head {
+            font-size: 26px;
+            line-height: 39px;
+            margin-top: 43px;
+        }
+
+        .webinar-checklist-content-mobile {
+            margin-top: 24px;
+
+            .webinar-checklist-button,
+            .webinar-checklist-button-mobile {
+                margin-top: 43px;
+            }
+        }
+    }
+
+    .webinar-presenter {
+        padding-top: 38px;
+        padding-bottom: 44px;
+
+        .webinar-presenter-head {
+            font-size: 26px;
+            line-height: 39px;
+        }
+
+        .webinar-presenter-checklist {
+            margin-top: 32px;
+
+            .list-wrapper {
+                .list-item {
+                    margin-top: 10px;
+                }
+            }
+
+            .webinar-presenter-card {
+                flex-direction: column;
+                margin-top: 32px;
+
+                .card-image  {
+                    margin-right: 0;
+                }
+
+                .card-content {
+                    margin-top: 39px;
+                    .card-text {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        .webinar-presenter-videos {
+            margin-top: 49px;
+
+            .video-wrapper {
+                margin-top: 24px;
+
+                .play-button {
+                    top: 30%;
+                }
+            }
+        }
+    }
+
+    .reviews {
+        padding-top: 39px;
+        padding-bottom: 45px;
+
+        .reviews-head {
+            font-size: 26px;
+            line-height: 39px;
+        }
+    }
+
+    .license {
+        padding-top: 42px;
+        padding-bottom: 44px;
+
+        .license-head {
+            margin-top: 28px;
+            font-size: 18px;
+            line-height: 25px;
+        }
+
+        .license-image {
+            margin-top: 24px;
+        }
+
+        .license-bottom {
+            margin-top: 24px;
+            font-size: 14px;
+            line-height: 20px;
+        }
+    }
+
+    .present {
+        padding-top: 43px;
+        padding-bottom: 45px;
+
+        .present-image {
+            .present-icon {
+                width: 53px;
+                top: 33%;
+                left: calc(50% - 26.5px);
+            }
+        }
+
+        .present-info {
+            margin-top: 43px;
+
+            .present-head {
+                font-size: 26px;
+                line-height: 36px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .main-banner {
+        .main-banner-laptop {
+            display: none;
+        }
+
+        .main-banner-right {
+            display: none;
+        }
+
+        .main-banner-left {
+            .event-row {
+                display: none;
+            }
+            
+            .banner-text {
+                .text-main {
+                    font-size: 40px;
+                    line-height: 48px;
+                    max-width: none;
+                    margin-top: 24px;
+                }
+            }
+
+            .banner-button {
+                display: none;
+            }
+        }
+    }
+
+    .what-is {
+        padding-top: 45px;
+
+        .flex-row {
+            flex-direction: column;
+        }
+
+        .illustration-laptop {
+            display: none;
+        }
+
+        .what-is-text {
+            margin-top: 35px;
+
+            .what-is-text-head {
+                font-size: 26px;
+                line-height: 39px;
+                padding-left: 0;
+            }
+
+            .what-is-text-bottom {
+                padding-left: 0;
+            }
+        }
+    }
+
+    .idea {
+        padding-top: 40px;
+        padding-bottom: 38px;
+
+        .flex-row {
+            .col-6 {
+                &:last-child {
+                    margin-top: 16px;
+                }
+            }
+        }
+
+        .idea-block  {
+            padding-top: 24px;
+            padding-bottom: 24px;
+            padding-left: 24px;
+            padding-right: 24px;
+        }
+    }
+
+    .webinar-checklist {
+        .webinar-checklist-content-mobile {
+            .webinar-checklist-button {
+                display: none;
+            }
+
+            .webinar-checklist-button-mobile {
+                display: flex;
+                justify-content: center;
+            }
+        }
+    }
+
+    .reviews {
+        .video-reviews {
+            .review-content {
+                .consultations-counter {
+                    .title {
+                        display: none;
+                    }
+                }
+            }
+
+            .video-review-player {
+                .play-button {
+                    top: 27%;
+                }
+            }
+        }
+    }
+
+    .present {
+        .present-info {
+            .present-button {
+                display: none;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1439px) {
+    .main-banner {
+        .main-banner-right {
+            .girl {
+                max-width: 625px;
+            }
+        }
+    }
+
+    .webinar-checklist {
+        .webinar-checklist-image {
+            max-width: 247px;
+        }
+    }
+}
+
+.mainBannerPresentShow {
+    opacity: 1;
+}
+
+.mainBannerPresentHidden {
+    opacity: 0;
+}

@@ -1,0 +1,42 @@
+<!-- Header -->
+<app-header></app-header>
+
+<!-- Content -->
+<content>
+    <div class="container">
+        <div class="not-found-block">
+            <div class="not-found-error">
+                404
+            </div>
+
+            <div class="not-found-text">
+                Такой страницы у нас нет!
+            </div>
+
+            <div class="home-button">
+                <button type="button" [routerLink]="['/']">
+                    <div class="icon">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#cliphome)">
+                                <path d="M15.8535 7.39516L9.63533 1.17667C8.73345 0.275095 7.26656 0.275095 6.36467 1.17667L0.146486 7.39516C-0.0488286 7.59048 -0.0488286 7.90704 0.146486 8.10236C0.341488 8.29767 0.658366 8.29767 0.853368 8.10236L1.24993 7.70579V14.0621C1.24993 14.856 1.89353 15.4996 2.68745 15.4996H5.18747C5.36007 15.4996 5.49998 15.3597 5.49998 15.1871V10.5621C5.49998 9.69913 6.19954 8.99956 7.06249 8.99956H8.93751C9.80046 8.99956 10.5 9.69913 10.5 10.5621V15.1871C10.5 15.3597 10.6399 15.4996 10.8125 15.4996H13.3126C14.1065 15.4996 14.7501 14.856 14.7501 14.0621V7.70579L15.1466 8.10236C15.2441 8.19986 15.3723 8.24892 15.5001 8.24892C15.6279 8.24892 15.756 8.19986 15.8535 8.10236C16.0488 7.90704 16.0488 7.59048 15.8535 7.39516Z" fill="#005264"/>
+                            </g>
+    
+                            <defs>
+                                <clipPath id="cliphome">
+                                    <rect width="16" height="16" fill="white"/>
+                                </clipPath>
+                            </defs>
+                        </svg>
+                    </div>
+                    
+                    <div class="text">
+                        На главную
+                    </div>
+                </button>
+            </div>
+        </div>
+    </div>
+</content>
+
+<!-- Footer -->
+<app-footer></app-footer>

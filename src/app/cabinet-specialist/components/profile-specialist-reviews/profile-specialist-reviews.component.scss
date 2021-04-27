@@ -1,0 +1,275 @@
+.content-wrapper {
+    display: flex;
+    margin-top: 19px;
+
+    content {
+        width: 954px;
+        height: 100%;
+        background: #ffffff;
+        margin-left: 30px;
+        /* padding-left: 24px;
+        padding-right: 24px; */
+        padding-top: 24px;
+        padding-bottom: 24px;
+        border-radius: 14px;
+
+        .page-top {
+            padding-left: 24px;
+            padding-right: 24px;
+
+            .page-head {
+                font-weight: 500;
+                font-size: 24px;
+                line-height: 140%;
+                color: #005264;                
+            }
+        }
+
+        .page-content {
+            margin-top: 17px;
+
+            .tabs {
+                .tabs-head {
+                    padding-left: 24px;
+                    padding-bottom: 16px;
+                    border-bottom: 1px solid #D5E8DD;
+                    display: flex;
+                    align-items: center;
+                    //overflow-x: scroll;
+                    overflow-y: hidden;
+
+                    .tab-head {
+                        margin-left: 40px;
+                        display: flex;
+                        align-items: center;
+                        color: #C1D3CA;
+                        cursor: pointer;
+
+                        &:first-child {
+                            margin-left: 0;
+                        }
+
+                        &:last-child {
+                            padding-right: 24px;
+                        }
+
+                        &.active {
+                            cursor: auto;
+
+                            &.positive {
+                                color: #389A71;
+                            }
+
+                            &.neutral {
+                                color: #9EACA9;
+                            }
+
+                            &.negative {
+                                color: #AE2424;
+                            }
+                        }
+
+                        .title {
+                            font-weight: 500;
+                            font-size: 16px;
+                            line-height: 140%;
+                        }
+
+                        .count {
+                            margin-left: 12px;
+                            font-family: "Poppins", sans-serif;
+                            font-weight: 500;
+                            font-size: 20px;
+                            line-height: 140%;
+                        }
+                    }
+                }
+
+                .tabs-content {
+                    margin-top: 24px;
+                    padding-left: 24px;
+                    padding-right: 24px;
+
+                    .tab-content {
+                        .review {
+                            margin-top: 12px;
+                            padding-top: 16px;
+                            padding-bottom: 20px;
+                            padding-left: 16px;
+                            padding-right: 16px;                         
+                            background: #F6FBF8;
+                            border: 1px solid #CEEADC;
+                            box-sizing: border-box;
+                            border-radius: 10px;
+
+                            &:first-child {
+                                margin-top: 0;
+                            }
+
+                            .review-header {
+                                display: flex;
+                                align-items: center;
+                                cursor: pointer;
+
+                                .user-icon {
+                                    width: 54px;
+                                    height: 54px;
+                                    flex: 0 0 54px;
+                                    background: #FFFFFF;
+                                    border: 1px solid #DBF8E6;
+                                    box-sizing: border-box;
+                                    border-radius: 100px;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                }
+
+                                .user-name {
+                                    margin-left: 13px;
+                                    font-weight: normal;
+                                    font-size: 18px;
+                                    line-height: 140%;
+                                    text-decoration-line: underline;
+                                    color: #005264;
+                                }
+                            }
+
+                            .review-content {
+                                margin-top: 6px;
+                                margin-left: 67px;
+                                max-width: 742px;
+                                font-weight: normal;
+                                font-size: 16px;
+                                line-height: 140%;
+                                color: #364D47;
+                            }
+
+                            .review-footer {
+                                margin-top: 16px;
+                                margin-left: 67px;
+
+                                .title {
+                                    font-weight: normal;
+                                    font-size: 12px;
+                                    line-height: 140%;
+                                    letter-spacing: 0.1em;
+                                    text-transform: uppercase;
+                                    color: #9EACA9;
+                                }
+
+                                .value {
+                                    margin-top: 7px;
+                                    display: flex;
+                                    align-items: center;
+                                    font-family: "Poppins", sans-serif;
+                                    font-weight: normal;
+                                    font-size: 16px;
+                                    line-height: 1;
+                                    color: #DEBA39;                                    
+
+                                    app-rating {
+                                        margin-right: 6px;
+                                    }
+                                }
+                            }
+                        }
+
+                        .no-content {
+                            text-align: center;
+                            margin-top: 63px;
+                            margin-bottom: 63px;
+                            font-weight: normal;
+                            font-size: 16px;
+                            line-height: 22px;
+                            text-align: center;
+                            color: #D4E1DC;
+            
+                            .icon {
+                                margin-bottom: 12px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1199px) {
+    .content-wrapper {
+        flex-direction: column;
+
+        content {
+            width: 100%;
+            margin-left: 0;
+            margin-top: 16px;
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .container {
+        width: 100%;
+        padding-left: 35px;
+        padding-right: 35px;
+    }
+}
+
+@media screen and (max-width: 559px) {
+    .container {
+        width: 100%;
+        padding-left: 19px;
+        padding-right: 19px;
+    }
+
+    .content-wrapper {
+        content {
+            padding-top: 16px;
+            padding-bottom: 16px;
+
+            .page-top {
+                padding-left: 16px;
+                padding-right: 16px;
+            }
+
+            .page-content {
+                .tabs {
+                    .tabs-head {
+                        padding-left: 16px;
+                        padding-bottom: 8px;
+
+                        .tab-head {
+                            &:last-child {
+                                padding-right: 16px;
+                            }
+                        }
+                    }
+
+                    .tabs-content {
+                        margin-top: 16px;
+                        padding-left: 16px;
+                        padding-right: 16px;
+
+                        .tab-content {
+                            .review {
+                                margin-top: 16px;
+
+                                .review-content {
+                                    margin-top: 16px;
+                                    margin-left: 0;
+                                }
+
+                                .review-footer {
+                                    margin-top: 16px;
+                                    margin-left: 0;
+                                    display: flex;
+                                    flex-direction: column;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

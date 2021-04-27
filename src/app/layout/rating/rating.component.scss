@@ -1,0 +1,12 @@
+.score-stars {
+    display: flex;
+    align-items: center;
+
+    > svg {
+        margin-left: 6px;
+
+        &:first-child {
+            margin-left: 0;
+        }
+    }
+}

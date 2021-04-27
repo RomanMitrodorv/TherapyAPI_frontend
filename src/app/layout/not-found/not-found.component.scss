@@ -1,0 +1,85 @@
+content {
+    display: block;
+    padding-top: 79px;
+    padding-bottom: 109px;
+
+    .not-found-block {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .not-found-error {
+            font-family: "Poppins", sans-serif;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 128px;
+            line-height: 100%;
+            text-align: center;
+            color: transparent;
+            -webkit-text-stroke: 1px #005264;
+        }
+
+        .not-found-text {
+            margin-top: 27px;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 20px;
+            line-height: 140%;
+            text-align: center;
+            color: #005264;            
+        }
+
+        .home-button {
+            margin-top: 28px;
+
+            > button {
+                padding-top: 10px;
+                padding-bottom: 10px;
+                padding-left: 11px;
+                padding-right: 11px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background: #FFFFFF;
+                box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+                border-radius: 10px;
+                border: 0;
+                outline: 0;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 16px;
+                line-height: 100%;
+                color: #005264;
+                cursor: pointer;
+
+                .icon {
+                    width: 16px;
+                    height: 16px;
+
+                    > svg {
+                        vertical-align: text-top;
+                    }
+                }
+                
+                > .text {
+                    margin-left: 14px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 991px) {
+    content {
+        padding-top: 210px;
+        padding-bottom: 211px;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    content {
+        padding-top: 71px;
+        padding-bottom: 72px;
+    }
+}

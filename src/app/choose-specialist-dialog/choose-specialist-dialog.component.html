@@ -1,0 +1,94 @@
+<div class="modal">
+    <div class="modal-body">
+        <div class="close-button" (click)="close()">
+            <div class="md"></div>
+            <div class="mdiv"></div>
+        </div>
+
+        <div class="modal-header">
+            Выберите проблему
+        </div>
+
+        <div class="modal-content">
+            <div class="problems-list" *ngIf="problems">
+                <div class="problems-list-item" *ngFor="let problem of problems; let i = index">
+                    <div class="problem">
+                        <div class="problem-number">
+                            {{ i + 1 }}
+                        </div>
+
+                        <div class="problem-text">
+                            {{ problem.problemText }}
+                        </div>
+                    </div>
+
+                    <div class="select" (click)="selectProblem(problem)">
+                        <div class="select-inner" [ngClass]="{'checked': selectedProblem == problem}">
+                            <div class="selected"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="problems-list-item">
+                    <div class="problem">
+                        <div class="problem-number">
+                            +
+                        </div>
+
+                        <div class="problem-text">
+                            Добавить новую
+                        </div>
+                    </div>
+
+                    <div class="select" (click)="selectProblem()">
+                        <div class="select-inner" [ngClass]="{'checked': isNewProblem}">
+                            <div class="selected"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="create-problem-area" *ngIf="isNewProblem">
+                <textarea placeholder="Опишите проблему" [(ngModel)]="newProblemText"></textarea>
+            </div>
+
+            <div class="button-green button-submit" (click)="submit()"
+                [ngClass]="{'disabled': (isNewProblem && newProblemText == null) || (isNewProblem && newProblemText == '')}">
+                Продолжить</div>
+        </div>
+    </div>
+
+    <div class="specialist-block" *ngIf="specialist">
+        <div class="specialist-block-head">
+            Специалист
+        </div>
+
+        <div class="specialist-block-content">
+            <div class="specialist-photo">
+                <img [src]="specialist.user.photo.url" />
+            </div>
+
+            <div class="specialist-info">
+                <div class="specialist-name">
+                    {{ specialist.user.firstName }} {{ specialist.user.lastName }}
+                </div>
+
+                <div class="specialist-rating">
+                    <div class="price">
+                        {{ specialist.price | number:'':'fr' }} ₽
+                    </div>
+
+                    <div class="rating">
+                        <div class="star">
+                            <img src="../../assets/images/star-half.svg" />
+                        </div>
+
+                        {{ specialist.rating }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal-background"></div>

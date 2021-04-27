@@ -1,0 +1,53 @@
+<div class="specialist-block" [ngClass]="{'is-specialist': isSpecialist}">
+
+    <!-- Specialist Photo -->
+    <div class="specialist-photo" [routerLink]="['/specialists', specialist.id]">
+        <div class="author-price">
+            {{ specialist.price | number:'':'fr' }} ₽
+        </div>
+
+        <img [src]="specialist.user.photo.url" />
+    </div>
+
+    <!-- Specialist Info -->
+    <div class="specialist-info" [routerLink]="['/specialists', specialist.id]">
+
+        <!-- Specialist Name -->
+        <div class="specialist-name">
+            {{ specialist.user.firstName }} {{ specialist.user.lastName }}
+        </div>
+
+        <!-- Specialist Rating -->
+        <div class="specialist-rating">
+            <div class="rating">
+                <app-rating [score]="specialist.rating" [single]="true" [size]="20"></app-rating>
+
+                <div class="rating-score">
+                    {{ specialist.rating }}
+                </div>
+            </div>
+
+            <div class="reviews">
+                <div class="reviews-counter positive" *ngIf="positiveReviews && positiveReviews.length"
+                    [routerLink]="['/specialists', specialist.id]" [queryParams]="{reviews: 'positive'}">
+                    {{ positiveReviews.length }}
+                </div>
+
+                <div class="reviews-counter neutral" *ngIf="neutralReviews && neutralReviews.length"
+                    [routerLink]="['/specialists', specialist.id]" [queryParams]="{reviews: 'neutral'}">
+                    {{ neutralReviews.length }}
+                </div>
+
+                <div class="reviews-counter negative" *ngIf="negativeReviews && negativeReviews.length"
+                    [routerLink]="['/specialists', specialist.id]" [queryParams]="{reviews: 'negative'}">
+                    {{ negativeReviews.length }}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Choose Button-->
+    <div class="choose-button" *ngIf="!isSpecialist">
+        <button type="button" (click)="chooseSpecialist()">Выбрать</button>
+    </div>
+</div>

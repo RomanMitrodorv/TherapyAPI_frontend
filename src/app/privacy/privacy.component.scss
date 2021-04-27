@@ -1,0 +1,42 @@
+.page-head {
+    display: flex;
+    align-items: center;
+    padding-top: 33px;
+    padding-bottom: 36px;
+
+    .page-title {
+        h2 {
+            font-weight: 500;
+            font-size: 32px;
+            line-height: 32px;
+            color: #162B1E;
+        }
+    }
+}
+
+.page-content {
+    .privacy-text {
+        
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .container {
+        width: auto;
+        padding-left: 35px;
+        padding-right: 35px;
+    }
+
+    .page-head {
+        padding-bottom: 24px;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .container {
+        width: 100%;
+        margin: 0;
+        padding-left: 19px;
+        padding-right: 19px;
+    }
+}

@@ -1,0 +1,261 @@
+.content-wrapper {
+    display: flex;
+    margin-top: 19px;
+
+    content {
+        width: 954px;
+        background: #ffffff;
+        margin-left: 30px;
+        padding-left: 24px;
+        padding-right: 24px;
+        padding-top: 24px;
+        padding-bottom: 24px;
+        border-radius: 14px;
+
+        .page-head {
+            display: flex;
+            align-items: center;
+
+            .session-date {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                width: 54px;
+                height: 54px;
+                flex: 0 0 54px;
+                border-radius: 100px;
+                background: #F6FBF8;
+                border: 1px solid #DBF8E6;
+                box-sizing: border-box;
+
+                .day {
+                    font-family: "Poppins", sans-serif;
+                    font-weight: 300;
+                    font-size: 22px;
+                    line-height: 22px;
+                    text-align: center;
+                    color: #005264;
+                }
+
+                .month {
+                    margin-top: 4px;
+                    font-weight: normal;
+                    font-size: 10px;
+                    line-height: 10px;
+                    text-align: center;
+                    letter-spacing: 0.18em;
+                    text-transform: uppercase;
+                    color: #9EACA9;                    
+                }
+            }
+
+            .specialist-info {
+                margin-left: 10px;
+                display: flex;
+                align-items: center;
+
+                .specialist-photo {
+                    width: 43px;
+                    height: 43px;
+                    flex: 0 0 43px;
+                    border: 1px solid #32A776;
+                    border-radius: 100px;
+                    padding: 3px;
+
+                    > img {
+                        width: 100%;
+                        height: 100%;
+                        border-radius: 100px;
+                        object-fit: cover;
+                    }
+                }
+
+                .specialist-name-rating {
+                    margin-left: 10px;
+
+                    .specialist-name {
+                        font-weight: 500;
+                        font-size: 16px;
+                        line-height: 16px;
+                        color: #005264;
+                    }
+    
+                    .specialist-rating {
+                        margin-top: 5px;
+                        display: flex;
+                        align-items: center;
+                        font-weight: normal;
+                        font-size: 14px;
+                        line-height: 16px;
+                        color: #DEBA39;
+    
+                        .rating-score {
+                            margin-left: 3px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .page-content {
+            margin-top: 16px;
+
+            .page-text {
+                max-width: 548px;
+                font-weight: normal;
+                font-size: 24px;
+                line-height: 140%;
+                color: #005264;                
+            }
+
+            .review-form {
+                margin-top: 16px;
+
+                .form-group {
+                    textarea {
+                        resize: none;
+                        width: 100%;
+                        min-height: 156px;
+                        background: #F6FBF8;
+                        border: 1px solid #D1E2DB;
+                        box-sizing: border-box;
+                        border-radius: 10px;
+                        font-weight: normal;
+                        font-size: 16px;
+                        line-height: 16px;
+                        color: #005264;
+                        padding-top: 23px;
+                        padding-left: 16px;
+                        outline: none;
+                        
+                        &::placeholder {
+                            color: #BDD2D1;  
+                        }
+                    }
+                }
+
+                .form-footer {
+                    margin-top: 16px;
+                    display: flex;
+                    align-items: center;
+
+                    .submit-button {
+                        > button {
+                            border-radius: 10px;
+                            letter-spacing: 0.135em;
+                            font-size: 14px;
+                            line-height: 17px;
+                        }
+                    }
+
+                    .set-score {
+                        margin-left: 33px;
+                        display: flex;
+                        align-items: center;
+                        flex-direction: row-reverse;
+
+                        .score-star {
+                            margin-left: 8px;
+                            cursor: pointer;
+                            opacity: .5;
+                            width: 24px;
+                            height: 24px;
+
+                            > img {
+                                width: 100%;
+                                height: 100%;
+                            }
+
+                            &:hover {
+                                opacity: 1;
+
+                                ~ .score-star {
+                                    opacity: 1;
+                                }
+                            }
+
+                            &.selected {
+                                opacity: 1;
+                            }
+
+                            &:last-child {
+                                margin-left: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1199px) {
+    .content-wrapper {
+        flex-direction: column;
+
+        content {
+            width: 100%;
+            margin-left: 0;
+            margin-top: 16px;
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .container {
+        width: 100%;
+        padding-left: 35px;
+        padding-right: 35px;
+    }
+}
+
+@media screen and (max-width: 559px) {
+    .container {
+        width: 100%;
+        padding-left: 19px;
+        padding-right: 19px;
+    }
+
+    .content-wrapper {
+        content {
+            padding: 16px;
+
+            .page-head {
+                .session-date {
+                    display: none;
+                }
+
+                .specialist-info {
+                    margin-left: 0;
+                }
+            }
+
+            .page-content {
+                .page-text {
+                    max-width: none;
+                    font-size: 20px;
+                }
+
+                .review-form {
+                    .form-footer {
+                        flex-direction: column-reverse;
+
+                        .set-score {
+                            margin-left: 0;
+                        }
+
+                        .submit-button {
+                            margin-top: 24px;
+                            width: 100%;
+
+                            > button {
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

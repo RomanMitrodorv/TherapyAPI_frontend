@@ -1,0 +1,58 @@
+<div class="page-wrapper">
+
+    <!-- Header -->
+    <app-header></app-header>
+
+    <div class="container">
+        <div class="content-wrapper">
+            <superadmin-sidebar></superadmin-sidebar>
+
+            <content *ngIf="publish">
+                <div class="page-top">
+                    <div class="button-back">
+                        <button class="button-transparent" (click)="prevRoute()">
+                            <div class="icon">
+                                <img src="../../../../../../assets/images/icon-arrow-left.svg" />
+                            </div>
+            
+                            Назад
+                        </button>
+                    </div>
+
+                    <div class="page-head">
+                        <h2>{{ publish.article.title }}</h2>
+                    </div>
+                </div>
+
+                <div class="page-content" *ngIf="articleForm">
+                    <div class="article-title">
+                        <input type="text" placeholder="Название" [(value)]="articleForm.value['title']" disabled />
+                    </div>
+
+                    <div class="article-preview-image-uploaded">
+                        <div class="preview-image">
+                            <img [src]="articleForm.value['previewImage']" />
+                        </div>
+                    </div>
+
+                    <div class="article-short-text">
+                        <textarea placeholder="Краткое описание" [(value)]="articleForm.value['shortText']" disabled></textarea>
+                    </div>
+
+                    <div class="article-text-editor">
+                        <textarea [froalaEditor]="editorOptions" [(froalaModel)]="editorContent" disabled></textarea>
+                    </div>
+
+                    <div class="article-submit">
+                        <button type="button" class="button-green" (click)="updatePublishStatus(2)">Одобрить</button>
+                        <button type="button" class="button-red-transparent" (click)="updatePublishStatus(3)">Отклонить</button>
+                        <input type="text" [(ngModel)]="publishMessage" placeholder="Сообщение автору..." />
+                    </div>
+                </div>
+            </content>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <app-footer></app-footer>
+</div>

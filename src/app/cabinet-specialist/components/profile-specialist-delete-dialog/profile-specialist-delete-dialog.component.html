@@ -1,0 +1,26 @@
+<div class="modal-wrapper" [ngClass]="{'visible': isVisible}">
+    <div class="modal" *ngIf="article">
+        <div class="modal-body">
+            <div class="close-button" (click)="close()">
+                <div class="md"></div>
+                <div class="mdiv"></div>
+            </div>
+
+            <div class="modal-header">
+                {{ article.title }}
+            </div>
+    
+            <div class="modal-content">
+                Вы действительно хотите удалить статью?
+            </div>
+
+            <div class="modal-footer">
+                <div class="footer-buttons">
+                    <div class="button-submit" (click)="deleteArticle()">
+                        Удалить
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

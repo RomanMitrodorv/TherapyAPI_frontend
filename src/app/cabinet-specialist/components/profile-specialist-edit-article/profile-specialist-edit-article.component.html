@@ -1,0 +1,74 @@
+<div class="page-wrapper">
+
+    <!-- Header -->
+    <profile-specialist-header></profile-specialist-header>
+
+    <div class="container">
+        <div class="content-wrapper">
+            <profile-specialist-sidebar></profile-specialist-sidebar>
+
+            <content *ngIf="article">
+                <div class="page-top">
+                    <div class="button-back">
+                        <button class="button-transparent" (click)="prevRoute()">
+                            <div class="icon">
+                                <img src="../../../../assets/images/icon-arrow-left.svg" />
+                            </div>
+            
+                            Назад
+                        </button>
+                    </div>
+
+                    <div class="page-head">
+                        <h2>{{ article.title }}</h2>
+                    </div>
+                </div>
+
+                <div class="page-content" *ngIf="articleForm">
+                    <input hidden type="file" #previewImage (change)="setPreviewImage($event.target.files)" />
+
+                    <div class="article-title">
+                        <input type="text" placeholder="Название" [(value)]="articleForm.value['title']" (input)="onChange('title', $event.target.value)" />
+                    </div>
+
+                    <div class="article-preview-image" draggable="true" ngClass="{{dragAreaClass}}" *ngIf="!articleForm.value['previewImage']">
+                        <div class="article-preview-image-caption">
+                            Добавьте изображение, которое будет отображаться в качестве обложки статьи
+                        </div>
+
+                        <div class="article-preview-image-button">
+                            <button type="button" (click)="previewImage.click()">+  Добавить превью</button> 
+                        </div>
+                    </div>
+
+                    <div class="article-preview-image-uploaded" *ngIf="articleForm.value['previewImage']">
+                        <div class="preview-image">
+                            <img [src]="articleForm.value['previewImage']" />
+                        </div>
+
+                        <div class="edit-button" (click)="editPreviewImage()">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M14.3191 7.62235L12.3776 5.68091L4.17137 13.8872L3.29083 16.7092L6.11281 15.8286L14.3191 7.62235ZM15.0262 6.91525L13.0848 4.97381L15.0375 3.02107L16.9789 4.96251L15.0262 6.91525ZM17.722 5.63364C18.0927 5.26299 18.0927 4.66204 17.722 4.29138L15.7086 2.27799C15.338 1.90734 14.737 1.90734 14.3664 2.27799L3.35662 13.2877C3.27812 13.3662 3.22962 13.4698 3.21957 13.5803L2.002 17.4824C1.97517 17.7776 2.22243 18.0248 2.51757 17.998L6.41967 16.7804C6.53023 16.7704 6.63377 16.7219 6.71227 16.6434L17.722 5.63364Z" fill="#19A067"/>
+                            </svg>                                
+                        </div>
+                    </div>
+
+                    <div class="article-short-text">
+                        <textarea placeholder="Краткое описание" [(value)]="articleForm.value['shortText']" (input)="onChange('shortText', $event.target.value)"></textarea>
+                    </div>
+
+                    <div class="article-text-editor">
+                        <div [froalaEditor]="editorOptions" [(froalaModel)]="editorContent"></div>
+                    </div>
+
+                    <div class="article-submit">
+                        <button type="button" class="button-green" (click)="submitArticle()">Сохранить</button>
+                    </div>
+                </div>
+            </content>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <app-footer></app-footer>
+</div>

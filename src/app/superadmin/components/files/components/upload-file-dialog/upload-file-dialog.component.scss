@@ -1,0 +1,182 @@
+// this holds the CSS display of the modal
+.modal {
+    // makes it hover above all elements
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    will-change: auto;
+    overflow-y: overlay;
+    padding-top: 39px;
+}
+
+// backdrop color
+.modal-background {
+    // should be below the .modal but above all other elements
+    z-index: 900;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(219, 219, 219, 0.75);
+    backdrop-filter: blur(50px);
+    will-change: auto;
+}
+
+@media screen and (max-width: 575px) {
+    .modal {
+        padding-top: 81px;
+    }
+}
+
+.modal-body {
+    width: 402px;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(30px);
+    border-radius: 10px;
+    margin: 0 auto;
+    padding-left: 59px;
+    padding-right: 59px;
+    padding-top: 39px;
+    padding-bottom: 39px;
+    border-radius: 10px;
+}
+
+.close-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: -79px;
+    top: 0;
+    width: 56px;
+    height: 56px;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(30px);
+    border-radius: 28px;
+    cursor: pointer;
+    transition: all .2s;
+
+    .md,
+    .mdiv  {
+        height: 21px;
+        width: 2px;
+        background-color: #DEDEDE;
+        transition: all .2s;
+    }
+
+    .mdiv {
+        margin-left: -2px;
+        transform: rotate(45deg);
+    }
+      
+    .md {
+        transform: rotate(-45deg);
+    }
+    
+    &:hover {
+        .md,
+        .mdiv {
+            background-color: #B9B9B9;
+        }
+    }
+
+    &:active {
+        background: rgba(238, 238, 238, 0.7);
+
+        .md,
+        .mdiv {
+            background-color: #DEDEDE;
+        }
+    }
+}
+
+.modal-header {
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 39px;
+    color: #3F666E;
+    margin-bottom: 20px;
+}
+
+.upload-preview {
+    position: relative;
+    width: 560px;
+    padding-top: 32px;
+    padding-bottom: 32px;
+    padding-left: 42px;
+    padding-right: 42px;
+    margin-top: 23px;
+    margin-bottom: 85px;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(30px);
+    border-radius: 10px;
+
+    .file-info {
+        margin-top: 24px;
+
+        .file-info-block {
+            margin-top: 12px;
+
+            &:first-child {
+                margin-top: 0;
+            }
+
+            .title {
+                font-weight: normal;
+                font-size: 12px;
+                line-height: 140%;
+                letter-spacing: 0.1em;
+                text-transform: uppercase;
+                color: #9EACA9;
+            }
+
+            .value {
+                margin-top: 3px;
+                font-family: "Poppins", sans-serif;
+                font-weight: normal;
+                font-size: 16px;
+                line-height: 140%;
+                letter-spacing: 0.1em;
+                color: #364D47;
+                height: 22px;
+                display: -webkit-box;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                -webkit-line-clamp: 1;
+                -webkit-box-orient: vertical;
+            }
+        }
+    }
+
+    button[type='submit'] {
+        width: 100%;
+        margin-top: 18px;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .modal-body {
+        width: 304px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .modal-present {
+        width: 304px;
+        margin-top: 14px;
+        padding-left: 23px;
+        padding-right: 23px;
+    }
+
+    .close-button {
+        right: auto;
+        left: 124px;
+        top: -68px;
+    }
+}

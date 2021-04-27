@@ -1,0 +1,32 @@
+// this holds the CSS display of the modal
+.modal {
+    // makes it hover above all elements
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    will-change: auto;
+    overflow-y: overlay;
+    padding-top: 39px;
+}
+
+// backdrop color
+.modal-background {
+    // should be below the .modal but above all other elements
+    z-index: 900;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(219, 219, 219, 0.75);
+    backdrop-filter: blur(50px);
+    will-change: auto;
+}
+
+@media screen and (max-width: 575px) {
+    .modal {
+        padding-top: 81px;
+    }
+}

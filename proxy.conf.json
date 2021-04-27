@@ -1,0 +1,10 @@
+{
+    "/webinarForm": {
+        "target": "https://lp.chernakovdenis.ru/pl/lite/block-public/process?id=691138500",
+        "secure": true,
+        "pathRewrite": {
+            "^/webinarForm": ""
+        },
+        "changeOrigin": true
+    }
+}

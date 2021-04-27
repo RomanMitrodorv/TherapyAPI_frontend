@@ -1,0 +1,2208 @@
+.content-wrapper {
+    display: flex;
+    margin-top: 19px;
+
+    content {
+        width: 954px;
+        height: 100%;
+        background: #ffffff;
+        margin-left: 30px;
+        /* padding-left: 24px;
+        padding-right: 24px; */
+        padding-top: 18px;
+        padding-bottom: 32px;
+        border-radius: 14px;
+
+        .page-top {
+            padding-left: 24px;
+            padding-right: 24px;
+
+            .page-info {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                .client-name {
+                    display: flex;
+                    align-items: center;
+                    font-weight: normal;
+                    font-size: 16px;
+                    line-height: 100%;
+                    color: #ADBDC0;                
+
+                    > svg {
+                        margin-right: 8px;
+                    }
+                }
+            }
+
+            .page-head {
+                margin-top: 16px;
+
+                .problem-text {
+                    max-width: 660px;
+                    font-weight: normal;
+                    font-size: 24px;
+                    line-height: 140%;
+                    color: #005264;
+                }
+            }
+        }
+
+        .page-content {
+            margin-top: 32px;
+
+            .tabs {
+                .tabs-head {
+                    padding-left: 24px;
+                    padding-bottom: 16px;
+                    border-bottom: 1px solid #D5E8DD;
+                    display: flex;
+                    align-items: center;
+                    //overflow-x: scroll;
+                    overflow-y: hidden;
+
+                    .tab-head {
+                        margin-left: 40px;
+                        display: flex;
+                        align-items: center;
+                        color: #C1D3CA;
+                        cursor: pointer;
+
+                        &:first-child {
+                            margin-left: 0;
+                        }
+
+                        &.active {
+                            color: #389A71;
+                            cursor: auto;
+                        }
+
+                        .title {
+                            font-weight: 500;
+                            font-size: 16px;
+                            line-height: 140%;
+                        }
+
+                        .count {
+                            margin-left: 12px;
+                            font-family: "Poppins", sans-serif;
+                            font-weight: 500;
+                            font-size: 20px;
+                            line-height: 140%;
+                        }
+                    }
+                }
+
+                .tabs-content {
+                    padding-top: 16px;
+                    padding-left: 24px;
+                    padding-right: 24px;
+
+                    .tab-content {
+                        .images-list {
+                            .images-list-item {
+                                margin-top: 16px;
+                                padding-top: 16px;
+                                padding-bottom: 16px;
+                                padding-left: 16px;
+                                padding-right: 16px;
+                                background: #F6FBF8;
+                                border: 1px solid #E2F1EA;
+                                box-sizing: border-box;
+                                border-radius: 16px;
+
+                                &:first-child {
+                                    margin-top: 0;
+                                }
+
+                                &:not(.hidden-image) {
+                                    .item-head {
+                                        .item-title {
+                                            .item-name {
+                                                .hidden-image-title {
+                                                    display: none;
+                                                }
+                                            }
+                                        }
+
+                                        .item-actions {
+                                            .item-reload {
+                                                display: none;
+                                            }
+                                        }
+                                    }
+                                }
+
+                                .item-head {
+                                    display: flex;
+                                    justify-content: space-between;
+                                    align-items: center;
+
+                                    .item-title {
+                                        display: flex;
+                                        align-items: center;
+
+                                        .item-date {
+                                            width: 54px;
+                                            height: 54px;
+                                            flex: 0 0 54px;
+                                            background: #FFFFFF;
+                                            border: 1px solid #DBF8E6;
+                                            box-sizing: border-box;
+                                            border-radius: 100px;
+                                            display: flex;
+                                            flex-direction: column;
+                                            justify-content: center;
+                                            align-items: center;
+                                            
+                                            .day,
+                                            .month {
+                                                text-align: center;
+                                            }
+
+                                            .day {
+                                                font-family: "Poppins", sans-serif;
+                                                font-weight: 300;
+                                                font-size: 22px;
+                                                line-height: 100%;
+                                                text-align: center;
+                                                color: #005264;
+                                            }
+
+                                            .month {
+                                                margin-top: 4px;
+                                                font-weight: normal;
+                                                font-size: 10px;
+                                                line-height: 100%;
+                                                text-align: center;
+                                                letter-spacing: 0.18em;
+                                                text-transform: uppercase;
+                                                color: #9EACA9;
+                                            }
+                                        }
+
+                                        .item-name {
+                                            margin-left: 16px;
+
+                                            .name {
+                                                font-weight: normal;
+                                                font-size: 20px;
+                                                line-height: 100%;
+                                                color: #005264;
+                                            }
+
+                                            .like-score {
+                                                margin-top: 13px;
+                                                display: flex;
+                                                align-items: center;
+
+                                                .like-score-section {
+                                                    width: 21.8px;
+                                                    height: 4px;
+                                                    border: 1px solid #CDE6DB;
+
+                                                    &:first-child {
+                                                        border-top-left-radius: 4px;
+                                                        border-bottom-left-radius: 4px;
+                                                    }
+
+                                                    &:last-child {
+                                                        border-top-right-radius: 4px;
+                                                        border-bottom-right-radius: 4px;
+                                                    }
+
+                                                    &.filled {
+                                                        background: #56C898;
+                                                        border: 1px solid #17A66A;
+                                                    }
+                                                }
+                                            }
+                                        }
+
+                                        .item-specialist {
+                                            margin-left: 160px;
+                                            display: flex;
+                                            align-items: center;
+
+                                            .specialist-photo {
+                                                width: 40px;
+                                                height: 40px;
+                                                flex: 0 0 40px;
+                                                padding: 3px;
+                                                border-radius: 100px;
+                                                border: 1px solid #32A776;
+
+                                                > img {
+                                                    width: 100%;
+                                                    height: 100%;
+                                                    border-radius: 100px;
+                                                    object-fit: cover;
+                                                    object-position: center;
+                                                }
+                                            }
+
+                                            .specialist-name {
+                                                margin-left: 12px;
+                                                font-weight: normal;
+                                                font-size: 16px;
+                                                line-height: 100%;
+                                                color: #005264;
+                                            }
+                                        }
+                                    }
+                                }
+
+                                .item-body {
+                                    margin-top: 10px;
+                                    
+                                    .item-description {
+                                        background: #FFFFFF;
+                                        border: 1px solid #E2F1EA;
+                                        box-sizing: border-box;
+                                        border-radius: 10px;
+
+                                        .item-description-row {
+                                            display: flex;
+                                            //align-items: center;
+                                            padding-left: 16px;
+                                            padding-right: 16px;
+                                            padding-top: 16px;
+                                            padding-bottom: 15px;
+
+                                            &.checklist-row {
+                                                align-items: center;
+                                            }
+                                            
+                                            &:first-child {
+                                                border-bottom: 1px solid #E2F1EA;
+
+                                                > .item-description-column {
+                                                    width: 156px;
+
+                                                    &:first-child {
+                                                        margin-right: 81px;
+                                                        width: 136px;
+                                                    }
+
+                                                    &:last-child {
+                                                        margin-left: 62px;
+                                                        width: 315px;
+                                                    }
+                                                }
+                                            }
+
+                                            &:nth-child(2) {
+                                                > .item-description-column {
+                                                    margin-right: 60px;
+
+                                                    &:last-child {
+                                                        margin-right: 0;
+                                                        margin-left: 10px;
+                                                    }
+                                                }
+                                            }
+
+                                            .item-description-column {
+                                                .column-title {
+                                                    font-weight: normal;
+                                                    font-size: 12px;
+                                                    line-height: 140%;
+                                                    text-transform: uppercase;
+                                                    letter-spacing: 0.1em;
+                                                    color: #B6C5BC;                                                    
+                                                }
+
+                                                &.text-column {
+                                                    .column-value {
+                                                        margin-top: 9px;
+                                                        font-weight: normal;
+                                                        font-size: 16px;
+                                                        line-height: 140%;
+                                                        color: #005264;                                                        
+                                                    }
+                                                }
+
+                                                &.checkbox-column {
+                                                    .column-value {
+                                                        margin-top: 12px;
+                                                    }
+                                                }
+
+                                                &.button-column {
+                                                    .column-value {
+                                                        button {
+                                                            width: 125px;
+                                                            height: 34px;
+                                                            padding: 0;
+                                                            text-transform: none;
+                                                            box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.05);
+                                                            border-radius: 10px;
+                                                            font-weight: normal;
+                                                            font-size: 16px;
+                                                            line-height: 100%;
+                                                            color: #FFFFFF;
+                                                            letter-spacing: normal;
+                                                        }
+                                                    }
+                                                }
+
+                                                &.relation-column {
+                                                    cursor: not-allowed;
+
+                                                    .column-value {
+                                                        display: flex;
+                                                        align-items: center;
+                                                        margin-top: 9px;
+
+                                                        > svg {
+                                                            flex: 0 0 16px;
+                                                        }
+
+                                                        .related-image {
+                                                            margin-left: 13px;
+                                                            font-weight: normal;
+                                                            font-size: 16px;
+                                                            line-height: 140%;
+                                                            color: #B6C5BC;
+                                                            border-bottom: 1px dashed #B6C5BC;
+                                                            display: flex;
+                                                            align-items: center;
+
+                                                            .text {
+                                                                max-width: 256px;
+                                                                white-space: nowrap;
+                                                                overflow: hidden;
+                                                                text-overflow: ellipsis;
+                                                            }
+
+                                                            > svg {
+                                                                margin-left: 7px;
+                                                                flex: 0 0 12px;
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+
+                                &.hidden-image {
+                                    background: #FBF9F6;
+                                    border: 1px solid #ECE2D4;
+
+                                    .item-head {
+                                        .item-title {
+                                            .item-date {
+                                                border: 1px solid #ECE2D4;
+
+                                                .month {
+                                                    color: #C8B69D;
+                                                }
+                                            }
+
+                                            .item-name {
+                                                .title {
+                                                    font-weight: normal;
+                                                    font-size: 12px;
+                                                    line-height: 140%;
+                                                    letter-spacing: 0.1em;
+                                                    text-transform: uppercase;
+                                                    color: #FF8C22;
+                                                }
+
+                                                .name {
+                                                    margin-top: 7px;
+                                                }
+
+                                                .like-score {
+                                                    display: none;
+                                                }
+                                            }
+
+                                            .item-specialist {
+                                                display: none;
+                                            }
+                                        }
+
+                                        .item-actions {
+                                            .item-edit {
+                                                display: none;
+                                            }
+                                        }
+                                    }
+
+                                    .item-body {
+                                        display: none;
+                                    }
+                                }
+
+                                &.create-item-form {
+                                    padding: 0;
+
+                                    .item-head {
+                                        padding-top: 16px;
+                                        padding-left: 16px;
+                                        padding-right: 16px;
+
+                                        .item-title {
+                                            .item-add-icon {
+                                                width: 54px;
+                                                height: 54px;
+                                                background: #FFFFFF;
+                                                border: 1px solid #DBF8E6;
+                                                box-sizing: border-box;
+                                                border-radius: 100px;
+                                                display: flex;
+                                                justify-content: center;
+                                                align-items: center;
+                                            }
+                                        }
+                                    }
+
+                                    .item-body {
+                                        margin-top: 16px;
+
+                                        .create-item-form {
+
+                                            .form-inner {
+                                                display: flex;
+                                                padding-left: 16px;
+                                                padding-right: 16px;
+                                                padding-bottom: 24px;
+                                                border-bottom: 1px solid #E2F1EA;
+
+                                                .form-block {
+                                                    &:first-child {
+                                                        width: 434px;
+                                                    }
+
+                                                    &:last-child {
+                                                        width: 424px;
+                                                        margin-left: 16px;
+                                                    }
+
+                                                    .form-group {
+                                                        margin-top: 16px;
+
+                                                        .input-wrapper {
+                                                            position: relative;
+
+                                                            label {
+                                                                position: absolute;
+                                                                top: 23px;
+                                                                left: 16px;
+                                                                font-size: 16px;
+                                                                line-height: 100%;
+                                                                color: #C0CCC5;
+                                                                cursor: text;
+                                                                transition: all .3s;
+                                                            }
+
+                                                            input,
+                                                            select {
+                                                                width: 100%;
+                                                                background: #FFFFFF;
+                                                                border: 1px solid #E1EEE6;
+                                                                box-sizing: border-box;
+                                                                border-radius: 10px;
+                                                                outline: none;
+                                                                padding-left: 16px;
+                                                                padding-top: 21px;
+                                                                padding-bottom: 10px;
+                                                                font-size: 16px;
+                                                                line-height: 100%;
+                                                                color: #005264;
+
+                                                                &.error {
+                                                                    background: rgba(255, 147, 147, 0.12);
+                                                                    border: 1px solid rgba(255, 147, 147, 0.12);
+                                                                    color: #FF9494;
+
+                                                                    &::placeholder {
+                                                                        color: #FF9494;
+                                                                    }
+
+                                                                    + label {
+                                                                        color: #FF9494;
+                                                                    }
+                                                                }
+
+                                                                &:focus,
+                                                                &:valid {
+                                                                    + label {
+                                                                        top: 7px;
+                                                                        font-size: 8px;
+                                                                        line-height: 130.08%;
+                                                                        letter-spacing: 0.06em;
+                                                                        text-transform: uppercase;
+                                                                        transition: all .3s;
+                                                                    }
+                                                                }
+                                                            }
+
+                                                            select {
+                                                                padding-top: 23px;
+                                                                padding-bottom: 11px;
+                                                                -moz-appearance: none; 
+                                                                -moz-appearance: none; 
+                                                                -webkit-appearance: none; 
+                                                                appearance: none;
+                                                                background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAB5SURBVHgBtc67DYAgEAbgO02wdRULKysmcBVHYAQ3cAYnuEI6TIybUGvIGYgPTCj1r+Dy3QPg6yDNuod8V7KSNgVooRJdMWTAbNEJ8oU0EsTMK4aCmRRi1nK+yWvyg2CUdaPw7o5wuClC4f9adWL/jlEyHpPRHfyeA75iP48UYEPmAAAAAElFTkSuQmCC');
+                                                                background-color: #ffffff;
+                                                                background-repeat: no-repeat;
+                                                                background-position: right 16px top 25px;
+
+                                                                &:valid {
+                                                                    + label {
+                                                                        top: 7px;
+                                                                        font-size: 8px;
+                                                                        line-height: 130.08%;
+                                                                        letter-spacing: 0.06em;
+                                                                        text-transform: uppercase;
+                                                                        transition: all .3s;
+                                                                    }
+                                                                }
+
+                                                                &:invalid {
+                                                                    color: #C0CCC5;
+                                                                }
+                                                            }
+                                                        }
+
+                                                        &:first-child {
+                                                            margin-top: 0;
+                                                        }
+
+                                                        &.form-group-half {
+                                                            display: flex;
+                                                            justify-content: space-between;
+                                                            align-items: center;
+
+                                                            .input-wrapper {
+                                                                width: 209px;
+                                                            }
+                                                        }
+
+                                                        &.form-group-checkbox {
+                                                            display: flex;
+                                                            align-items: center;
+
+                                                            .input-wrapper {
+                                                                display: flex;
+                                                                flex-direction: column;
+                                                                align-items: flex-start;
+
+                                                                label {
+                                                                    position: static;
+                                                                    font-weight: normal;
+                                                                    font-size: 12px;
+                                                                    line-height: 140%;
+                                                                    letter-spacing: 0.1em;
+                                                                    color: #B6C5BC;
+                                                                    text-transform: uppercase;
+                                                                    cursor: default;
+                                                                }
+
+                                                                input {
+                                                                    margin-top: 12px;
+                                                                }
+
+                                                                &:first-child {
+                                                                    margin-left: 16px;
+                                                                    margin-right: 80px;
+                                                                }
+
+                                                                &:last-child {
+                                                                    margin-left: 80px;
+                                                                }
+                                                            }
+                                                        }
+
+                                                        &.form-group-progress {
+                                                            .input-wrapper {
+                                                                width: 282px;
+                                                                height: 52px;
+
+                                                                label {
+                                                                    position: static;
+                                                                    display: flex;
+                                                                    justify-content: space-between;
+                                                                    align-items: center;
+                                                                    margin-left: 8px;
+
+                                                                    > span {
+                                                                        font-weight: normal;
+                                                                        line-height: 140%;
+                                                                        letter-spacing: 0.1em;
+                                                                        color: #B6C5BC;
+                                                                        text-transform: uppercase;
+
+                                                                        &:first-child {
+                                                                            font-size: 12px;                                                                        
+                                                                        }
+
+                                                                        &:last-child {
+                                                                            font-family: "Poppins", sans-serif;
+                                                                            font-size: 14px;
+                                                                        }
+                                                                    }
+                                                                }
+
+                                                                .mat-slider {
+                                                                    width: 100%;
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+
+                                            .submit-block {
+                                                height: 64px;
+                                            
+                                                > button {
+                                                    width: 100%;
+                                                    height: 100%;
+                                                    font-weight: bold;
+                                                    font-size: 14px;
+                                                    line-height: 121.5%;
+                                                    text-align: center;
+                                                    letter-spacing: 0.135em;
+                                                    color: #0D9D61;
+                                                    text-transform: uppercase;
+                                                    background: none;
+                                                    border: none;
+                                                    outline: none;
+                                                    cursor: pointer;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        .resources-list {
+                            .resources-list-item {
+                                margin-top: 16px;
+                                padding-top: 16px;
+                                padding-bottom: 16px;
+                                padding-left: 16px;
+                                padding-right: 16px;
+                                background: #F6FBF8;
+                                border: 1px solid #E2F1EA;
+                                box-sizing: border-box;
+                                border-radius: 16px;
+
+                                &:first-child {
+                                    margin-top: 0;
+                                }
+
+                                .item-head {
+                                    display: flex;
+                                    justify-content: space-between;
+                                    align-items: center;
+
+                                    .item-title {
+                                        display: flex;
+                                        align-items: center;
+
+                                        .item-date {
+                                            width: 54px;
+                                            height: 54px;
+                                            flex: 0 0 54px;
+                                            background: #FFFFFF;
+                                            border: 1px solid #DBF8E6;
+                                            box-sizing: border-box;
+                                            border-radius: 100px;
+                                            display: flex;
+                                            flex-direction: column;
+                                            justify-content: center;
+                                            align-items: center;
+                                            
+                                            .day,
+                                            .month {
+                                                text-align: center;
+                                            }
+
+                                            .day {
+                                                font-family: "Poppins", sans-serif;
+                                                font-weight: 300;
+                                                font-size: 22px;
+                                                line-height: 100%;
+                                                text-align: center;
+                                                color: #005264;
+                                            }
+
+                                            .month {
+                                                margin-top: 4px;
+                                                font-weight: normal;
+                                                font-size: 10px;
+                                                line-height: 100%;
+                                                text-align: center;
+                                                letter-spacing: 0.18em;
+                                                text-transform: uppercase;
+                                                color: #9EACA9;
+                                            }
+                                        }
+
+                                        .item-name {
+                                            margin-left: 16px;
+
+                                            .name {
+                                                font-weight: normal;
+                                                font-size: 20px;
+                                                line-height: 100%;
+                                                color: #005264;
+                                            }
+
+                                            .like-score {
+                                                margin-top: 13px;
+                                                display: flex;
+                                                align-items: center;
+
+                                                .like-score-section {
+                                                    width: 21.8px;
+                                                    height: 4px;
+                                                    border: 1px solid #CDE6DB;
+
+                                                    &:first-child {
+                                                        border-top-left-radius: 4px;
+                                                        border-bottom-left-radius: 4px;
+                                                    }
+
+                                                    &:last-child {
+                                                        border-top-right-radius: 4px;
+                                                        border-bottom-right-radius: 4px;
+                                                    }
+
+                                                    &.filled {
+                                                        background: #56C898;
+                                                        border: 1px solid #17A66A;
+                                                    }
+                                                }
+                                            }
+                                        }
+
+                                        .item-specialist {
+                                            margin-left: 160px;
+                                            display: flex;
+                                            align-items: center;
+
+                                            .specialist-photo {
+                                                width: 40px;
+                                                height: 40px;
+                                                flex: 0 0 40px;
+                                                padding: 3px;
+                                                border-radius: 100px;
+                                                border: 1px solid #32A776;
+
+                                                > img {
+                                                    width: 100%;
+                                                    height: 100%;
+                                                    border-radius: 100px;
+                                                    object-fit: cover;
+                                                    object-position: center;
+                                                }
+                                            }
+
+                                            .specialist-name {
+                                                margin-left: 12px;
+                                                font-weight: normal;
+                                                font-size: 16px;
+                                                line-height: 100%;
+                                                color: #005264;
+                                            }
+                                        }
+                                    }
+                                }
+
+                                .item-body {
+                                    margin-top: 10px;
+
+                                    .item-description {
+                                        background: #FFFFFF;
+                                        border: 1px solid #E2F1EA;
+                                        box-sizing: border-box;
+                                        border-radius: 10px;
+                                        display: flex;
+                                        
+                                        .item-description-block {
+                                            padding-bottom: 16px;
+                                            padding-left: 16px;
+
+                                            &:first-child {
+                                                width: 434px;
+                                                border-right: 1px solid #DCF1E7;
+                                                padding-top: 16px;
+                                            }
+
+                                            &:last-child {
+                                                padding-top: 25px;
+
+                                                .item-description-row {
+                                                    .row-value {
+                                                        margin-top: 15px;
+                                                    }
+                                                }
+                                            }
+
+                                            .item-description-row {
+                                                margin-top: 24px;
+                                                max-width: 270px;
+
+                                                &:first-child {
+                                                    margin-top: 0;
+                                                }
+
+                                                .row-title {
+                                                    font-weight: normal;
+                                                    font-size: 12px;
+                                                    line-height: 140%;
+                                                    letter-spacing: 0.1em;
+                                                    color: #B6C5BC;
+                                                    text-transform: uppercase;
+                                                }
+
+                                                .row-value {
+                                                    margin-top: 9px;
+                                                    font-weight: normal;
+                                                    font-size: 16px;
+                                                    line-height: 140%;
+                                                    color: #005264;
+                                                    
+                                                    .num-list {
+                                                        .num-list-item {
+                                                            margin-top: 14px;
+                                                            width: 304px;
+                                                            padding-top: 10px;
+                                                            padding-bottom: 8px;
+                                                            padding-left: 15px;
+                                                            padding-right: 18px;
+                                                            background: transparent;
+                                                            border: 1px solid #DCECE6;
+                                                            box-sizing: border-box;
+                                                            border-radius: 10px;
+                                                            display: flex;
+                                                            justify-content: space-between;
+                                                            align-items: center;
+
+                                                            &:first-child {
+                                                                margin-top: 0;
+                                                            }
+
+                                                            .num-item-title {
+                                                                display: flex;
+                                                                align-items: center;
+                                                                font-weight: normal;
+                                                                font-size: 16px;
+                                                                line-height: 140%;
+                                                                color: #005264;
+
+                                                                .num-item-index {
+                                                                    width: 15px;
+                                                                    margin-right: 14px;
+                                                                    font-family: "Poppins", sans-serif;
+                                                                    font-weight: normal;
+                                                                    font-size: 24px;
+                                                                    line-height: 100%;
+                                                                    color: #32A776;
+                                                                    text-align: center;
+                                                                }
+                                                            }
+
+                                                            .num-item-checked {
+                                                                > svg {
+                                                                    display: none;
+                                                                }
+                                                            }
+
+                                                            &.checked {
+                                                                background: #F6FBF8;
+                                                                
+                                                                .num-item-checked {
+                                                                    > svg {
+                                                                        display: block;
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+
+                                &.create-item-form {
+                                    padding: 0;
+
+                                    .item-head {
+                                        padding-top: 16px;
+                                        padding-left: 16px;
+                                        padding-right: 16px;
+
+                                        .item-title {
+                                            .item-add-icon {
+                                                width: 54px;
+                                                height: 54px;
+                                                background: #FFFFFF;
+                                                border: 1px solid #DBF8E6;
+                                                box-sizing: border-box;
+                                                border-radius: 100px;
+                                                display: flex;
+                                                justify-content: center;
+                                                align-items: center;
+                                            }
+                                        }
+                                    }
+
+                                    .item-body {
+                                        margin-top: 16px;
+
+                                        .create-item-form {
+                                            .form-inner {
+                                                display: flex;
+                                                justify-content: space-between;
+                                                border-bottom: 1px solid #E2F1EA;
+                                                padding-left: 16px;
+                                                padding-right: 16px;
+                                                padding-bottom: 24px;
+
+                                                .form-block {
+                                                    &:first-child {
+                                                        width: 434px;
+                                                    }
+
+                                                    &:last-child {
+                                                        width: 424px;
+                                                    }
+
+                                                    .form-group {
+                                                        margin-top: 16px;
+
+                                                        &:first-child {
+                                                            margin-top: 0;
+                                                        }
+
+                                                        .input-wrapper {
+                                                            position: relative;
+
+                                                            label {
+                                                                position: absolute;
+                                                                top: 23px;
+                                                                left: 16px;
+                                                                font-size: 16px;
+                                                                line-height: 100%;
+                                                                color: #C0CCC5;
+                                                                cursor: text;
+                                                                transition: all .3s;
+                                                            }
+
+                                                            input {
+                                                                width: 100%;
+                                                                background: #FFFFFF;
+                                                                border: 1px solid #E1EEE6;
+                                                                box-sizing: border-box;
+                                                                border-radius: 10px;
+                                                                outline: none;
+                                                                padding-left: 16px;
+                                                                padding-top: 21px;
+                                                                padding-bottom: 10px;
+                                                                font-size: 16px;
+                                                                line-height: 100%;
+                                                                color: #005264;
+
+                                                                &.error {
+                                                                    background: rgba(255, 147, 147, 0.12);
+                                                                    border: 1px solid rgba(255, 147, 147, 0.12);
+                                                                    color: #FF9494;
+
+                                                                    &::placeholder {
+                                                                        color: #FF9494;
+                                                                    }
+
+                                                                    + label {
+                                                                        color: #FF9494;
+                                                                    }
+                                                                }
+
+                                                                &:focus,
+                                                                &:valid {
+                                                                    + label {
+                                                                        top: 7px;
+                                                                        font-size: 8px;
+                                                                        line-height: 130.08%;
+                                                                        letter-spacing: 0.06em;
+                                                                        text-transform: uppercase;
+                                                                        transition: all .3s;
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+
+                                                        &.form-group-half {
+                                                            display: flex;
+                                                            justify-content: space-between;
+                                                            align-items: center;
+
+                                                            .input-wrapper {
+                                                                width: 209px;
+                                                            }
+                                                        }
+
+                                                        &.form-group-progress {
+                                                            margin-left: 16px;
+                                                            margin-top: 32px;
+
+                                                            .input-wrapper {
+                                                                width: 282px;
+                                                                height: 52px;
+
+                                                                label {
+                                                                    position: static;
+                                                                    display: flex;
+                                                                    justify-content: space-between;
+                                                                    align-items: center;
+                                                                    margin-left: 8px;
+
+                                                                    > span {
+                                                                        font-weight: normal;
+                                                                        line-height: 140%;
+                                                                        letter-spacing: 0.1em;
+                                                                        color: #B6C5BC;
+                                                                        text-transform: uppercase;
+
+                                                                        &:first-child {
+                                                                            font-size: 12px;                                                                        
+                                                                        }
+
+                                                                        &:last-child {
+                                                                            font-family: "Poppins", sans-serif;
+                                                                            font-size: 14px;
+                                                                        }
+                                                                    }
+                                                                }
+
+                                                                .mat-slider {
+                                                                    width: 100%;
+                                                                }
+                                                            }
+                                                        }
+
+                                                        &.form-group-inline {
+                                                            .input-wrapper {
+                                                                .inline-button {
+                                                                    position: absolute;
+                                                                    display: flex;
+                                                                    justify-content: center;
+                                                                    align-items: center;
+                                                                    width: 72px;
+                                                                    height: 100%;
+                                                                    top: 0;
+                                                                    right: 0;
+                                                                    border-top-right-radius: 10px;
+                                                                    border-bottom-right-radius: 10px;
+                                                                    background: #E9F9EF;
+                                                                    border: 1px solid #A0DFB9;
+                                                                    box-sizing: border-box;
+                                                                    cursor: pointer;
+                                                                    outline: none;
+                                                                }
+                                                            }
+                                                        }
+
+                                                        &.form-group-list {
+                                                            margin-top: 0;
+
+                                                            .num-list {
+                                                                background: #F6FBF8;
+                                                                border: 1px solid #E1EEE6;
+                                                                border-top: 0;
+                                                                border-bottom-left-radius: 10px;
+                                                                border-bottom-right-radius: 10px;
+                                                                box-sizing: border-box;
+                                                                margin-top: -8px;
+
+                                                                .num-list-item {
+                                                                    display: flex;
+                                                                    justify-content: space-between;
+                                                                    align-items: center;
+                                                                    padding-top: 16px;
+                                                                    padding-bottom: 16px;
+                                                                    padding-left: 16px;
+                                                                    padding-right: 16px;
+                                                                    border-bottom: 1px solid #E1EEE6;
+
+                                                                    &:first-child {
+                                                                        padding-top: 24px;
+                                                                    }
+
+                                                                    &:last-child {
+                                                                        border-bottom: 0;
+                                                                    }
+
+                                                                    .num-item-title {
+                                                                        font-weight: normal;
+                                                                        font-size: 16px;
+                                                                        line-height: 140%;
+                                                                        color: #005264;
+                                                                        display: flex;
+                                                                        align-items: center;
+                                                                        
+                                                                        .num-item-index {
+                                                                            width: 15px;
+                                                                            margin-right: 14px;
+                                                                            font-family: "Poppins", sans-serif;
+                                                                            font-weight: normal;
+                                                                            font-size: 24px;
+                                                                            line-height: 100%;
+                                                                            text-align: center;
+                                                                            color: #32A776;
+                                                                        }
+                                                                    }
+
+                                                                    .num-list-item-checked {
+                                                                        width: 40px;
+                                                                        height: 24px;
+                                                                    }
+                                                                }
+
+                                                                &.empty {
+                                                                    margin-top: 16px;
+                                                                    padding-top: 61px;
+                                                                    padding-bottom: 61px;
+                                                                    border-top: 1px solid #E1EEE6;
+                                                                    border-top-left-radius: 10px;
+                                                                    border-top-right-radius: 10px;
+
+                                                                    .empty-list-message {
+                                                                        display: flex;
+                                                                        flex-direction: column;
+                                                                        justify-content: center;
+                                                                        align-items: center;
+                                                                        text-align: center;
+                                                                        font-weight: normal;
+                                                                        font-size: 16px;
+                                                                        line-height: 100%;
+                                                                        color: #B6C5BC;
+                                                                        cursor: default;
+
+                                                                        > svg {
+                                                                            margin-bottom: 24px;
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+
+                                            .submit-block {
+                                                height: 64px;
+                                            
+                                                > button {
+                                                    width: 100%;
+                                                    height: 100%;
+                                                    font-weight: bold;
+                                                    font-size: 14px;
+                                                    line-height: 121.5%;
+                                                    text-align: center;
+                                                    letter-spacing: 0.135em;
+                                                    color: #0D9D61;
+                                                    text-transform: uppercase;
+                                                    background: none;
+                                                    border: none;
+                                                    outline: none;
+                                                    cursor: pointer;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        .sessions-list {
+                            .sessions-list-item {
+                                background: #F6FBF8;
+                                border: 1px solid #E2F1EA;
+                                box-sizing: border-box;
+                                border-radius: 16px;
+                                padding-top: 10px;
+                                padding-bottom: 10px;
+                                padding-left: 16px;
+                                padding-right: 16px;
+                                margin-top: 12px;
+
+                                &:first-child {
+                                    margin-top: 0;
+                                }
+
+                                .sessions-list-item-inner {
+                                    display: flex;
+                                    justify-content: space-between;
+                                    align-items: center;
+
+                                    .item-title {
+                                        display: flex;
+                                        align-items: center;
+
+                                        .item-date {
+                                            width: 54px;
+                                            height: 54px;
+                                            flex: 0 0 54px;
+                                            background: #FFFFFF;
+                                            border: 1px solid #DBF8E6;
+                                            box-sizing: border-box;
+                                            display: flex;
+                                            flex-direction: column;
+                                            justify-content: center;
+                                            align-items: center;
+                                            text-align: center;
+                                            border-radius: 100px;
+
+                                            .day {
+                                                font-family: "Poppins", sans-serif;
+                                                font-weight: 300;
+                                                font-size: 22px;
+                                                line-height: 100%;
+                                                text-align: center;
+                                                color: #005264;
+                                            }
+
+                                            .month {
+                                                margin-top: 4px;
+                                                font-weight: normal;
+                                                font-size: 10px;
+                                                line-height: 100%;
+                                                text-align: center;
+                                                letter-spacing: 0.18em;
+                                                text-transform: uppercase;
+                                                color: #9EACA9;
+                                            }
+                                        }
+
+                                        .item-specialist {
+                                            margin-left: 18px;
+                                            display: flex;
+                                            align-items: center;
+
+                                            .specialist-photo {
+                                                width: 43px;
+                                                height: 43px;
+                                                flex: 0 0 43px;
+                                                border: 1px solid #32A776;
+                                                border-radius: 100px;
+                                                padding: 3px;
+                        
+                                                > img {
+                                                    width: 100%;
+                                                    height: 100%;
+                                                    border-radius: 100px;
+                                                    object-fit: cover;
+                                                }
+                                            }
+
+                                            .specialist-name {
+                                                margin-left: 10px;
+                                                font-weight: 500;
+                                                font-size: 16px;
+                                                line-height: 100%;
+                                                color: #005264;
+                                                cursor: pointer;
+                                            }
+
+                                            .specialist-rating {
+                                                margin-left: 10px;
+                                                display: flex;
+                                                align-items: center;
+
+                                                .rating-score {
+                                                    margin-left: 3px;
+                                                    font-family: "Poppins", sans-serif;
+                                                    font-weight: normal;
+                                                    font-size: 14px;
+                                                    line-height: 111%;
+                                                    color: #DEBA39;
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    .item-rating {
+                                        display: flex;
+                                        align-items: center;
+
+                                        .item-score {
+                                            .title {
+                                                font-weight: normal;
+                                                font-size: 12px;
+                                                line-height: 140%;
+                                                letter-spacing: 0.1em;
+                                                text-transform: uppercase;
+                                                color: #B6C5BC;                                                
+                                            }
+
+                                            .score {
+                                                margin-top: 6px;
+                                            }
+                                        }
+                                        
+                                        .item-review {
+                                            margin-left: 40px;
+                                            display: flex;
+                                            justify-content: center;
+                                            align-items: center;
+                                            width: 101px;
+                                            height: 42px;
+                                            flex: 0 0 101px;
+                                            background: #FFFFFF;
+                                            border: 0.5px solid #C7DFD3;
+                                            box-sizing: border-box;
+                                            border-radius: 10px;
+                                            font-weight: normal;
+                                            font-size: 16px;
+                                            line-height: 140%;
+                                            color: #89A295;
+                                            cursor: pointer;
+                                            outline: none;                                                                                    
+
+                                            svg {
+                                                margin-right: 12px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        .new-item {
+                            margin-top: 32px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1199px) {
+    .content-wrapper {
+        flex-direction: column;
+
+        content {
+            width: 100%;
+            margin-left: 0;
+            margin-top: 16px;
+            padding-top: 24px;
+        }
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .content-wrapper {
+        content {
+            .page-content {
+                .tabs {
+                    .tabs-content {
+                        .tab-content {
+                            .images-list {
+                                .images-list-item {
+                                    .item-head {
+                                        .item-title {
+                                            .item-specialist {
+                                                margin-left: 21px;
+                                            }
+                                        }
+                                    }
+
+                                    .item-body {
+                                        .item-description {
+                                            .item-description-row {
+                                                align-items: flex-start !important;
+                                                flex-direction: column;
+                                                padding: 0;
+
+                                                &:first-child {
+                                                    border-bottom: 0;
+
+                                                    > .item-description-column {
+                                                        width: 100% !important;
+                                                        margin-left: 0 !important;
+                                                        margin-right: 0 !important;
+                                                        padding: 16px;
+                                                        border-bottom: 1px solid #E2F1EA;
+                                                    }
+                                                }
+
+                                                &:nth-child(2) {
+                                                    flex-direction: row;
+                                                    flex-wrap: wrap;
+
+                                                    > .item-description-column {
+                                                        padding-top: 16px;
+                                                        padding-bottom: 16px;
+
+                                                        &:first-child {
+                                                            margin-left: 16px;
+                                                        }
+
+                                                        &:last-child {
+                                                            width: 100%;
+                                                            margin-left: 0;
+                                                            padding-left: 16px;
+                                                            border-top: 1px solid #E2F1EA;
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    &.create-item-form {
+                                        .item-body {
+                                            .create-item-form {
+                                                .form-inner {
+                                                    .form-block {
+                                                        
+                                                        &:first-child {
+                                                            width: 340px;
+                                                        }
+
+                                                        &:last-child {
+                                                            width: 282px;
+                                                        }
+
+                                                        .form-group {
+
+
+                                                            &.form-group-half {
+                                                                .input-wrapper {
+                                                                    width: 162px;
+                                                                }
+                                                            }
+
+                                                            &.form-group-checkbox {
+                                                                justify-content: space-between;
+
+                                                                .input-wrapper {
+                                                                    
+                                                                    &:first-child {
+                                                                        margin-right: 0;
+                                                                    }
+
+                                                                    &:last-child {
+                                                                        margin-left: 0;
+                                                                        margin-right: 16px;
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            .resources-list {
+                                .resources-list-item {
+                                    .item-head {
+                                        .item-title {
+                                            .item-specialist {
+                                                margin-left: 21px;
+                                            }
+                                        }
+                                    }
+
+                                    .item-body {
+                                        .item-description {
+                                            flex-direction: column;
+
+                                            .item-description-block {
+                                                width: 100% !important;
+                                                padding: 0 !important;
+
+                                                .item-description-row {
+                                                    border-bottom: 1px solid #E2F1EA;
+                                                    max-width: none !important;
+                                                    padding-top: 16px;
+                                                    padding-bottom: 16px;
+                                                    padding-left: 16px;
+                                                    padding-right: 16px;
+                                                    margin-top: 0;
+
+                                                    .row-value {
+                                                        .num-list {
+                                                            .num-list-item {
+                                                                width: 100%;
+                                                            }
+                                                        }
+                                                    }
+                                                }
+
+                                                &:first-child {
+                                                    border-right: 0;
+                                                    padding-bottom: 0;
+
+                                                    .item-description-row {
+                                                        max-width: 350px;
+                                                    }
+                                                }
+
+                                                &:last-child {
+                                                    .item-description-row {
+                                                        max-width: none;
+                                                        border-bottom: 0;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    &.create-item-form {
+                                        .item-body {
+                                            .create-item-form {
+                                                .form-inner {
+                                                    flex-direction: column;
+                                                    justify-content: flex-start;
+                                                    padding-bottom: 16px;
+
+                                                    .form-block {
+                                                        
+                                                        &:first-child {
+                                                            width: 100%;
+                                                        }
+
+                                                        &:last-child {
+                                                            width: 100%;
+                                                            margin-top: 24px;
+                                                        }
+
+                                                        .form-group {
+                                                            &.form-group-half {
+                                                                .input-wrapper {
+                                                                    width: calc(50% - 8px);
+                                                                }
+                                                            }
+
+                                                            &.form-group-progress {
+                                                                margin-top: 24px;
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .content-wrapper {
+        content {
+            .page-content {
+                .tabs {
+                    .tabs-content {
+                        .sessions-list {
+                            .sessions-list-item {
+                                .session-info {
+                                    .session-score {
+                                        //display: none;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .container {
+        width: 100%;
+        padding-left: 35px;
+        padding-right: 35px;
+    }
+
+    .content-wrapper {
+        content {
+            .page-content {
+                .tabs {
+                    .tabs-content {
+                        .tab-content {
+                            .images-list {
+                                .images-list-item {
+                                    //padding-top: 10px;
+
+                                    .item-head {
+                                        .item-title {
+                                            width: 100%;
+                                        }
+                                    }
+
+                                    &.create-item-form {
+                                        .item-body {
+                                            .create-item-form {
+                                                .form-inner {
+                                                    flex-direction: column;
+                                                    padding-bottom: 16px;
+
+                                                    .form-block {
+
+                                                        &:first-child {
+                                                            width: 100%;
+                                                        }
+
+                                                        &:last-child {
+                                                            width: 100%;
+                                                            margin-left: 0;
+                                                            margin-top: 24px;
+                                                        }
+
+                                                        .form-group {
+
+                                                            &.form-group-half {
+                                                                .input-wrapper {
+                                                                    width: calc(50% - 8px);
+                                                                }
+                                                            }
+
+                                                            &.form-group-checkbox {
+                                                                justify-content: flex-start;
+
+                                                                .input-wrapper {
+                                                                    
+                                                                    &:first-child {
+                                                                        margin-right: 80px;
+                                                                    }
+
+                                                                    &:last-child {
+                                                                        margin-left: 80px;
+                                                                    }
+                                                                }
+                                                            }
+
+                                                            &.form-group-progress {
+                                                                margin-left: 8px;
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            .resources-list {
+                                .resources-list-item {
+                                    .item-head {
+                                        .item-title {
+                                            width: 100%;
+                                        }
+                                    }
+                                }
+                            }
+
+                            .sessions-list {
+                                .sessions-list-item {
+                                    .sessions-list-item-inner {
+                                        flex-direction: column;
+                                        justify-content: flex-start;
+                                        align-items: flex-start;
+
+                                        .item-rating {
+                                            margin-left: 72px;
+                                            margin-top: 24px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 559px) {
+    .container {
+        width: 100%;
+        padding-left: 19px;
+        padding-right: 19px;
+    }
+
+    .content-wrapper {
+        content {
+            padding-top: 16px;
+            padding-bottom: 16px;
+
+            .page-top {
+                padding-left: 16px;
+                padding-right: 16px;
+
+                .page-info {
+                    flex-direction: column;
+                    justify-content: flex-start;
+                    align-items: flex-start;
+                    
+                    .client-name {
+                        margin-top: 18px;
+                    }
+
+                    .button-back {
+                        margin-left: 0;
+                    }
+                }
+    
+                .page-head {
+                    margin-top: 16px;
+                    padding-left: 0;
+                    padding-right: 0;
+                    font-size: 20px;
+                }
+            }
+
+            .page-content {
+                margin-top: 20px;
+
+                .tabs {
+                    .tabs-head {
+                        padding-left: 24px;
+                        //padding-right: 16px;
+                        padding-bottom: 8px;
+
+                        .tab-head {
+                            
+                            &:last-child {
+                                padding-right: 24px;
+                            }
+                        }
+                    }
+
+                    .tabs-content {
+                        padding-left: 10px;
+                        padding-right: 10px;
+
+                        .tab-content {
+                            .images-list {
+                                .images-list-item {
+                                    .item-head {
+                                        align-items: flex-start;
+                                        position: relative;
+
+                                        .item-title {
+                                            flex-wrap: wrap;
+
+                                            .item-name {
+                                                margin-left: 0;
+                                                margin-top: 16px;
+                                                width: 100%;
+
+                                                .name {
+                                                    line-height: 120%;
+                                                }
+
+                                                .like-score {
+                                                    margin-top: 11px;
+
+                                                    .like-score-section {
+                                                        width: 21.8px;
+                                                    }
+                                                }
+                                            }
+
+                                            .item-specialist {
+                                                margin-left: 0;
+                                                margin-top: 18px;
+
+                                                .specialist-name {
+                                                    max-width: 164px;
+                                                    white-space: nowrap;
+                                                    overflow: hidden;
+                                                    text-overflow: ellipsis;
+                                                }
+                                            }
+                                        }
+
+                                        .item-actions {
+                                            position: absolute;
+                                            top: 0;
+                                            right: 0;
+                                        }
+                                    }
+
+                                    .item-body {
+                                        .item-description {
+                                            .item-description-row {
+                                                flex-direction: column !important;
+
+                                                .item-description-column {
+                                                    padding-top: 0 !important;
+                                                    padding-bottom: 0 !important;
+                                                    margin-left: 0 !important;
+                                                    margin-right: 0 !important;
+                                                    border-top: 0 !important;
+                                                    border-bottom: 0 !important;
+                                                    padding-left: 16px;
+                                                    padding-right: 14px;
+                                                    margin-top: 24px;
+
+                                                    &.button-column,
+                                                    &.relation-column {
+                                                        margin-bottom: 24px;
+                                                    }
+
+                                                    &.relation-column {
+                                                        .column-value {
+                                                            .related-image {
+                                                                .text {
+                                                                    max-width: none;
+                                                                    white-space: normal;
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    &.create-item-form {
+                                        .item-body {
+                                            .create-item-form {
+                                                .form-inner {
+                                                    .form-block {
+                                                        .form-group {
+
+                                                            &.form-group-half {
+                                                                flex-direction: column;
+                                                                justify-content: flex-start;
+                                                                align-items: flex-start;
+
+                                                                .input-wrapper {
+                                                                    width: 100%;
+
+                                                                    &:last-child {
+                                                                        margin-top: 16px;
+                                                                    }
+                                                                }
+                                                            }
+
+                                                            &.form-group-checkbox {
+                                                                justify-content: flex-start;
+                                                                align-items: flex-start;
+                                                                flex-direction: column-reverse;
+                                                                margin-left: 16px;
+
+                                                                .input-wrapper {
+                                                                    margin-top: 24px;
+
+                                                                    &:first-child {
+                                                                        margin-left: 0;
+                                                                        margin-right: 0;
+                                                                    }
+
+                                                                    &:last-child {
+                                                                        margin-top: 0;
+                                                                        margin-left: 0;
+                                                                        margin-right: 0;
+                                                                    }
+                                                                }
+                                                            }
+
+                                                            &.form-group-progress {
+                                                                margin-left: 0;
+
+                                                                .input-wrapper {
+                                                                    width: 215px;
+                                                                    height: 56px;
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            .resources-list {
+                                .resources-list-item {
+                                    .item-head {
+                                        position: relative;
+
+                                        .item-title {
+                                            flex-wrap: wrap;
+
+                                            .item-name {
+                                                width: 100%;
+                                                margin-left: 0;
+                                                margin-top: 16px;
+
+                                                .name {
+                                                    line-height: 120%;
+                                                }
+
+                                                .like-score {
+                                                    margin-top: 11px;
+
+                                                    .like-score-section {
+                                                        width: 21.8px;
+                                                    }
+                                                }
+                                            }
+
+                                            .item-specialist {
+                                                margin-left: 0;
+                                                margin-top: 18px;
+                                            }
+                                        }
+
+                                        .item-actions {
+                                            position: absolute;
+                                            top: 0;
+                                            right: 0;
+                                        }
+                                    }
+
+                                    .item-body {
+                                        .item-description {
+                                            .item-description-block {
+                                                .item-description-row {
+                                                    margin-top: 24px;
+                                                    border-bottom: 0;
+                                                    padding-top: 0;
+                                                    padding-bottom: 0;
+
+                                                    &:first-child {
+                                                        margin-top: 24px;
+                                                    }
+                                                }
+
+                                                &:last-child {
+                                                    .item-description-row {
+                                                        &:last-child {
+                                                            margin-bottom: 16px;
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    &.create-item-form {
+                                        .item-body {
+                                            .create-item-form {
+                                                .form-inner {
+                                                    padding-left: 0;
+                                                    padding-right: 0;
+
+                                                    .form-block {
+                                                        padding-left: 16px;
+                                                        padding-right: 16px;
+
+                                                        &:first-child {
+                                                            padding-bottom: 24px;
+                                                            border-bottom: 1px solid #E2F1EA;
+                                                        }
+
+                                                        .form-group {
+
+                                                            &.form-group-half {
+                                                                flex-direction: column;
+                                                                justify-content: flex-start;
+                                                                align-items: flex-start;
+
+                                                                .input-wrapper {
+                                                                    width: 100%;
+                                                                    
+                                                                    &:last-child {
+                                                                        margin-top: 16px;
+                                                                    }
+                                                                }
+                                                            }
+                                                            
+                                                            &.form-group-progress {
+                                                                margin-left: 0;
+
+                                                                .input-wrapper {
+                                                                    width: 215px;
+                                                                }
+                                                            }
+
+                                                            &.form-group-inline {
+                                                                .input-wrapper {
+                                                                    .inline-button {
+                                                                        width: 42px;
+                                                                    }
+                                                                }
+                                                            }
+
+                                                            &.form-group-list {
+                                                                .num-list {
+                                                                    margin-top: -9px;
+
+                                                                    &.empty {
+                                                                        padding-top: 46px;
+                                                                        padding-bottom: 24px;
+                                                                        padding-left: 38px;
+                                                                        padding-right: 38px;
+
+                                                                        .empty-list-message {
+                                                                            line-height: 140%;
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            .sessions-list {
+                                .sessions-list-item {
+                                    padding-top: 16px;
+                                    padding-bottom: 16px;
+                                    padding-left: 16px;
+                                    padding-right: 16px;
+
+                                    .sessions-list-item-inner {
+                                        .item-title {
+                                            flex-wrap: wrap-reverse;
+
+                                            .item-date {
+                                                margin-top: 16px;
+                                            }
+
+                                            .item-specialist {
+                                                width: 100%;
+                                                margin-left: 0;
+                                            }
+                                        }
+
+                                        .item-rating {
+                                            margin-top: -50px;
+                                            flex-wrap: wrap;
+
+                                            .item-review {
+                                                width: 100%;
+                                                margin-left: -72px;
+                                                margin-top: 16px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.button-back {
+    > button {
+        border: 0.5px solid rgba(56, 154, 113, 0.5);
+        box-sizing: border-box;
+        border-radius: 10px;
+        background: transparent;
+        display: flex;
+        align-items: center;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 17px;
+        text-transform: uppercase;
+        color: #5BAA89;
+        height: 34px;
+        padding-top: 0;
+        padding-bottom: 0;
+        padding-left: 10.5px;
+        padding-right: 12px;
+
+        .icon {
+            width: 20px;
+            height: 20px;
+            margin-right: 8px;
+
+            > img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+}
+
+.button-edit {
+    > button {
+        width: 40px;
+        height: 40px;
+        background: #E9F9EF;
+        border: 0.5px solid #A0DFB9;
+        box-sizing: border-box;
+        border-radius: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        outline: none;
+        cursor: pointer;
+    }
+}
+
+.button-reload {
+    > button {
+        width: 40px;
+        height: 40px;
+        background: #FFF3E0;
+        border: 0.5px solid #E4CA9F;
+        box-sizing: border-box;
+        border-radius: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        outline: none;
+        cursor: pointer;
+    }
+}
+
+.new-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .new-item-button {
+        width: 64px;
+        height: 64px;
+        background: #E9F9EF;
+        border: 0.5px solid #A0DFB9;
+        box-sizing: border-box;
+        border-radius: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        outline: none;
+    }
+}

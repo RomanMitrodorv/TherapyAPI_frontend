@@ -1,0 +1,232 @@
+<div class="page-wrapper">
+
+    <!-- Header -->
+    <app-header></app-header>
+
+    <div class="container">
+
+        <div class="button-back">
+            <button class="button-transparent" (click)="prevRoute()">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M16.875 10.625H4.40656L9.18094 15.1725C9.43094 15.4106 9.44063 15.8063 9.2025 16.0563C8.96469 16.3059 8.56906 16.3159 8.31875 16.0778L2.86625 10.8841C2.63031 10.6478 2.5 10.3341 2.5 10C2.5 9.66625 2.63031 9.35219 2.87719 9.10563L8.31906 3.9225C8.44 3.80719 8.595 3.75 8.75 3.75C8.915 3.75 9.08 3.815 9.20281 3.94406C9.44094 4.19406 9.43125 4.58938 9.18125 4.8275L4.38688 9.375H16.875C17.22 9.375 17.5 9.655 17.5 10C17.5 10.345 17.22 10.625 16.875 10.625Z" fill="#5BAA89"/>
+                </svg>                    
+
+                Назад
+            </button>
+        </div>
+
+        <div class="article-container">
+
+            <!-- Specialist Block -->
+            <div class="specialist-block" *ngIf="specialist">
+
+                <!-- Photo -->
+                <div class="specialist-photo">
+                    <img [src]="specialist.user.photo.url" />
+                </div>
+
+                <!-- Info -->
+                <div class="specialist-info">
+                    <div class="specialist-name">
+                        {{ specialist.user.firstName }} {{ specialist.user.lastName }}
+                    </div>
+
+                    <div class="specialist-stat">
+                        <div class="price">
+                            {{ specialist.price | number:'':'fr' }} ₽
+                        </div>
+
+                        <div class="rating">
+                            <div class="rating-stars">
+                                <app-rating [score]="specialist.rating" [single]="false" [size]="16"></app-rating>
+                            </div>
+
+                            <div class="rating-score">
+                                {{ specialist.rating }}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="specialist-description">
+                        {{ specialist.description }}
+                    </div>
+
+                    <div class="choose-button">
+                        <button type="button" (click)="showSpecialistDialog(specialist)" *ngIf="!isSpecialist">
+                            Выбрать
+                            <img src="../../../../assets/images/icon-arrow-right.svg" alt="" />
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Reviews -->
+    <div class="reviews">
+        <div class="reviews-head">
+            <div class="article-container">
+                <div class="reviews-switcher">
+                    <ul #reviewsTabs>
+                        <li class="positive" name="positive" [ngClass]="{'active': activeReviewsTab == 'positive'}" (click)="changeReviewsTab('positive')">
+                            Положительные отзывы
+                            <div class="count">{{ positiveReviews.length }}</div>
+                        </li>
+
+                        <li class="neutral" name="neutral" [ngClass]="{'active': activeReviewsTab == 'neutral'}" (click)="changeReviewsTab('neutral')">
+                            Нейтральные отзывы
+                            <div class="count">{{ neutralReviews.length }}</div>
+                        </li>
+
+                        <li class="negative" name="negative" [ngClass]="{'active': activeReviewsTab == 'negative'}" (click)="changeReviewsTab('negative')">
+                            Отрицательные отзывы
+                            <div class="count">{{ negativeReviews.length }}</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="reviews-content">
+            <div class="article-container">
+
+                <div class="reviews-list" *ngIf="activeReviewsTab == 'positive'">
+                    <div class="review-block" *ngFor="let review of positiveReviews" [attr.review-id]="review.id">
+                        <div class="review-block-head">
+                            <div class="reviewer-name">
+                                {{ review.session.problem.user.firstName }} {{ review.session.problem.user.lastName }}
+                            </div>
+    
+                            <div class="review-score">
+                                <app-review-score [score]="review.score"></app-review-score>
+                            </div>
+                        </div>
+    
+                        <div class="review-text">
+                            {{ review.text }}
+                        </div>
+    
+                        <div class="review-date">
+                            <span class="icon">
+                                <img src="../../../../assets/images/icon-calendar.svg" alt="" />
+                            </span>
+    
+                            {{ review.session.date | date: 'dd MMM yyy' }}
+                        </div>
+                    </div>
+
+                    <div class="no-content" *ngIf="!positiveReviews.length">
+                        <div class="icon">
+                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M20.0001 38.0001C28.8366 38.0001 36.0001 30.8366 36.0001 22.0001C36.0001 13.1635 28.8366 6.00008 20.0001 6.00008C11.1635 6.00008 4.00008 13.1635 4.00008 22.0001C4.00008 30.8366 11.1635 38.0001 20.0001 38.0001ZM20.0001 40.0001C29.9412 40.0001 38.0001 31.9412 38.0001 22.0001C38.0001 12.059 29.9412 4.00008 20.0001 4.00008C10.059 4.00008 2.00008 12.059 2.00008 22.0001C2.00008 31.9412 10.059 40.0001 20.0001 40.0001Z" fill="#D4E1DC"/>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M18.0001 24.0001V11.0001H20.0001V22.0569L25.4188 18.1863L26.5813 19.8138L19.5813 24.8138C19.2765 25.0315 18.8756 25.0606 18.5425 24.8892C18.2094 24.7178 18.0001 24.3747 18.0001 24.0001Z" fill="#D4E1DC"/>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M37.293 10.7072L29.293 2.70718L30.7072 1.29297L38.7072 9.29297L37.293 10.7072Z" fill="#D4E1DC"/>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M2.70718 10.7072L10.7072 2.70718L9.29297 1.29297L1.29297 9.29297L2.70718 10.7072Z" fill="#D4E1DC"/>
+                            </svg>                                
+                        </div>
+
+                        Нет положительных отзывов
+                    </div>
+
+                    <!-- Pagination -->
+                    <div class="reviews-pagination" *ngIf="positiveReviews.length">
+                        <app-pagination [currentPage]="pageNumber" [totalPages]="totalPages" (onChanged)="setPageNumber($event)"></app-pagination>
+                    </div>
+                </div>
+
+                <div class="reviews-list" *ngIf="activeReviewsTab == 'neutral'">
+                    <div class="review-block" *ngFor="let review of neutralReviews" [attr.review-id]="review.id">
+                        <div class="review-block-head">
+                            <div class="reviewer-name">
+                                {{ review.session.problem.user.firstName }} {{ review.session.problem.user.lastName }}
+                            </div>
+    
+                            <div class="review-score">
+                                <app-review-score [score]="review.score"></app-review-score>
+                            </div>
+                        </div>
+    
+                        <div class="review-text">
+                            {{ review.text }}
+                        </div>
+    
+                        <div class="review-date">
+                            <span class="icon">
+                                <img src="../../../../assets/images/icon-calendar.svg" alt="" />
+                            </span>
+    
+                            {{ review.session.date | date: 'dd MMM yyy' }}
+                        </div>
+                    </div>
+
+                    <div class="no-content" *ngIf="!neutralReviews.length">
+                        <div class="icon">
+                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M20.0001 38.0001C28.8366 38.0001 36.0001 30.8366 36.0001 22.0001C36.0001 13.1635 28.8366 6.00008 20.0001 6.00008C11.1635 6.00008 4.00008 13.1635 4.00008 22.0001C4.00008 30.8366 11.1635 38.0001 20.0001 38.0001ZM20.0001 40.0001C29.9412 40.0001 38.0001 31.9412 38.0001 22.0001C38.0001 12.059 29.9412 4.00008 20.0001 4.00008C10.059 4.00008 2.00008 12.059 2.00008 22.0001C2.00008 31.9412 10.059 40.0001 20.0001 40.0001Z" fill="#D4E1DC"/>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M18.0001 24.0001V11.0001H20.0001V22.0569L25.4188 18.1863L26.5813 19.8138L19.5813 24.8138C19.2765 25.0315 18.8756 25.0606 18.5425 24.8892C18.2094 24.7178 18.0001 24.3747 18.0001 24.0001Z" fill="#D4E1DC"/>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M37.293 10.7072L29.293 2.70718L30.7072 1.29297L38.7072 9.29297L37.293 10.7072Z" fill="#D4E1DC"/>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M2.70718 10.7072L10.7072 2.70718L9.29297 1.29297L1.29297 9.29297L2.70718 10.7072Z" fill="#D4E1DC"/>
+                            </svg>                                
+                        </div>
+
+                        Нет нейтральных отзывов
+                    </div>
+
+                    <!-- Pagination -->
+                    <div class="reviews-pagination" *ngIf="neutralReviews.length">
+                        <app-pagination [currentPage]="pageNumber" [totalPages]="totalPages" (onChanged)="setPageNumber($event)"></app-pagination>
+                    </div>
+                </div>
+
+                <div class="reviews-list" *ngIf="activeReviewsTab == 'negative'">
+                    <div class="review-block" *ngFor="let review of negativeReviews" [attr.review-id]="review.id">
+                        <div class="review-block-head">
+                            <div class="reviewer-name">
+                                {{ review.session.problem.user.firstName }} {{ review.session.problem.user.lastName }}
+                            </div>
+    
+                            <div class="review-score">
+                                <app-review-score [score]="review.score"></app-review-score>
+                            </div>
+                        </div>
+    
+                        <div class="review-text">
+                            {{ review.text }}
+                        </div>
+    
+                        <div class="review-date">
+                            <span class="icon">
+                                <img src="../../../../assets/images/icon-calendar.svg" alt="" />
+                            </span>
+    
+                            {{ review.session.date | date: 'dd MMM yyy' }}
+                        </div>
+                    </div>
+
+                    <div class="no-content" *ngIf="!negativeReviews.length">
+                        <div class="icon">
+                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M20.0001 38.0001C28.8366 38.0001 36.0001 30.8366 36.0001 22.0001C36.0001 13.1635 28.8366 6.00008 20.0001 6.00008C11.1635 6.00008 4.00008 13.1635 4.00008 22.0001C4.00008 30.8366 11.1635 38.0001 20.0001 38.0001ZM20.0001 40.0001C29.9412 40.0001 38.0001 31.9412 38.0001 22.0001C38.0001 12.059 29.9412 4.00008 20.0001 4.00008C10.059 4.00008 2.00008 12.059 2.00008 22.0001C2.00008 31.9412 10.059 40.0001 20.0001 40.0001Z" fill="#D4E1DC"/>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M18.0001 24.0001V11.0001H20.0001V22.0569L25.4188 18.1863L26.5813 19.8138L19.5813 24.8138C19.2765 25.0315 18.8756 25.0606 18.5425 24.8892C18.2094 24.7178 18.0001 24.3747 18.0001 24.0001Z" fill="#D4E1DC"/>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M37.293 10.7072L29.293 2.70718L30.7072 1.29297L38.7072 9.29297L37.293 10.7072Z" fill="#D4E1DC"/>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M2.70718 10.7072L10.7072 2.70718L9.29297 1.29297L1.29297 9.29297L2.70718 10.7072Z" fill="#D4E1DC"/>
+                            </svg>                                
+                        </div>
+
+                        Нет негативных отзывов
+                    </div>
+
+                    <!-- Pagination -->
+                    <div class="reviews-pagination" *ngIf="negativeReviews.length">
+                        <app-pagination [currentPage]="pageNumber" [totalPages]="totalPages" (onChanged)="setPageNumber($event)"></app-pagination>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <app-footer></app-footer>
+</div>
+
+<choose-specialist-dialog class="choose-specialist-dialog hidden"></choose-specialist-dialog>

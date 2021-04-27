@@ -1,0 +1,215 @@
+.content-wrapper {
+    display: flex;
+    margin-top: 19px;
+
+    content {
+        width: 954px;
+        height: 100%;
+        background: #ffffff;
+        margin-left: 30px;
+        padding-left: 24px;
+        padding-right: 24px;
+        padding-top: 24px;
+        padding-bottom: 24px;
+        border-radius: 14px;
+
+        .page-head {
+            font-weight: normal;
+            font-size: 24px;
+            line-height: 140%;
+            color: #005264;
+        }
+
+        .page-subhead {
+            max-width: 813px;
+            margin-top: 16px;
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 140%;
+            color: #005264;
+        }
+
+        .page-content {
+            .refund-form {
+                .form-group {
+                    display: flex;
+                    align-items: center;
+                    margin-top: 48px;
+
+                    .group-number {
+                        width: 54px;
+                        height: 54px;
+                        border-radius: 100px;
+                        background: #F6FBF8;
+                        border: 1px solid #DBF8E6;
+                        box-sizing: border-box;
+                        font-family: "Poppins", sans-serif;
+                        font-weight: 300;
+                        font-size: 22px;
+                        line-height: 100%;
+                        text-align: center;
+                        color: #005264;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+
+                    .group-icon {
+                        width: 85px;
+                        height: 90px;
+                        flex: 0 0 85px;
+                        margin-left: 28px;
+                    }
+
+                    .group-input {
+                        margin-left: 37px;
+
+                        .label {
+                            font-weight: normal;
+                            font-size: 20px;
+                            line-height: 140%;
+                            color: #005264;                            
+                        }
+
+                        .input {
+                            width: fit-content;
+                            margin-top: 12px;
+                            cursor: pointer;
+                            font-weight: normal;
+                            font-size: 14px;
+                            line-height: 100%;
+                            color: #25A46E;
+                            border: 0.5px dashed #25A46E;
+                            box-sizing: border-box;
+                            border-radius: 10px;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            padding-left: 10px;
+                            padding-right: 10px;
+                            padding-top: 10px;
+                            padding-bottom: 10px;
+                            
+                            .clear {
+                                margin-left: 10px;
+                                cursor: pointer;
+
+                                > svg {
+                                    //vertical-align: baseline;
+                                }
+                            }
+                        }
+
+                        input {
+                            visibility: hidden;
+                            position: absolute;
+                            top: -999999px;
+                            left: -999999px;
+                            width: 0;
+                            height: 0;
+                        }
+                    }
+
+                    &:last-child {
+                        .group-icon {
+                            width: 85px;
+                            height: 82px;
+                            flex: 0 0 85px;
+                            margin-left: 28px;
+                        }
+                    }
+                }
+
+                .form-footer {
+                    margin-top: 48px;
+                    display: flex;
+                    align-items: center;
+
+                    .submit-button {
+                        > button {
+                            font-style: normal;
+                            font-weight: bold;
+                            font-size: 14px;
+                            line-height: 121.5%;
+                            text-align: center;
+                            text-transform: uppercase;
+                            letter-spacing: 0.135em;
+                            color: #FFFFFF;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            padding: 0;
+                            width: 165px;
+                            height: 65px;
+                            border-radius: 10px;
+                            box-shadow: none;
+
+                            &.button-disabled {
+                                background: #E8F0ED;
+                                border: 0.5px solid rgba(255, 255, 255, 0.8);
+                                cursor: not-allowed;
+
+                                &:hover {
+                                    background: #E8F0ED;
+                                    border: 0.5px solid rgba(255, 255, 255, 0.8);
+                                }
+                            }
+                        }
+                    }
+
+                    .cancel-button {
+                        margin-left: 24px;
+
+                        > button {
+                            cursor: pointer;
+                            background: none;
+                            border: none;
+                            outline: none;
+                            font-weight: bold;
+                            font-size: 14px;
+                            line-height: 121.5%;
+                            text-align: center;
+                            letter-spacing: 0.135em;
+                            color: #25A46E;
+                            text-transform: uppercase;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1199px) {
+    .content-wrapper {
+        flex-direction: column;
+
+        content {
+            width: 100%;
+            margin-left: 0;
+            margin-top: 16px;
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .container {
+        width: 100%;
+        padding-left: 35px;
+        padding-right: 35px;
+    }
+}
+
+@media screen and (max-width: 559px) {
+    .container {
+        width: 100%;
+        padding-left: 19px;
+        padding-right: 19px;
+    }
+
+    .content-wrapper {
+        content {
+            padding: 16px;
+        }
+    }
+}

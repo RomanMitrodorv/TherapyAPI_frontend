@@ -1,0 +1,235 @@
+aside {
+    width: 234px;
+
+    .sidebar-nav {
+        background: #ffffff;
+        padding-top: 25px;
+        padding-bottom: 25px;
+        padding-left: 23px;
+        padding-right: 23px;
+        border-radius: 14px;
+
+        nav {
+            ul {
+                li {
+                    margin-top: 28px;
+    
+                    &:first-child {
+                        margin-top: 0;
+
+                        a {
+                            > svg {
+                                circle,
+                                path {
+                                    stroke: #005264;
+                                }
+                            }
+                        }
+                    }
+
+                    &:nth-child(2) {
+                        a {
+                            > svg {
+                                path {
+                                    fill: #005264;
+                                }
+                            }
+
+                            &.active,
+                            &:hover {
+                                > svg {
+                                    path {
+                                        stroke: none;
+                                        fill: #32A776;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    &:last-child {
+                        a {
+                            > svg {
+                                path {
+                                    fill: #005264;
+                                }
+                            }
+
+                            &.active,
+                            &:hover {
+                                > svg {
+                                    path {
+                                        stroke: none;
+                                        fill: #32A776;
+                                    }
+                                }
+                            }
+                        }
+                    }
+    
+                    a {
+                        display: flex;
+                        align-items: center;
+                        font-weight: normal;
+                        font-size: 16px;
+                        line-height: 19px;
+                        color: #005264;
+                        text-decoration: none;
+                        cursor: pointer;
+                        transition: all .3s;
+    
+                        > svg {
+                            transition: all .3s;
+                            margin-right: 12px;
+
+                            circle,
+                            path {
+                                transition: all .3s;
+                            }
+                        }
+    
+                        &.active,
+                        &:hover {
+                            color: #32A776;
+    
+                            > svg {
+                                circle,
+                                path {
+                                    stroke: #32A776;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .sidebar-finances {
+        margin-top: 16px;
+        background: #ffffff;
+        padding-top: 20px;
+        padding-bottom: 22px;
+        padding-left: 23px;
+        padding-right: 23px;
+        border-radius: 14px;
+
+        &.sidebar-finances-mobile {
+            margin-top: 0;
+            padding-top: 16px;
+            padding-bottom: 26px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .pay-block {
+                .pay-button {
+                    margin-top: 10px;
+                }
+            }
+        }
+
+        .finances-head {
+            font-weight: normal;
+            font-size: 12px;
+            line-height: 17px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #B6C5BC;
+        }
+
+        .balance-row {
+            margin-top: 16px;
+            display: flex;
+            align-items: center;
+
+            .balance {
+                font-family: Poppins;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 24px;
+                line-height: 24px;
+                color: #005264;
+            }
+
+            .balance-lock {
+                display: flex;
+                align-items: center;
+                margin-left: 15.63px;
+                font-family: Poppins;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 16px;
+                line-height: 16px;
+                color: #BED4CB;
+
+                > img {
+                    margin-right: 7.63px;
+                }
+            }
+        }
+        
+        .pay-button {
+            margin-top: 16px;
+
+            button {
+                padding-top: 10px;
+                padding-bottom: 9px;
+                padding-left: 12px;
+                padding-right: 12px;
+                font-weight: normal;
+                font-size: 16px;
+                line-height: 16px;
+                color: #FFFFFF;
+                text-transform: none;
+                border-radius: 10px;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    aside {
+        .sidebar-finances-mobile {
+            display: none !important;
+        }
+    }
+}
+
+@media screen and (max-width: 1199px) {
+    aside {
+        width: 100%;
+        
+        .sidebar-nav {
+            display: none;
+        }
+
+        .sidebar-finances:not(.sidebar-finances-mobile) {
+            display: none;
+        }
+    }
+}
+
+@media screen and (max-width: 559px) {
+    aside {
+        .sidebar-finances-mobile {
+            padding-bottom: 21px !important;
+
+            .balance-block {
+                .balance-row {
+                    .balance-lock {
+                        display: none;
+                    }
+                }
+            }
+
+            .pay-block {
+                align-self: flex-end;
+
+                .pay-button {
+                    margin-top: 0 !important;
+                }
+            }
+        }
+    }
+}

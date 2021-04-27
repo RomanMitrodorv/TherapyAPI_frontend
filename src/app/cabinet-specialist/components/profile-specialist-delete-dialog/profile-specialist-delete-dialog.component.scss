@@ -1,0 +1,155 @@
+.modal-wrapper {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    overflow-y: overlay;
+    background: rgba(240, 246, 243, 0.7);
+    backdrop-filter: blur(60px);
+    opacity: 0;
+    visibility: hidden;
+    z-index: 100;
+    transition: visibility 0s ease-in-out .3s, opacity .3s ease-in-out;
+
+    &.visible {
+        opacity: 1;
+        visibility: visible;
+        transition-delay: 0s;
+    }
+
+    .modal {
+        padding-top: 39px;
+
+        .modal-body {
+            width: 479px;
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(30px);
+            border-radius: 10px;
+            margin: 0 auto;
+            padding-top: 32px;
+            //padding-bottom: 32px;
+            border-radius: 10px;
+
+            .close-button {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: absolute;
+                right: -79px;
+                top: 0;
+                width: 56px;
+                height: 56px;
+                background: rgba(255, 255, 255, 0.7);
+                //backdrop-filter: blur(30px);
+                border-radius: 28px;
+                cursor: pointer;
+        
+                .md,
+                .mdiv  {
+                    height: 21px;
+                    width: 2px;
+                    background-color: #DEDEDE;
+                }
+        
+                .mdiv {
+                    margin-left: -2px;
+                    transform: rotate(45deg);
+                }
+                  
+                .md {
+                    transform: rotate(-45deg);
+                }
+                
+                &:hover {
+                    .md,
+                    .mdiv {
+                        background-color: #B9B9B9;
+                    }
+                }
+        
+                &:active {
+                    background: rgba(238, 238, 238, 0.7);
+        
+                    .md,
+                    .mdiv {
+                        background-color: #DEDEDE;
+                    }
+                }
+            }
+        
+            .modal-header {
+                min-height: 27px;
+                padding-left: 40px;
+                padding-right: 40px;
+                padding-bottom: 12px;
+                border-bottom: 1px solid #DFDFDF;
+                font-weight: 500;
+                font-size: 24px;
+                line-height: 100%;
+                color: #162B1E;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            .modal-content {
+                padding-left: 40px;
+                padding-right: 40px;
+                margin-top: 18px;
+                font-weight: normal;
+                font-size: 18px;
+                line-height: 140%;
+                color: #364D47;
+            }
+
+            .modal-footer {
+                margin-top: 18px;
+
+                .footer-buttons {
+                    border-top: 1px solid #DFDFDF;
+
+                    .button-submit {
+                        width: 100%;
+                        height: 65px;
+                        color: #E9002A;
+                        font-style: normal;
+                        font-weight: bold;
+                        font-size: 14px;
+                        line-height: 121.5%;
+                        letter-spacing: 0.135em;
+                        text-transform: uppercase;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        cursor: pointer;
+                        outline: none;
+                    
+                        &.disabled {
+                            cursor: not-allowed;
+                            background: #E7E7E7;
+                            box-shadow: none;
+                        }
+                    }
+                }   
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .modal {
+        padding-top: 81px;
+
+        .modal-body {
+            width: 304px;
+            padding-left: 10px;
+            padding-right: 10px;
+    
+            .close-button {
+                right: auto;
+                left: 124px;
+                top: -68px;
+            }
+        }
+    }
+}

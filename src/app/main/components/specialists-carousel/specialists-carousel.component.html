@@ -1,0 +1,50 @@
+<div class="swiper">
+    <swiper [config]="config" [(index)]="currentSlide">
+        <div class="specialists-carousel-item" *ngFor="let specialist of specialists" [ngClass]="{'is-specialist': isSpecialist}">
+            <div class="specialist-photo" [routerLink]="['/specialists', specialist.id]">
+                <div class="author-price">
+                    {{ specialist.price | number:'':'fr' }} ₽
+                </div>
+                
+                <img *ngIf="specialist.user.photo && specialist.user.photo.url" [src]="specialist.user.photo.url" onerror="this.src = '../../../../assets/images/avatar-placeholder.png'" />
+                <img *ngIf="!specialist.user.photo || !specialist.user.photo.url" src="../../../../assets/images/avatar-placeholder.png" />
+            </div>
+        
+            <div class="specialist-content">
+                <div class="info" [routerLink]="['/specialists', specialist.id]">
+                    <div class="name">
+                        {{ specialist.user.firstName }} {{ specialist.user.lastName }}
+                    </div>
+        
+                    <div class="rating">
+                        <div class="score">
+                            <div class="icon-star">
+                                <app-rating [score]="specialist.rating" [single]="true" [size]="20"></app-rating>
+                            </div>
+        
+                            {{ specialist.rating }}
+                        </div>
+        
+                        <div class="reviews">
+                            <div class="reviews-counter positive" *ngIf="specialist.positiveReviews && specialist.positiveReviews.length" [routerLink]="['/specialists', specialist.id]" [queryParams]="{reviews: 'positive'}">
+                                {{ specialist.positiveReviews.length }}
+                            </div>
+            
+                            <div class="reviews-counter neutral" *ngIf="specialist.neutralReviews && specialist.neutralReviews.length" [routerLink]="['/specialists', specialist.id]" [queryParams]="{reviews: 'neutral'}">
+                                {{ specialist.neutralReviews.length }}
+                            </div>
+            
+                            <div class="reviews-counter negative" *ngIf="specialist.negativeReviews && specialist.negativeReviews.length" [routerLink]="['/specialists', specialist.id]" [queryParams]="{reviews: 'negative'}">
+                                {{ specialist.negativeReviews.length }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="choose-button"  *ngIf="!isSpecialist">
+                    <button type="button" (click)="showSpecialistDialog(specialist)">Выбрать</button>
+                </div>
+            </div>
+        </div>
+    </swiper>
+</div>

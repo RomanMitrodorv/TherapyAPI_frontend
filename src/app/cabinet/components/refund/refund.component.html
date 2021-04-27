@@ -1,0 +1,170 @@
+<div class="page-wrapper">
+
+    <!-- Header -->
+    <profile-header></profile-header>
+
+    <div class="container">
+        <div class="content-wrapper">
+            <profile-sidebar></profile-sidebar>
+
+            <content>
+                <div class="page-head">
+                    Возврат средств
+                </div>
+
+                <div class="page-subhead">
+                    Для возврата средств необходимо пройти проверку личности, вы должны предоставить скан паспорта (разворот основной страницы, с вашей фотографией) и фотографию где вы держите документ в руках. Эта мера нужна во избежание мошеннических действий со стороны пользователей. Спасибо за понимание!
+                </div>
+
+                <div class="page-content">
+                    <div class="refund-form">
+                        <form [formGroup]="refundForm" (ngSubmit)="submitRefundForm(refundForm)">
+                            <div class="form-group">
+                                <div class="group-number">
+                                    1
+                                </div>
+
+                                <div class="group-icon">
+                                    <svg width="85" height="90" viewBox="0 0 85 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <rect x="0.5" y="0.5" width="84" height="89" rx="7.5" stroke="#D1E4DB"/>
+                                        <line x1="4.37114e-08" y1="44.834" x2="85" y2="44.834" stroke="#D1E4DB"/>
+                                        <rect x="8.08301" y="52.416" width="22.6667" height="28.3333" rx="2" fill="#D1E4DB"/>
+                                        <circle cx="19.417" cy="62.334" r="4.25" fill="white"/>
+                                        <path d="M16.9916 67.6644C17.1814 67.4283 17.468 67.291 17.7709 67.291H21.0628C21.3657 67.291 21.6522 67.4283 21.842 67.6643L27.9242 75.2268C28.4504 75.8811 27.9846 76.8535 27.1449 76.8535H11.6898C10.8502 76.8535 10.3844 75.8812 10.9105 75.2269L16.9916 67.6644Z" fill="white"/>
+                                        <rect x="22.667" y="5.25" width="39.6667" height="1.41667" rx="0.708333" fill="#D1E4DB"/>
+                                        <rect x="7.08301" y="12.75" width="70.8333" height="2.83333" rx="1.41667" fill="#D1E4DB"/>
+                                        <rect x="7.08301" y="18.416" width="70.8333" height="2.83333" rx="1.41667" fill="#D1E4DB"/>
+                                        <rect x="7.08301" y="24.084" width="70.8333" height="2.83333" rx="1.41667" fill="#D1E4DB"/>
+                                        <rect x="7.08301" y="34" width="21.25" height="2.83333" rx="1.41667" fill="#D1E4DB"/>
+                                        <rect x="56.667" y="34" width="21.25" height="2.83333" rx="1.41667" fill="#D1E4DB"/>
+                                        <rect x="35" y="56" width="43" height="3" rx="1.5" fill="#D1E4DB"/>
+                                        <rect x="35" y="62" width="43" height="3" rx="1.5" fill="#D1E4DB"/>
+                                        <rect x="35" y="68" width="43" height="3" rx="1.5" fill="#D1E4DB"/>
+                                        <rect x="35" y="74" width="43" height="3" rx="1.5" fill="#D1E4DB"/>
+                                    </svg>                                        
+                                </div>
+
+                                <div class="group-input">
+                                    <div class="label">
+                                        Разворот паспорта, лицевая сторона
+                                    </div>
+
+                                    <div class="input">
+                                        <div class="input-file" (click)="documentInput.click()" *ngIf="!documentFile">
+                                            Прикрепить
+                                        </div>
+
+                                        <div class="input-file" *ngIf="documentFile">
+                                            {{ documentFile.name }}
+                                        </div>
+
+                                        <div class="clear" (click)="valueClear('document')" *ngIf="documentFile">
+                                            <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <g clip-path="url(#clip0)">
+                                                    <path d="M4.44754 5.00001L0.114408 0.666859C-0.0381498 0.514301 -0.0381498 0.266957 0.114408 0.114419C0.266967 -0.03812 0.51431 -0.0381396 0.666849 0.114419L5 4.44757L9.33314 0.114419C9.4857 -0.0381396 9.73304 -0.0381396 9.88558 0.114419C10.0381 0.266977 10.0381 0.51432 9.88558 0.666859L5.55245 5L9.88558 9.33315C10.0381 9.48571 10.0381 9.73305 9.88558 9.88559C9.80931 9.96186 9.70933 9.99999 9.60935 9.99999C9.50937 9.99999 9.40941 9.96186 9.33312 9.88559L5 5.55245L0.666868 9.88559C0.590599 9.96186 0.490619 9.99999 0.390638 9.99999C0.290658 9.99999 0.190698 9.96186 0.114408 9.88559C-0.0381498 9.73303 -0.0381498 9.48569 0.114408 9.33315L4.44754 5.00001Z" fill="#25A46E"/>
+                                                </g>
+
+                                                <defs>
+                                                    <clipPath id="clip0">
+                                                        <rect width="10" height="10" fill="white" transform="matrix(-1 0 0 1 10 0)"/>
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>                                                
+                                        </div>
+
+                                        <input #documentInput type="file" formControlName="document" accept=".jpg, .jpeg, .png" (change)="valueChanged($event.target.files[0], 'documentFile')" />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="group-number">
+                                    2
+                                </div>
+
+                                <div class="group-icon">
+                                    <svg width="85" height="82" viewBox="0 0 86 82" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <rect x="52.25" y="0.25" width="32.9375" height="35.1667" rx="2.75" stroke="#D1E4DB" stroke-width="0.5"/>
+                                        <line x1="52" y1="17.584" x2="85.4375" y2="17.584" stroke="#D1E4DB" stroke-width="0.5"/>
+                                        <rect x="54.7861" y="20.6191" width="8.91667" height="11.1458" rx="2" fill="#D1E4DB"/>
+                                        <circle cx="59.2451" cy="24.5215" r="1.67187" fill="white"/>
+                                        <path d="M58.1084 26.8441C58.2982 26.608 58.5848 26.4707 58.8877 26.4707H59.6015C59.9043 26.4707 60.1909 26.608 60.3807 26.844L61.7976 28.6057C62.3238 29.2601 61.858 30.2324 61.0183 30.2324H57.4711C56.6314 30.2324 56.1656 29.2601 56.6918 28.6058L58.1084 26.8441Z" fill="white"/>
+                                        <rect x="60.917" y="1.67188" width="15.6042" height="0.557292" rx="0.278646" fill="#D1E4DB"/>
+                                        <rect x="54.7861" y="5.01562" width="27.8646" height="1.11458" rx="0.557292" fill="#D1E4DB"/>
+                                        <rect x="54.7861" y="7.24414" width="27.8646" height="1.11458" rx="0.557292" fill="#D1E4DB"/>
+                                        <rect x="54.7861" y="9.47461" width="27.8646" height="1.11458" rx="0.557292" fill="#D1E4DB"/>
+                                        <rect x="54.7861" y="13.375" width="8.35938" height="1.11458" rx="0.557292" fill="#D1E4DB"/>
+                                        <rect x="74.292" y="13.375" width="8.35938" height="1.11458" rx="0.557292" fill="#D1E4DB"/>
+                                        <rect x="65.375" y="22.291" width="17.276" height="1.11458" rx="0.557292" fill="#D1E4DB"/>
+                                        <rect x="65.375" y="24.5215" width="17.276" height="1.11458" rx="0.557292" fill="#D1E4DB"/>
+                                        <rect x="65.375" y="26.75" width="17.276" height="1.11458" rx="0.557292" fill="#D1E4DB"/>
+                                        <rect x="65.375" y="28.9785" width="17.276" height="1.11458" rx="0.557292" fill="#D1E4DB"/>
+                                            
+                                        <g clip-path="url(#clip1)">
+                                            <path d="M37.3059 65.7029L37.3787 65.994L37.6697 66.0667L46.7683 68.3419C52.4999 69.7754 56.5 74.9001 56.5001 80.8078C56.5001 81.1897 56.1894 81.5 55.8126 81.5H1.18754C0.808179 81.5 0.5 81.1918 0.5 80.8125C0.5 74.9 4.50019 69.7756 10.2336 68.3468L10.234 68.3467L19.3326 66.0715L19.6237 65.9987L19.6964 65.7076L20.5229 62.3993L20.5902 62.1299L20.3971 61.9304C18.1755 59.6351 16.6408 56.5268 16.1646 53.3639L16.1121 53.015L15.7659 52.9476C14.4874 52.6984 13.4765 51.6498 13.3092 50.3193L12.7156 45.5701C12.7156 45.57 12.7155 45.5699 12.7155 45.5698C12.6073 44.6975 12.877 43.8217 13.4588 43.1623L13.4593 43.1617C13.8308 42.7393 14.306 42.4334 14.8301 42.2682L15.2249 42.1437L15.1764 41.7327C15.0041 40.2732 14.75 37.9054 14.75 36.875C14.75 34.6174 15.0934 32.4561 16.5738 30.8236C18.0507 29.195 20.7607 27.984 25.7555 27.8796L25.9021 27.8766L26.0238 27.7948C29.4321 25.5059 33.1004 25.5 34.7463 25.5C38.8218 25.5 41.662 26.8352 43.3245 29.3731C44.4327 31.065 44.6901 32.4419 44.5532 33.5305C44.4158 34.6226 43.8731 35.4928 43.2552 36.1519L42.3722 37.0372L42.2362 37.1735L42.2268 37.3659L42.0082 41.838L41.9905 42.2008L42.3301 42.3298C42.7987 42.5079 43.2214 42.7981 43.5559 43.1815L43.5563 43.182C44.127 43.8342 44.3926 44.7057 44.2844 45.5669L44.2844 45.5672L43.6907 50.3172L43.6906 50.3175C43.5358 51.5627 42.6382 52.5586 41.4768 52.8857L41.1643 52.9737L41.1175 53.295C40.6392 56.5842 39.0219 59.7955 36.6649 62.1293L36.4626 62.3297L36.5316 62.6059L37.3059 65.7029Z" stroke="#D1E4DB"/>
+                                        </g>
+
+                                        <defs>
+                                            <clipPath id="clip1">
+                                                <rect width="57" height="57" fill="white" transform="translate(0 25)"/>
+                                            </clipPath>
+                                        </defs>
+                                    </svg>                                                                          
+                                </div>
+
+                                <div class="group-input">
+                                    <div class="label">
+                                        Ваша фотография с документом в руках
+                                    </div>
+
+                                    <div class="input">
+                                        <div class="input-file" (click)="selfieInput.click()" *ngIf="!selfieFile">
+                                            Прикрепить
+                                        </div>
+
+                                        <div class="input-file" *ngIf="selfieFile">
+                                            {{ selfieFile.name }}
+                                        </div>
+
+                                        <div class="clear" (click)="valueClear('selfie')" *ngIf="selfieFile">
+                                            <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <g clip-path="url(#clip0)">
+                                                    <path d="M4.44754 5.00001L0.114408 0.666859C-0.0381498 0.514301 -0.0381498 0.266957 0.114408 0.114419C0.266967 -0.03812 0.51431 -0.0381396 0.666849 0.114419L5 4.44757L9.33314 0.114419C9.4857 -0.0381396 9.73304 -0.0381396 9.88558 0.114419C10.0381 0.266977 10.0381 0.51432 9.88558 0.666859L5.55245 5L9.88558 9.33315C10.0381 9.48571 10.0381 9.73305 9.88558 9.88559C9.80931 9.96186 9.70933 9.99999 9.60935 9.99999C9.50937 9.99999 9.40941 9.96186 9.33312 9.88559L5 5.55245L0.666868 9.88559C0.590599 9.96186 0.490619 9.99999 0.390638 9.99999C0.290658 9.99999 0.190698 9.96186 0.114408 9.88559C-0.0381498 9.73303 -0.0381498 9.48569 0.114408 9.33315L4.44754 5.00001Z" fill="#25A46E"/>
+                                                </g>
+
+                                                <defs>
+                                                    <clipPath id="clip0">
+                                                        <rect width="10" height="10" fill="white" transform="matrix(-1 0 0 1 10 0)"/>
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>                                                
+                                        </div>
+
+                                        <input #selfieInput type="file" formControlName="selfie" accept=".jpg, .jpeg, .png" (change)="valueChanged($event.target.files[0], 'selfieFile')" />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-footer">
+                                <div class="submit-button">
+                                    <button type="submit" class="button-green" [ngClass]="{'button-disabled': refundForm.invalid}">
+                                        Продолжить
+                                    </button>
+                                </div>
+
+                                <div class="cancel-button">
+                                    <button type="button" (click)="cancelRefund()">
+                                        Отменить процедуру возврата
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </content>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <app-footer></app-footer>
+</div>

@@ -1,0 +1,198 @@
+<div class="page-wrapper">
+
+    <!-- Header -->
+    <profile-specialist-header></profile-specialist-header>
+
+    <div class="container">
+        <div class="content-wrapper">
+            <profile-specialist-sidebar></profile-specialist-sidebar>
+
+            <content>
+                <div class="page-top">
+                    <div class="page-head">
+                        Отзывы
+                    </div>
+                </div>
+
+                <div class="page-content">
+                    <div class="tabs">
+                        <ul class="tabs-head" #reviewsTabs>
+                            <li class="tab-head positive" *ngIf="positiveReviews" name="Positive" [ngClass]="{'active': activeTab == 'Positive'}" (click)="setActiveTab('Positive')">
+                                <div class="title">
+                                    Положительные
+                                </div>
+
+                                <div class="count">
+                                    {{ positiveReviews.length }}
+                                </div>
+                            </li>
+
+                            <li class="tab-head neutral" *ngIf="neutralReviews" name="Neutral" [ngClass]="{'active': activeTab == 'Neutral'}" (click)="setActiveTab('Neutral')">
+                                <div class="title">
+                                    Нейтральные
+                                </div>
+
+                                <div class="count">
+                                    {{ neutralReviews.length }}
+                                </div>
+                            </li>
+
+                            <li class="tab-head negative" *ngIf="negativeReviews" name="Negative" [ngClass]="{'active': activeTab == 'Negative'}" (click)="setActiveTab('Negative')">
+                                <div class="title">
+                                    Отрицательные
+                                </div>
+
+                                <div class="count">
+                                    {{ negativeReviews.length }}
+                                </div>
+                            </li>
+                        </ul>
+
+                        <div class="tabs-content">
+                            <div class="tab-content" *ngIf="activeTab == 'Positive'">
+                                <div class="review" *ngFor="let review of positiveReviews">
+                                    <div class="review-header">
+                                        <div class="user-icon">
+                                            <svg width="22" height="21" viewBox="0 0 22 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M1 18.8888C1.00051 15.616 6.92593 12.9629 6.92593 12.9629C6.92593 12.9629 9.383 13.7037 11.0002 13.7036C12.6172 13.7036 15.0741 12.9629 15.0741 12.9629C15.0741 12.9629 21 15.616 21 18.8888C21 19.9999 14.9293 19.9999 11 19.9999C7.07072 19.9999 0.999826 19.9999 1 18.8888Z" stroke="#005264"/>
+                                                <circle cx="11.0004" cy="5.55556" r="5.05556" stroke="#005264"/>
+                                            </svg>                                                
+                                        </div>
+
+                                        <div class="user-name" [routerLink]="['/profile-specialist/clients', review.session.problem.user.id]">
+                                            {{ review.session.problem.user.firstName }} {{ review.session.problem.user.lastName }}
+                                        </div>
+                                    </div>
+
+                                    <div class="review-content">
+                                        {{ review.text }}
+                                    </div>
+
+                                    <div class="review-footer">
+                                        <div class="title">
+                                            Оценка
+                                        </div>
+
+                                        <div class="value">
+                                            <app-rating [score]="review.score" [single]="true" [size]="16"></app-rating>
+
+                                            {{ review.score }}
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="no-content" *ngIf="positiveReviews && !positiveReviews.length">
+                                    <div class="icon">
+                                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M20.0001 38.0001C28.8366 38.0001 36.0001 30.8366 36.0001 22.0001C36.0001 13.1635 28.8366 6.00008 20.0001 6.00008C11.1635 6.00008 4.00008 13.1635 4.00008 22.0001C4.00008 30.8366 11.1635 38.0001 20.0001 38.0001ZM20.0001 40.0001C29.9412 40.0001 38.0001 31.9412 38.0001 22.0001C38.0001 12.059 29.9412 4.00008 20.0001 4.00008C10.059 4.00008 2.00008 12.059 2.00008 22.0001C2.00008 31.9412 10.059 40.0001 20.0001 40.0001Z" fill="#D4E1DC"/>
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M18.0001 24.0001V11.0001H20.0001V22.0569L25.4188 18.1863L26.5813 19.8138L19.5813 24.8138C19.2765 25.0315 18.8756 25.0606 18.5425 24.8892C18.2094 24.7178 18.0001 24.3747 18.0001 24.0001Z" fill="#D4E1DC"/>
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M37.293 10.7072L29.293 2.70718L30.7072 1.29297L38.7072 9.29297L37.293 10.7072Z" fill="#D4E1DC"/>
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M2.70718 10.7072L10.7072 2.70718L9.29297 1.29297L1.29297 9.29297L2.70718 10.7072Z" fill="#D4E1DC"/>
+                                        </svg>                                
+                                    </div>
+            
+                                    Нет положительных отзывов
+                                </div>
+                            </div>
+
+                            <div class="tab-content" *ngIf="activeTab == 'Neutral'">
+                                <div class="review" *ngFor="let review of neutralReviews">
+                                    <div class="review-header">
+                                        <div class="user-icon">
+                                            <svg width="22" height="21" viewBox="0 0 22 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M1 18.8888C1.00051 15.616 6.92593 12.9629 6.92593 12.9629C6.92593 12.9629 9.383 13.7037 11.0002 13.7036C12.6172 13.7036 15.0741 12.9629 15.0741 12.9629C15.0741 12.9629 21 15.616 21 18.8888C21 19.9999 14.9293 19.9999 11 19.9999C7.07072 19.9999 0.999826 19.9999 1 18.8888Z" stroke="#005264"/>
+                                                <circle cx="11.0004" cy="5.55556" r="5.05556" stroke="#005264"/>
+                                            </svg>                                                
+                                        </div>
+
+                                        <div class="user-name" [routerLink]="['/profile-specialist/clients', review.session.problem.user.id]">
+                                            {{ review.session.problem.user.firstName }} {{ review.session.problem.user.lastName }}
+                                        </div>
+                                    </div>
+
+                                    <div class="review-content">
+                                        {{ review.text }}
+                                    </div>
+
+                                    <div class="review-footer">
+                                        <div class="title">
+                                            Оценка
+                                        </div>
+
+                                        <div class="value">
+                                            <img src="../../../../assets/images/star-half.svg" />
+
+                                            {{ review.score }}
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="no-content" *ngIf="neutralReviews && !neutralReviews.length">
+                                    <div class="icon">
+                                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M20.0001 38.0001C28.8366 38.0001 36.0001 30.8366 36.0001 22.0001C36.0001 13.1635 28.8366 6.00008 20.0001 6.00008C11.1635 6.00008 4.00008 13.1635 4.00008 22.0001C4.00008 30.8366 11.1635 38.0001 20.0001 38.0001ZM20.0001 40.0001C29.9412 40.0001 38.0001 31.9412 38.0001 22.0001C38.0001 12.059 29.9412 4.00008 20.0001 4.00008C10.059 4.00008 2.00008 12.059 2.00008 22.0001C2.00008 31.9412 10.059 40.0001 20.0001 40.0001Z" fill="#D4E1DC"/>
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M18.0001 24.0001V11.0001H20.0001V22.0569L25.4188 18.1863L26.5813 19.8138L19.5813 24.8138C19.2765 25.0315 18.8756 25.0606 18.5425 24.8892C18.2094 24.7178 18.0001 24.3747 18.0001 24.0001Z" fill="#D4E1DC"/>
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M37.293 10.7072L29.293 2.70718L30.7072 1.29297L38.7072 9.29297L37.293 10.7072Z" fill="#D4E1DC"/>
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M2.70718 10.7072L10.7072 2.70718L9.29297 1.29297L1.29297 9.29297L2.70718 10.7072Z" fill="#D4E1DC"/>
+                                        </svg>                                
+                                    </div>
+            
+                                    Нет нейтральных отзывов
+                                </div>
+                            </div>
+
+                            <div class="tab-content" *ngIf="activeTab == 'Negative'">
+                                <div class="review" *ngFor="let review of negativeReviews">
+                                    <div class="review-header">
+                                        <div class="user-icon">
+                                            <svg width="22" height="21" viewBox="0 0 22 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M1 18.8888C1.00051 15.616 6.92593 12.9629 6.92593 12.9629C6.92593 12.9629 9.383 13.7037 11.0002 13.7036C12.6172 13.7036 15.0741 12.9629 15.0741 12.9629C15.0741 12.9629 21 15.616 21 18.8888C21 19.9999 14.9293 19.9999 11 19.9999C7.07072 19.9999 0.999826 19.9999 1 18.8888Z" stroke="#005264"/>
+                                                <circle cx="11.0004" cy="5.55556" r="5.05556" stroke="#005264"/>
+                                            </svg>                                                
+                                        </div>
+
+                                        <div class="user-name" [routerLink]="['/profile-specialist/clients', review.session.problem.user.id]">
+                                            {{ review.session.problem.user.firstName }} {{ review.session.problem.user.lastName }}
+                                        </div>
+                                    </div>
+
+                                    <div class="review-content">
+                                        {{ review.text }}
+                                    </div>
+
+                                    <div class="review-footer">
+                                        <div class="title">
+                                            Оценка
+                                        </div>
+
+                                        <div class="value">
+                                            <img src="../../../../assets/images/star-empty.svg" />
+
+                                            {{ review.score }}
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="no-content" *ngIf="negativeReviews && !negativeReviews.length">
+                                    <div class="icon">
+                                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M20.0001 38.0001C28.8366 38.0001 36.0001 30.8366 36.0001 22.0001C36.0001 13.1635 28.8366 6.00008 20.0001 6.00008C11.1635 6.00008 4.00008 13.1635 4.00008 22.0001C4.00008 30.8366 11.1635 38.0001 20.0001 38.0001ZM20.0001 40.0001C29.9412 40.0001 38.0001 31.9412 38.0001 22.0001C38.0001 12.059 29.9412 4.00008 20.0001 4.00008C10.059 4.00008 2.00008 12.059 2.00008 22.0001C2.00008 31.9412 10.059 40.0001 20.0001 40.0001Z" fill="#D4E1DC"/>
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M18.0001 24.0001V11.0001H20.0001V22.0569L25.4188 18.1863L26.5813 19.8138L19.5813 24.8138C19.2765 25.0315 18.8756 25.0606 18.5425 24.8892C18.2094 24.7178 18.0001 24.3747 18.0001 24.0001Z" fill="#D4E1DC"/>
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M37.293 10.7072L29.293 2.70718L30.7072 1.29297L38.7072 9.29297L37.293 10.7072Z" fill="#D4E1DC"/>
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M2.70718 10.7072L10.7072 2.70718L9.29297 1.29297L1.29297 9.29297L2.70718 10.7072Z" fill="#D4E1DC"/>
+                                        </svg>                                
+                                    </div>
+            
+                                    Нет отрицательных отзывов
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </content>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <app-footer></app-footer>
+</div>

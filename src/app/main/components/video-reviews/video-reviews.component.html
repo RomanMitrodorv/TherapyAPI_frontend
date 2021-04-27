@@ -1,0 +1,63 @@
+<div class="swiper" *ngIf="reviews">
+    <swiper [(index)]="currentSlide">
+        <div class="reviews-slider" *ngFor="let review of reviews">
+            <div class="slide-wrapper">
+                <div class="review-content">
+                    <div class="reviewer">
+                        <div class="reviewer-name">
+                            {{ review.fullName }}
+                        </div>
+                    </div>
+
+                    <div class="review-text">
+                        {{ review.text }}
+                    </div>
+                </div>
+
+                <div class="review-video">
+                    <div class="video-wrapper">
+                        <video style="width: 100%; height: 100%; border-radius: 6px; background: #000000;" controls="controls" preload="metadata">
+                            <source [src]="getVideoSourceStr(review.linkYouTube)"
+                                type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </swiper>
+
+    <div class="swiper-controls">
+        <div class="swiper-prev" (click)="prevSlide()">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2.51745 5.69998L10.2939 0.376244C10.653 0.130212 11.0149 0 11.3157 0C11.8971 0 12.2568 0.466678 12.2568 1.24784V12.754C12.2568 13.5342 11.8976 14 11.3175 14C11.0163 14 10.6602 13.8697 10.3003 13.623L2.52017 8.29934C2.01984 7.95642 1.74275 7.49495 1.74275 6.99938C1.74264 6.50414 2.01655 6.04279 2.51745 5.69998Z" fill="#5DB892"/>
+            </svg>           
+        </div>
+
+        <div class="swiper-next" (click)="nextSlide()">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M11.4825 5.69998L3.70609 0.376244C3.34696 0.130212 2.98511 0 2.68434 0C2.10286 0 1.74316 0.466678 1.74316 1.24784V12.754C1.74316 13.5342 2.10241 14 2.68253 14C2.98375 14 3.33982 13.8697 3.69974 13.623L11.4798 8.29934C11.9802 7.95642 12.2572 7.49495 12.2572 6.99938C12.2574 6.50414 11.9834 6.04279 11.4825 5.69998Z" fill="#5DB892"/>
+            </svg>
+        </div>
+    </div>
+
+    <div class="swiper-controls-mobile">
+        <div class="swiper-prev" (click)="prevSlide()">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2.51745 5.69998L10.2939 0.376244C10.653 0.130212 11.0149 0 11.3157 0C11.8971 0 12.2568 0.466678 12.2568 1.24784V12.754C12.2568 13.5342 11.8976 14 11.3175 14C11.0163 14 10.6602 13.8697 10.3003 13.623L2.52017 8.29934C2.01984 7.95642 1.74275 7.49495 1.74275 6.99938C1.74264 6.50414 2.01655 6.04279 2.51745 5.69998Z" fill="#5DB892"/>
+            </svg>
+        </div>
+
+        <div class="swiper-next" (click)="nextSlide()">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M11.4825 5.69998L3.70609 0.376244C3.34696 0.130212 2.98511 0 2.68434 0C2.10286 0 1.74316 0.466678 1.74316 1.24784V12.754C1.74316 13.5342 2.10241 14 2.68253 14C2.98375 14 3.33982 13.8697 3.69974 13.623L11.4798 8.29934C11.9802 7.95642 12.2572 7.49495 12.2572 6.99938C12.2574 6.50414 11.9834 6.04279 11.4825 5.69998Z" fill="#5DB892"/>
+            </svg>
+        </div>
+    </div>
+
+    <div class="slides-indicator" *ngIf="reviews">
+        <div class="slides-indicator-inner">
+            <div class="slide-indicator" *ngFor="let slide of reviews; let i = index"
+                [ngClass]="{'active': currentSlide == i}" (click)="setSlide(i)"></div>
+        </div>
+    </div>
+</div>

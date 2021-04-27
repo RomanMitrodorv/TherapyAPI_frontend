@@ -1,0 +1,318 @@
+.content-wrapper {
+    display: flex;
+    margin-top: 19px;
+
+    content {
+        width: 954px;
+        height: 100%;
+        background: #ffffff;
+        margin-left: 30px;
+        padding-left: 24px;
+        padding-right: 24px;
+        padding-top: 24px;
+        padding-bottom: 24px;
+        border-radius: 14px;
+
+        .page-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .page-head {
+                display: flex;
+                align-items: center;
+
+                h2 {
+                    font-weight: 500;
+                    font-size: 24px;
+                    line-height: 34px;
+                    color: #005264;
+                }
+
+                .new-review {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin-left: 17px;
+        
+                    .new-review-button {
+                        width: 40px;
+                        height: 40px;
+                        background: #E9F9EF;
+                        border: 0.5px solid #A0DFB9;
+                        box-sizing: border-box;
+                        border-radius: 32px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        cursor: pointer;
+                        outline: none;
+
+                        > img {
+                            width: 20px;
+                            height: 20px;
+                        }
+                    }
+                }
+            }
+
+            .page-filters {
+                font-weight: normal;
+                font-size: 14px;
+                line-height: 14px;
+                color: #9EACA9;
+
+                .page-filter {
+                    background: #FAFFFC;
+                    border: 1px solid #D6EDE2;
+                    box-sizing: border-box;
+                    border-radius: 10px;
+
+                    &.count {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        width: 288px;
+                        height: 46px;
+                        padding-left: 19px;
+                        padding-right: 19px;
+                    }
+
+                    .filter-values {
+                        display: flex;
+                        align-items: center;
+
+                        .filter-value {
+                            margin-left: 26px;
+                            cursor: pointer;
+
+                            &.active {
+                                color: #005264;
+                                cursor: default;
+                            }
+
+                            &.disabled {
+                                color: #9EACA9;
+                                cursor: not-allowed;
+                            }
+
+                            &:first-child {
+                                margin-left: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .page-content {
+            margin-top: 21px;
+
+            .reviews-empty {
+                padding-top: 93px;
+                padding-bottom: 124px;
+                text-align: center;
+
+                .text {
+                    margin-top: 12px;
+                    font-weight: normal;
+                    font-size: 16px;
+                    line-height: 140%;
+                    text-align: center;
+                    color: #D4E1DC;
+                }
+            }
+
+            .reviews-list {
+                article {
+                    margin-top: 12px;
+                    background: #F6FBF8;
+                    border: 1px solid #CEEADC;
+                    box-sizing: border-box;
+                    border-radius: 10px;
+                    padding-top: 24px;
+                    padding-bottom: 22px;
+                    padding-left: 24px;
+                    padding-right: 24px;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+
+                    &:first-child {
+                        margin-top: 0;
+                    }
+
+                    .article-content {
+                        .article-title {
+                            font-weight: normal;
+                            font-size: 24px;
+                            line-height: 100%;
+                            color: #162B1E;
+                            text-decoration: underline;
+                        }
+
+                        .article-short-text {
+                            margin-top: 20px;
+                            padding-right: 70px;
+                            height: 44px;
+                            font-weight: normal;
+                            font-size: 16px;
+                            line-height: 140%;
+                            color: #364D47;
+                            display: -webkit-box;
+                            -webkit-line-clamp: 2;
+                            -webkit-box-orient: vertical;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                        }
+
+                        .article-actions {
+                            margin-top: 20px;
+                            display: flex;
+                            align-items: center;
+
+                            .article-date {
+                                display: flex;
+                                align-items: center;
+
+                                .date {
+                                    margin-left: 9px;
+                                    font-family: "Poppins", sans-serif;
+                                    font-style: normal;
+                                    font-weight: normal;
+                                    font-size: 14px;
+                                    line-height: 115%;
+                                    color: #9EACA9;
+                                }
+                            }
+
+                            .article-likes-comments {
+                                margin-left: 57px;
+                                display: flex;
+                                align-items: center;
+
+                                > div {
+                                    display: flex;
+                                    align-items: center;                                    
+
+                                    > svg {
+                                        margin-left: 8px;
+                                    }
+                                }
+
+                                .article-likes {
+                                    margin-right: 12px;
+
+                                    .likes-count {
+                                        font-family: "Poppins", sans-serif;
+                                        font-style: normal;
+                                        font-weight: 500;
+                                        font-size: 14px;
+                                        line-height: 115%;
+                                        color: #A9A9A9;
+                                    }
+                                }
+
+                                .article-comments {
+                                    margin-left: 12px;
+
+                                    .comments-count {
+                                        font-family: "Poppins", sans-serif;
+                                        font-style: normal;
+                                        font-weight: 500;
+                                        font-size: 14px;
+                                        line-height: 115%;
+                                        color: #A9A9A9;
+                                    }
+                                }
+                            }
+
+                            .article-edit-actions {
+                                margin-left: 60px;
+                                display: flex;
+                                align-items: center;
+                                font-weight: normal;
+                                font-size: 16px;
+                                line-height: 100%;
+
+                                .action-edit {
+                                    margin-right: 16px;
+                                    color: #219653;
+                                    cursor: pointer;
+                                    text-decoration: underline;
+                                }
+
+                                .action-delete {
+                                    margin-left: 16px;
+                                    color: #9EACA9;
+                                    cursor: pointer;
+                                    text-decoration: underline;
+                                }
+                            }
+                        }
+                    }
+
+                    .article-photo {
+                        width: 126px;
+                        height: 88px;
+                        flex: 0 0 126px;
+                        border-radius: 10px;
+
+                        > img {
+                            width: 100%;
+                            height: 100%;
+                            border-radius: 10px;
+                            object-fit: cover;
+                            object-position: center;
+                        }
+                    }
+                }
+            }
+
+            .reviews-pagination {
+                display: inline-block;
+                margin-top: 24px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1199px) {
+    .content-wrapper {
+        flex-direction: column;
+
+        content {
+            width: 100%;
+            margin-left: 0;
+            margin-top: 16px;
+        }
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .content-wrapper {
+        margin-top: 24px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .container {
+        width: 100%;
+        padding-left: 35px;
+        padding-right: 35px;
+    }
+}
+
+@media screen and (max-width: 559px) {
+    .container {
+        width: 100%;
+        padding-left: 19px;
+        padding-right: 19px;
+    }
+
+    .content-wrapper {
+        content {
+            padding: 16px;
+        }
+    }
+}

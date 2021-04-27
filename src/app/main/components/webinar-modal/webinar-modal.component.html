@@ -1,0 +1,54 @@
+<modal #webinarModal id="webinar-modal" class="hidden">
+    <div class="modal-body">
+        <div class="close-button" (click)="close()">
+            <div class="md"></div>
+            <div class="mdiv"></div>
+        </div>
+    
+        <div class="modal-header">
+            Регистрация на вебинар
+        </div>
+    
+        <div class="modal-content">
+            <div class="form-wrapper">
+                <form [formGroup]="webinarModalForm" (ngSubmit)="submitWebinarModalForm(webinarModalForm)" ngNativeValidate>
+                    <div class="form-group">
+                        <input #first_name type="text" formControlName="first_name"  placeholder="&nbsp;" required />
+                        <label class="valid" (click)="labelClick('first_name')">Имя</label>
+                    </div>
+    
+                    <div class="form-group">
+                        <input #email type="email" formControlName="email" placeholder="&nbsp;" required />
+                        <label class="valid" (click)="labelClick('email')">E-mail</label>
+                    </div>
+    
+                    <div class="form-group">
+                        <input #phone type="phone" id="phone" formControlName="phone" (keyup)="inputEvent('phone', $event.target.value)" pattern="[\+]\d\s[\(]\d{3}[\)]\s\d{3}[\-]\d{2}[\-]\d{2}" placeholder="&nbsp;" required />
+                        <label class="valid" (click)="labelClick('phone')">Телефон</label>
+                    </div>
+    
+                    <div class="form-group-checkbox">
+                        <input type="checkbox" id="checkboxPersonal" required />
+                        <label for="checkboxPersonal">Я согласен на обработку персональных данных в соответствии с <a href="#">Условиями</a></label>
+                    </div>
+
+                    <button type="submit" class="button-green">Зарегистрироваться</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-present">
+        <div class="present-icon">
+            <img src="../../../../assets/images/icon-present-2.svg" />
+        </div>
+
+        <div class="present-head">
+            * Подарок при регистрации: запись мастер–класса
+        </div>
+
+        <div class="present-text">
+            «Как консультанту сделать денежный поток регулярным и постоянным»
+        </div>
+    </div>
+</modal>

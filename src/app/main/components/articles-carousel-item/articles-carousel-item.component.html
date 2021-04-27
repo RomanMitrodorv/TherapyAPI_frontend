@@ -1,0 +1,125 @@
+<div class="article-container" *ngIf="article">
+
+    <!-- Head -->
+    <div class="article-head">
+
+        <!-- Image -->
+        <div class="article-image">
+            <img [src]="article.image.url" />
+        </div>
+
+        <!-- Info -->
+        <div class="article-info">
+
+            <!-- Title -->
+            <div class="article-title" [routerLink]="['/articles/', article.id]">
+                {{ article.title }}
+            </div>
+
+            <!-- Likes -->
+            <div class="article-likes">
+                {{ article.likes.length }}
+
+                <img src="../../../../assets/images/icon-like.svg" />
+            </div>
+
+            <!-- Comments -->
+            <div class="article-comments">
+                {{ article.comments.length }}
+
+                <img src="../../../../assets/images/icon-comment.svg" />
+            </div>
+
+            <!-- Date -->
+            <div class="article-date">
+                <img src="../../../../assets/images/icon-calendar.svg" />
+
+                {{ article.date | date: 'dd MMM yyy' }}
+            </div>
+        </div>
+    </div>
+
+    <!-- Content -->
+    <div class="article-content">
+
+        <!-- Article Text -->
+        <div class="article-text" [innerHTML]="article.text"></div>
+
+        <!-- Article Sidebar -->
+        <div class="article-sidebar">
+            <div class="article-sidebar-inner">
+                <!-- Author -->
+                <div class="author-block" [ngClass]="{'is-specialist': isSpecialist}">
+                    <div class="content-wrapper">
+
+                        <div class="title">Автор</div>
+
+                        <div class="author-name" [routerLink]="['/specialists', article.author.id]">
+                            {{ article.author.user.firstName }} {{ article.author.user.lastName }}
+                        </div>
+
+                        <div class="author-info">
+                            <div class="author-photo">
+                                <img [src]="article.author.user.photo.url" />
+                            </div>
+
+                            <div class="author-price">
+                                {{ article.author.price | number:'':'fr' }} ₽
+                            </div>
+
+                            <div class="author-rating">
+                                <div class="icon-star">
+                                    <app-rating [score]="article.author.rating" [single]="true" [size]="20"></app-rating>
+                                </div>
+
+                                {{ article.author.rating }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sign Up Button -->
+                <div class="signup-button" *ngIf="!isSpecialist">
+                    <button type="button" (click)="showSpecialistDialog(article.author)">Записаться</button>
+                </div>
+            </div>
+        </div>
+
+        <!--Article Bottom Bar -->
+        <div class="article-bottom-bar">
+            <div class="article-bottom-bar-inner">
+                <div class="author-block">
+                    <div class="author-photo">
+                        <img [src]="article.author.user.photo.url" />
+                    </div>
+
+                    <div class="author-name">
+                        <div class="title">Автор</div>
+
+                        <div class="name" [routerLink]="['/specialists', article.author.id]">
+                            {{ article.author.user.firstName }} {{ article.author.user.lastName }}
+                        </div>
+                    </div>
+
+                    <div class="author-info">
+                        <div class="author-price">
+                            {{ article.author.price | number:'':'fr' }} ₽
+                        </div>
+
+                        <div class="author-rating">
+                            <div class="icon-star">
+                                <img src="../../../../assets/images/star.svg" />
+                            </div>
+
+                            {{ article.author.rating }}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="signup-button" *ngIf="!isSpecialist">
+                    <button type="button" (click)="showSpecialistDialog(article.author)">Записаться</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

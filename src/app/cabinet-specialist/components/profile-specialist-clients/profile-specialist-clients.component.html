@@ -1,0 +1,154 @@
+<div class="page-wrapper">
+
+    <!-- Header -->
+    <profile-specialist-header></profile-specialist-header>
+
+    <div class="container">
+        <div class="content-wrapper">
+            <profile-specialist-sidebar></profile-specialist-sidebar>
+
+            <content>
+                <div class="page-top">
+                    <div class="page-head">
+                        Клиенты
+                    </div>
+                    
+                    <div class="page-filters">
+                        <div class="filter page-size">
+                            <div class="filter-title">
+                                На странице
+                            </div>
+
+                            <div class="filter-values">
+                                <div class="filter-value" (click)="setPageSize(10)" [ngClass]="{'active': pageSize == 10}">10</div>
+                                <div class="filter-value" (click)="setPageSize(25)" [ngClass]="{'active': pageSize == 25}">25</div>
+                                <div class="filter-value" (click)="setPageSize(50)" [ngClass]="{'active': pageSize == 50}">50</div>
+                                <div class="filter-value" (click)="setPageSize(100)" [ngClass]="{'active': pageSize == 100}">100</div>
+                            </div>
+                        </div>
+
+                        <div class="filter property-filter">
+                            <div class="filter-values">
+                                <div class="filter-value" [ngClass]="{'active': sorter == 1}" (click)="setSorter(1)">
+                                    Сессий
+
+                                    <svg *ngIf="sorter == 1 && sortBy == 1" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M8.49988 13.5L8.49988 3.52525L12.1379 7.34475C12.3284 7.54475 12.6449 7.5525 12.8449 7.362C13.0446 7.17175 13.0526 6.85525 12.8621 6.655L8.70713 2.293C8.51813 2.10425 8.26713 2 7.99988 2C7.73288 2 7.48163 2.10425 7.28438 2.30175L3.13788 6.65525C3.04563 6.752 2.99988 6.876 2.99988 7C2.99988 7.132 3.05188 7.264 3.15513 7.36225C3.35513 7.55275 3.67138 7.545 3.86188 7.345L7.49988 3.5095L7.49988 13.5C7.49988 13.776 7.72388 14 7.99988 14C8.27588 14 8.49988 13.776 8.49988 13.5Z"
+                                            fill="#005264" />
+                                    </svg>
+
+                                    <svg *ngIf="sorter == 1 && sortBy == 2" style="transform: rotate(180deg);" width="16"
+                                        height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M8.49988 13.5L8.49988 3.52525L12.1379 7.34475C12.3284 7.54475 12.6449 7.5525 12.8449 7.362C13.0446 7.17175 13.0526 6.85525 12.8621 6.655L8.70713 2.293C8.51813 2.10425 8.26713 2 7.99988 2C7.73288 2 7.48163 2.10425 7.28438 2.30175L3.13788 6.65525C3.04563 6.752 2.99988 6.876 2.99988 7C2.99988 7.132 3.05188 7.264 3.15513 7.36225C3.35513 7.55275 3.67138 7.545 3.86188 7.345L7.49988 3.5095L7.49988 13.5C7.49988 13.776 7.72388 14 7.99988 14C8.27588 14 8.49988 13.776 8.49988 13.5Z"
+                                            fill="#005264" />
+                                    </svg>
+                                </div>
+
+                                <div class="filter-value" [ngClass]="{'active': sorter == 2}" (click)="setSorter(2)">
+                                    Оплачено
+
+                                    <svg *ngIf="sorter == 2 && sortBy == 1" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M8.49988 13.5L8.49988 3.52525L12.1379 7.34475C12.3284 7.54475 12.6449 7.5525 12.8449 7.362C13.0446 7.17175 13.0526 6.85525 12.8621 6.655L8.70713 2.293C8.51813 2.10425 8.26713 2 7.99988 2C7.73288 2 7.48163 2.10425 7.28438 2.30175L3.13788 6.65525C3.04563 6.752 2.99988 6.876 2.99988 7C2.99988 7.132 3.05188 7.264 3.15513 7.36225C3.35513 7.55275 3.67138 7.545 3.86188 7.345L7.49988 3.5095L7.49988 13.5C7.49988 13.776 7.72388 14 7.99988 14C8.27588 14 8.49988 13.776 8.49988 13.5Z"
+                                            fill="#005264" />
+                                    </svg>
+
+                                    <svg *ngIf="sorter == 2 && sortBy == 2" style="transform: rotate(180deg);" width="16"
+                                        height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M8.49988 13.5L8.49988 3.52525L12.1379 7.34475C12.3284 7.54475 12.6449 7.5525 12.8449 7.362C13.0446 7.17175 13.0526 6.85525 12.8621 6.655L8.70713 2.293C8.51813 2.10425 8.26713 2 7.99988 2C7.73288 2 7.48163 2.10425 7.28438 2.30175L3.13788 6.65525C3.04563 6.752 2.99988 6.876 2.99988 7C2.99988 7.132 3.05188 7.264 3.15513 7.36225C3.35513 7.55275 3.67138 7.545 3.86188 7.345L7.49988 3.5095L7.49988 13.5C7.49988 13.776 7.72388 14 7.99988 14C8.27588 14 8.49988 13.776 8.49988 13.5Z"
+                                            fill="#005264" />
+                                    </svg>
+                                </div>
+
+                                <div class="filter-value" [ngClass]="{'active': sorter == 3}" (click)="setSorter(3)">
+                                    Оценка
+
+                                    <svg *ngIf="sorter == 3 && sortBy == 1" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M8.49988 13.5L8.49988 3.52525L12.1379 7.34475C12.3284 7.54475 12.6449 7.5525 12.8449 7.362C13.0446 7.17175 13.0526 6.85525 12.8621 6.655L8.70713 2.293C8.51813 2.10425 8.26713 2 7.99988 2C7.73288 2 7.48163 2.10425 7.28438 2.30175L3.13788 6.65525C3.04563 6.752 2.99988 6.876 2.99988 7C2.99988 7.132 3.05188 7.264 3.15513 7.36225C3.35513 7.55275 3.67138 7.545 3.86188 7.345L7.49988 3.5095L7.49988 13.5C7.49988 13.776 7.72388 14 7.99988 14C8.27588 14 8.49988 13.776 8.49988 13.5Z"
+                                            fill="#005264" />
+                                    </svg>
+
+                                    <svg *ngIf="sorter == 3 && sortBy == 2" style="transform: rotate(180deg);" width="16"
+                                        height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M8.49988 13.5L8.49988 3.52525L12.1379 7.34475C12.3284 7.54475 12.6449 7.5525 12.8449 7.362C13.0446 7.17175 13.0526 6.85525 12.8621 6.655L8.70713 2.293C8.51813 2.10425 8.26713 2 7.99988 2C7.73288 2 7.48163 2.10425 7.28438 2.30175L3.13788 6.65525C3.04563 6.752 2.99988 6.876 2.99988 7C2.99988 7.132 3.05188 7.264 3.15513 7.36225C3.35513 7.55275 3.67138 7.545 3.86188 7.345L7.49988 3.5095L7.49988 13.5C7.49988 13.776 7.72388 14 7.99988 14C8.27588 14 8.49988 13.776 8.49988 13.5Z"
+                                            fill="#005264" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="page-content">
+                    <div class="clients-list" *ngIf="clients">
+
+                        <div class="clients-list-item" *ngFor="let client of clients">
+                            <div class="client-name" [routerLink]="['/profile-specialist/clients', client.user.id]">
+                                <div class="avatar">
+                                    <div class="avatar-inner">
+                                        <svg width="22" height="21" viewBox="0 0 22 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1 18.8888C1.00051 15.616 6.92593 12.9629 6.92593 12.9629C6.92593 12.9629 9.383 13.7037 11.0002 13.7036C12.6172 13.7036 15.0741 12.9629 15.0741 12.9629C15.0741 12.9629 21 15.616 21 18.8888C21 19.9999 14.9293 19.9999 11 19.9999C7.07072 19.9999 0.999826 19.9999 1 18.8888Z" stroke="#005264"/>
+                                            <circle cx="11.0003" cy="5.55556" r="5.05556" stroke="#005264"/>
+                                        </svg>                                            
+                                    </div>
+                                </div>
+
+                                <div class="name">
+                                    {{ client.user.firstName }} {{ client.user.lastName }}
+                                </div>
+                            </div>
+
+                            <div class="client-stats">
+                                <div class="stat-block">
+                                    <div class="title">
+                                        Сессий с вами
+                                    </div>
+
+                                    <div class="value">
+                                        {{ client.sessions.length }}
+                                    </div>
+                                </div>
+
+                                <div class="stat-block">
+                                    <div class="title">
+                                        Оплачено
+                                    </div>
+
+                                    <div class="value">
+                                        {{ client.paid | number:'':'fr' }} ₽
+                                    </div>
+                                </div>
+
+                                <div class="stat-block">
+                                    <div class="title">
+                                        Ср. оценка
+                                    </div>
+
+                                    <div class="value">
+                                        <div class="rating">
+                                            <img src="../../../../assets/images/star-half.svg" />
+
+                                            {{ client.averageScore }}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="clients-pagination">
+                        <app-pagination [currentPage]="pageNumber" [totalPages]="totalPages" (onChanged)="setPageNumber($event)"></app-pagination>
+                    </div>
+                </div>
+            </content>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <app-footer></app-footer>
+</div>

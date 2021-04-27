@@ -1,0 +1,794 @@
+.content-wrapper {
+    display: flex;
+    margin-top: 19px;
+
+    content {
+        width: 954px;
+        height: 100%;
+        background: #ffffff;
+        margin-left: 30px;
+        padding-left: 24px;
+        padding-top: 24px;
+        padding-bottom: 24px;
+        border-radius: 14px;
+
+        .page-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            border-bottom: 1px solid #D5E8DD;
+
+            .client-name {
+                display: flex;
+                align-items: center;
+
+                .name {
+                    margin-left: 20px;
+                    font-weight: 500;
+                    font-size: 24px;
+                    line-height: 140%;
+                    color: #005264;                    
+                }
+            }
+
+            .client-contacts {
+                display: flex;
+                align-items: center;
+                padding-right: 24px;
+
+                .phone {
+                    font-family: "Poppins", sans-serif;
+                    font-weight: normal;
+                    font-size: 20px;
+                    line-height: 121.5%;
+                    color: #364D47;
+                }
+
+                .button-copy {
+                    margin-left: 20px;
+                    
+                    > button {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: 40px;
+                        height: 40px;
+                        flex: 0 0 40px;
+                        background: #E9F9EF;
+                        border: 0.5px solid #A0DFB9;
+                        box-sizing: border-box;
+                        border-radius: 100px;
+                        outline: none;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+
+        .page-content {
+            padding-top: 20px;
+            padding-right: 24px;
+
+            .client-stats {
+                display: flex;
+                align-items: center;
+
+                .client-stat-block {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin-right: 11px;
+                    height: 32px;
+                    padding-left: 8px;
+                    padding-right: 8px;
+                    background: #FFFFFF;
+                    border: 1px solid #DBF8E6;
+                    box-sizing: border-box;
+                    border-radius: 10px;
+
+                    &:last-child {
+                        margin-right: 0;
+                    }
+
+                    &.role-patient {
+                        background-color: #E9F9EF;
+                        border-color: #A0DFB9;
+                        
+                        .title {
+                            color: #049A5B;
+                            font-weight: 500;
+                        }
+                    }
+
+                    &.role-specialist {
+                        background-color: #F8F3FF;
+                        border-color: #E7D8FD;
+                        
+                        .title {
+                            color: #634F81;
+                            font-weight: 500;
+                        }
+                    }
+
+                    &.role-admin {
+                        background-color: #FFF8F7;
+                        border-color: #A43B3B;
+                        
+                        .title {
+                            color: #DA3B3B;
+                            font-weight: 500;
+                        }
+                    }
+
+                    .title {
+                        font-weight: normal;
+                        font-size: 14px;
+                        line-height: 100%;
+                        color: #005264;                        
+                    }
+
+                    .value {
+                        font-family: "Poppins", sans-serif;
+                        font-weight: normal;
+                        font-size: 16px;
+                        line-height: 100%;
+                        color: #005264;
+                        margin-left: 8px;
+                        margin-top: 1px;
+                    }
+
+                    > div {
+                        &:first-child {
+                            margin-left: 0;
+                        }
+                    }
+                }
+
+                .change-role-button {
+                    margin-left: auto;
+                    margin-right: 0;
+                    width: 169px;
+                    height: 32px;
+
+                    >button {
+                        z-index: 2;
+                        position: relative;
+                        width: 100%;
+                        height: 100%;
+                        font-size: 16px;
+                        line-height: 100%;
+                        padding: 0;
+                        text-transform: none;
+                        letter-spacing: normal;
+                        font-weight: normal;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+
+                        >svg {
+                            margin-left: 10px;
+
+                            &.expanded {
+                                transform: rotate(180deg);
+                            }
+                        }
+                    }
+                }
+
+                .roles-expanded {
+                    width: 100%;
+                    position: relative;
+                    top: -18px;
+                    border-radius: 10px;
+                    z-index: 1;
+                    background-color: #F6FBF8;
+                    border: 1px solid #E1EEE6;
+                    max-height: 0;
+                    transition: all 0.3s;
+                    overflow: hidden;
+
+                    &.expanded {
+                        max-height: 124px;
+                    }
+
+                    .item {
+                        text-align: center;
+                        padding-top: 9px;
+                        padding-bottom: 9px;
+                        border-bottom: 1px solid #E1EEE6;
+                        font-weight: normal;
+                        font-size: 14px;
+                        line-height: 100%;
+                        color: #005264;
+                        font-size: 16px;
+                        cursor: pointer;
+                        transition: all .2s ease-in-out;
+
+                        &.selected {
+                            background-color: #dcf3e6;
+
+                            &:hover {
+                                background-color: #dcf3e6;
+                            }
+                        }
+
+                        &:last-child {
+                            border-bottom: none;
+                        }
+
+                        &:first-child {
+                            padding-top: 27px;
+                        }
+
+                        &:hover {
+                            background-color: #e8f9ef;
+                        }
+
+                        &:active {
+                            background-color: #dcf3e6;
+                        }
+                    }
+                }
+            }
+
+            .sessions-list {
+                margin-top: 20px;
+
+                .sessions-list-item {
+                    margin-top: 12px;
+                    padding-top: 12px;
+                    padding-bottom: 20px;
+                    padding-left: 16px;
+                    padding-right: 16px;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    box-sizing: border-box;
+                    border-radius: 10px;
+
+                    &:first-child {
+                        margin-top: 0;
+                    }
+
+                    &.session-active {
+                        background: #FBF9F6;
+                        border: 1px solid #ECE2D4;
+
+                        .session-info {
+                            .session-date {
+                                border: 1px solid #ECE2D4;
+                            }
+
+                            .problem-info {
+                                .title {
+                                    color: #FF8C22;
+                                }
+                            }
+                        }
+                    }
+
+                    &.session-waiting {
+                        background: #ffffff;
+                        border: 1px solid #E6E6E6;
+
+                        .session-info {
+                            .session-date {
+                                border: 1px solid #E6E6E6;
+                            }
+
+                            .problem-info {
+                                .title {
+                                    color: #9EACA9;
+
+                                    .title-inner {
+                                        display: flex;
+                                        align-items: center;
+
+                                        > div {
+                                            margin-left: 7px;
+
+                                            &:first-child {
+                                                margin-left: 0;
+                                            }
+
+                                            &.icon {
+                                                width: 12px;
+                                                height: 14px;
+                                            }
+
+                                            &.time {
+                                                font-family: "Poppins", sans-serif;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    &.session-success {
+                        background: #F6FBF8;
+                        border: 1px solid #CEEADC;
+
+                        .session-info {
+                            .session-date {
+                                border: 1px solid #DBF8E6;
+                            }
+
+                            .problem-info {
+                                .title {
+                                    font-family: "Poppins", sans-serif;
+                                    color: #008F39;
+                                }
+                            }
+                        }
+                    }
+
+                    &.session-refund {
+                        background: #F6FBF8;
+                        border: 1px solid #CEEADC;
+
+                        .session-info {
+                            .session-date {
+                                border: 1px solid #DBF8E6;
+                            }
+
+                            .problem-info {
+                                .title {
+                                    color: #D80815;
+                                }
+                            }
+                        }
+                    }
+
+                    .session-info {
+                        display: flex;
+
+                        .session-date {
+                            width: 54px;
+                            height: 54px;
+                            border-radius: 100px;
+                            background: #FFFFFF;
+                            border: 1px solid #ECE2D4;
+                            box-sizing: border-box;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            align-items: center;
+
+                            .day {
+                                font-family: "Poppins", sans-serif;
+                                font-weight: 300;
+                                font-size: 22px;
+                                line-height: 100%;
+                                color: #364D47;
+                            }
+
+                            .month {
+                                margin-top: 4px;
+                                font-weight: normal;
+                                font-size: 10px;
+                                line-height: 100%;
+                                letter-spacing: 0.18em;
+                                text-transform: uppercase;
+                                color: #C8B69D;
+                            }
+                        }
+
+                        .problem-info {
+                            margin-left: 13px;
+                            margin-top: 6px;
+
+                            .title {
+                                font-weight: normal;
+                                font-size: 12px;
+                                line-height: 140%;
+                                letter-spacing: 0.1em;
+                                text-transform: uppercase;
+                            }
+
+                            .text {
+                                margin-top: 10px;
+                                max-width: 338px;
+                                font-weight: normal;
+                                font-size: 14px;
+                                line-height: 140%;
+                                color: #364D47;                                
+                            }
+                        }
+                    }
+
+                    .session-info-mobile {
+                        margin-top: 12px;
+
+                        .problem-text {
+                            font-weight: normal;
+                            font-size: 14px;
+                            line-height: 140%;
+                            color: #364D47;
+                        }
+                    }
+
+                    .session-actions {
+                        display: flex;
+                        align-items: center;
+                        margin-top: 4px;
+
+                        .session-action {
+                            margin-left: 12px;
+                            display: flex;
+                            align-items: center;
+                            box-sizing: border-box;
+                            border-radius: 10px;
+                            outline: none;
+
+                            &:first-child {
+                                margin-left: 0;
+                            }
+
+                            &.problem-images {
+                                height: 32px;
+                                padding-left: 8px;
+                                padding-right: 8px;
+                                background: #F8F3FF;
+                                border: 1px solid #E7D8FD;
+
+                                .title {
+                                    font-weight: normal;
+                                    font-size: 14px;
+                                    line-height: 100%;
+                                    color: #634F81;
+                                }
+
+                                .icon {
+                                    width: 16px;
+                                    height: 16px;
+                                    margin-left: 8px;
+                                    margin-right: 8px;
+                                    display: flex;
+                                    align-items: center;
+                                }
+
+                                .value {
+                                    font-family: "Poppins", sans-serif;
+                                    font-weight: normal;
+                                    font-size: 16px;
+                                    line-height: 100%;
+                                    color: #634F81;
+                                    margin-top: 2px;                                  
+                                }
+                            }
+
+                            &.problem-resources {
+                                height: 32px;
+                                padding-left: 8px;
+                                padding-right: 8px;
+                                background: #EBFBFF;
+                                border: 1px solid #B5E2ED;
+
+                                .title {
+                                    font-weight: normal;
+                                    font-size: 14px;
+                                    line-height: 100%;
+                                    color: #364D47;
+                                }
+
+                                .icon {
+                                    width: 16px;
+                                    height: 16px;
+                                    margin-left: 8px;
+                                    margin-right: 8px;
+                                    display: flex;
+                                    align-items: center;
+                                }
+
+                                .value {
+                                    font-family: "Poppins", sans-serif;
+                                    font-weight: normal;
+                                    font-size: 16px;
+                                    line-height: 100%;
+                                    color: #364D47;    
+                                    margin-top: 2px;                        
+                                }
+                            }
+
+                            &.review-badge {
+                                height: 32px;
+                                padding-left: 8px;
+                                padding-right: 8px;
+                                border: 1px solid #DDDDDD;
+                                background: transparent;
+                                cursor: pointer;
+
+                                .title {
+                                    font-weight: normal;
+                                    font-size: 14px;
+                                    line-height: 100%;
+                                    color: #364D47;
+                                }
+
+                                .value {
+                                    font-family: "Poppins", sans-serif;
+                                    font-weight: normal;
+                                    font-size: 16px;
+                                    line-height: 100%;
+                                    color: #364D47;
+                                    margin-top: 2px;
+                                    margin-left: 8px;                           
+                                }
+
+                                &.positive {
+                                    background: #CBFADD;
+                                    border: 1px solid #C6E8D3;
+                                }
+
+                                &.neutral {
+                                    background: linear-gradient(90deg, #F0F0F0 0%, #F0F0F0 48.95%, rgba(240, 240, 240, 0) 48.96%, rgba(240, 240, 240, 0) 100%);
+                                    border: 1px solid #DDDDDD;
+                                }
+
+                                &.negative {
+                                    background: linear-gradient(90deg, #F5C9C9 0%, #F5C9C9 41.15%, rgba(255, 255, 255, 0.505208) 41.16%, rgba(255, 255, 255, 0) 100%);
+                                    border: 1px solid #FFBCBC;
+                                }
+
+                                &.empty {
+                                    cursor: default;
+                                }
+                            }
+
+                            &.close-button {
+                                height: 40px;
+                                padding-left: 16px;
+                                padding-right: 16px;
+                                justify-content: center;
+                                background: linear-gradient(180deg, #FFA800 0%, #F27400 100%);
+                                border: 1px solid #DA8300;
+                                font-weight: 500;
+                                font-size: 16px;
+                                line-height: 100%;
+                                color: #FFFFFF;
+                                text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.05);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1199px) {
+    .content-wrapper {
+        flex-direction: column;
+
+        content {
+            width: 100%;
+            margin-left: 0;
+            margin-top: 16px;
+
+            .page-content {
+                .sessions-list {
+                    .sessions-list-item {
+                        margin-top: 16px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .content-wrapper {
+        content {
+            .page-content {
+                padding-top: 16px;
+
+                .sessions-list {
+                    margin-top: 16px;
+
+                    .sessions-list-item {
+                        flex-direction: column;
+                        justify-content: flex-start;
+                        align-items: flex-start;
+
+                        &.session-active {
+                            padding-bottom: 16px;
+                        }
+
+                        .session-actions {
+                            margin-top: 20px;
+                            margin-left: 67px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .content-wrapper {
+        content {
+            .client-stats {
+                .client-stat-block {
+                    &.phone-number {
+                        display: none !important;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .container {
+        width: 100%;
+        padding-left: 35px;
+        padding-right: 35px;
+    }
+
+    .content-wrapper {
+        content {
+            .page-top {
+                padding-bottom: 21px;
+                
+                .client-name {
+                    width: 100%;
+                    flex-direction: column;
+                    align-items: flex-start;
+
+                    .name {
+                        margin-left: 0;
+                        margin-top: 16px;
+                    }
+                }
+
+                .client-contacts {
+                    display: none;
+                }
+            }
+
+            .page-content {
+                .client-stats {
+                    flex-wrap: wrap;
+
+                    .client-stat-block {
+                        margin-bottom: 11px;
+                    }
+                }
+
+                .sessions-list {
+                    margin-top: 5px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 560px) {
+    .content-wrapper {
+        content {
+            .page-content {
+                .sessions-list {
+                    .sessions-list-item {
+                        .session-info-mobile {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 559px) {
+    .container {
+        width: 100%;
+        padding-left: 19px;
+        padding-right: 19px;
+    }
+
+    .content-wrapper {
+        content {
+            padding-top: 16px;
+            padding-bottom: 16px;
+            padding-left: 16px;
+
+            .page-top {
+                padding-right: 16px;
+                padding-bottom: 16px;
+
+                .client-contacts {
+                    padding-right: 0;
+                }
+            }
+
+            .page-content {
+                padding-right: 16px;
+
+                .sessions-list {
+                    .sessions-list-item {
+                        padding-bottom: 16px;
+
+                        &.session-active {
+                            .session-info {
+                                .problem-info {
+                                    margin-left: 12px;
+
+                                    .title {
+                                        max-width: 80px;
+                                    }
+                                }
+                            }
+                        }
+
+                        .session-info {
+                            width: 100%;
+
+                            .problem-info {
+                                margin-left: 16px;
+                                margin-top: 0;
+                                align-self: center;
+
+                                .name,
+                                .text {
+                                    display: none;
+                                }
+                            }
+                        }
+
+                        .session-actions {
+                            margin-top: 16px;
+                            margin-left: 0;
+                            flex-direction: column;
+                            align-items: flex-start;
+
+                            .session-action {
+                                margin-left: 0;
+                                margin-top: 16px;
+
+                                &:first-child {
+                                    margin-top: 0;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.button-back {
+    > button {
+        border: 0.5px solid rgba(56, 154, 113, 0.5);
+        box-sizing: border-box;
+        border-radius: 10px;
+        background: transparent;
+        display: flex;
+        align-items: center;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 17px;
+        text-transform: uppercase;
+        color: #5BAA89;
+        height: 34px;
+        padding-top: 0;
+        padding-bottom: 0;
+        padding-left: 10.5px;
+        padding-right: 12px;
+
+        .icon {
+            width: 20px;
+            height: 20px;
+            margin-right: 8px;
+
+            > img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+}

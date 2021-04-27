@@ -1,0 +1,90 @@
+<div class="page-wrapper">
+
+    <!-- Header -->
+    <profile-header></profile-header>
+
+    <div class="container">
+        <div class="content-wrapper">
+            <profile-sidebar></profile-sidebar>
+
+            <content>
+                <div class="page-head" *ngIf="session">
+                    <div class="session-date">
+                        <div class="day">
+                            {{ session.date | date: 'd' }}
+                        </div>
+
+                        <div class="month">
+                            {{ normalizeMonth(session.date | date: 'MMM') }}
+                        </div>
+                    </div>
+
+                    <div class="specialist-info">
+                        <div class="specialist-photo">
+                            <img [src]="session.specialist.user.photo.url" />
+                        </div>
+    
+                        <div class="specialist-name-rating">
+                            <div class="specialist-name">
+                                {{ session.specialist.user.firstName }} {{ session.specialist.user.lastName }}
+                            </div>
+        
+                            <div class="specialist-rating">
+                                <app-rating [score]="session.specialist.rating" [single]="true" [size]="18"></app-rating>
+    
+                                <div class="rating-score">
+                                    {{ session.specialist.rating }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="page-content">
+                    <div class="page-text">
+                        Документы отправлены на проверку. Пожалуйста, оставьте отзыв терапевту.
+                    </div>
+
+                    <div class="review-form">
+                        <form [formGroup]="reviewForm" (ngSubmit)="submit(reviewForm)">
+                            <div class="form-group">
+                                <textarea placeholder="Ваш отзыв..." formControlName="reviewText"></textarea>
+                            </div>
+
+                            <div class="form-footer">
+                                <div class="submit-button">
+                                    <button type="submit" class="button-green">Отправить отзыв</button>
+                                </div>
+
+                                <div class="set-score">
+                                    <div class="score-star" [ngClass]="{'selected': reviewScore > 4}" (click)="setReviewScore(5)">
+                                        <img src="../../../../assets/images/star.svg" />
+                                    </div>
+
+                                    <div class="score-star" [ngClass]="{'selected': reviewScore > 3}" (click)="setReviewScore(4)">
+                                        <img src="../../../../assets/images/star.svg" />
+                                    </div>
+
+                                    <div class="score-star" [ngClass]="{'selected': reviewScore > 2}" (click)="setReviewScore(3)">
+                                        <img src="../../../../assets/images/star.svg" />
+                                    </div>
+
+                                    <div class="score-star" [ngClass]="{'selected': reviewScore > 1}" (click)="setReviewScore(2)">
+                                        <img src="../../../../assets/images/star.svg" />
+                                    </div>
+
+                                    <div class="score-star" [ngClass]="{'selected': reviewScore > 0}" (click)="setReviewScore(1)">
+                                        <img src="../../../../assets/images/star.svg" />
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </content>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <app-footer></app-footer>
+</div>

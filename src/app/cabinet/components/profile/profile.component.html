@@ -1,0 +1,30 @@
+<div class="page-wrapper">
+
+    <!-- Header -->
+    <profile-header></profile-header>
+
+    <div class="container">
+        <div class="content-wrapper">
+            <profile-sidebar></profile-sidebar>
+
+            <content>
+
+                <!-- Problems -->
+                <div class="problems-list" *ngIf="problems">
+                    <app-problem *ngFor="let problem of problems" [problem]="problem"></app-problem>
+                </div>
+
+                <div class="new-problem" [routerLink]="['/profile/problems/add']">
+                    <div class="new-problem-button">
+                        <img src="../../../../assets/images/icon-plus.svg" />
+                    </div>
+                </div>
+            </content>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <app-footer></app-footer>
+</div>
+
+<app-alert *ngIf="isAlertShow" [text]="alertText"></app-alert>

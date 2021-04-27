@@ -1,0 +1,509 @@
+<div class="page-wrapper">
+
+    <!-- Header -->
+    <profile-header></profile-header>
+
+    <div class="container">
+        <div class="content-wrapper">
+            <profile-sidebar></profile-sidebar>
+
+            <content>
+                <div class="button-back">
+                    <button type="button" (click)="prevRoute()">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16.875 10.625H4.40656L9.18094 15.1725C9.43094 15.4106 9.44063 15.8063 9.2025 16.0563C8.96469 16.3059 8.56906 16.3159 8.31875 16.0778L2.86625 10.8841C2.63031 10.6478 2.5 10.3341 2.5 10C2.5 9.66625 2.63031 9.35219 2.87719 9.10563L8.31906 3.9225C8.44 3.80719 8.595 3.75 8.75 3.75C8.915 3.75 9.08 3.815 9.20281 3.94406C9.44094 4.19406 9.43125 4.58938 9.18125 4.8275L4.38688 9.375H16.875C17.22 9.375 17.5 9.655 17.5 10C17.5 10.345 17.22 10.625 16.875 10.625Z" fill="#5BAA89"/>
+                        </svg>                            
+
+                        Назад
+                    </button>
+                </div>
+
+                <div class="page-head" *ngIf="problem">
+                    {{ problem.problemText }}
+                </div>
+
+                <div class="page-content">
+                    <div class="tabs" *ngIf="assets">
+                        <ul class="tabs-head" #assetsTabs>
+                            <li class="tab-head" name="images" [ngClass]="{'active': activeTab == 'images'}" (click)="setActiveTab('images')">
+                                Образов
+
+                                <div class="count">
+                                    {{ assets.images.length }}
+                                </div>
+                            </li>
+
+                            <li class="tab-head" name="resources" [ngClass]="{'active': activeTab == 'resources'}" (click)="setActiveTab('resources')">
+                                Ресурсов
+
+                                <div class="count">
+                                    {{ assets.resources.length }}
+                                </div>
+                            </li>
+
+                            <li class="tab-head" name="sessions" [ngClass]="{'active': activeTab == 'sessions'}" (click)="setActiveTab('sessions')">
+                                Проведено сессий
+
+                                <div class="count" *ngIf="sessions">
+                                    {{ sessions.length }}
+                                </div>
+                            </li>
+                        </ul>
+
+                        <div class="tabs-content">
+                            <div class="tab-content" *ngIf="activeTab == 'images'">
+                                <div class="images-list">
+                                    <div class="images-list-item" *ngFor="let image of assets.images">
+                                        <div class="item-head">
+                                            <div class="item-title">
+                                                <div class="item-date">
+                                                    <div class="day">{{ image.session.date | date: 'd' }}</div>
+                                                    <div class="month">{{ normalizeMonth(image.session.date | date: 'MMM') }}</div>
+                                                </div>
+
+                                                <div class="item-name">
+                                                    <div class="title hidden-image-title">
+                                                        Образ убран
+                                                    </div>
+
+                                                    <div class="name">
+                                                        {{ image.title }}
+                                                    </div>
+                                                    
+                                                    <div class="like-score">
+                                                        <div class="like-score-section" [ngClass]="{'filled': image.likeScore > 0}"></div>
+                                                        <div class="like-score-section" [ngClass]="{'filled': image.likeScore > 1}"></div>
+                                                        <div class="like-score-section" [ngClass]="{'filled': image.likeScore > 2}"></div>
+                                                        <div class="like-score-section" [ngClass]="{'filled': image.likeScore > 3}"></div>
+                                                        <div class="like-score-section" [ngClass]="{'filled': image.likeScore > 4}"></div>
+                                                        <div class="like-score-section" [ngClass]="{'filled': image.likeScore > 5}"></div>
+                                                        <div class="like-score-section" [ngClass]="{'filled': image.likeScore > 6}"></div>
+                                                        <div class="like-score-section" [ngClass]="{'filled': image.likeScore > 7}"></div>
+                                                        <div class="like-score-section" [ngClass]="{'filled': image.likeScore > 8}"></div>
+                                                        <div class="like-score-section" [ngClass]="{'filled': image.likeScore > 9}"></div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="item-specialist">
+                                                    <div class="specialist-photo">
+                                                        <img [src]="image.session.specialist.user.photo.url" />
+                                                    </div>
+
+                                                    <div class="specialist-name">
+                                                        {{ image.session.specialist.user.firstName }} {{ image.session.specialist.user.lastName }}
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="item-actions">
+                                                
+                                            </div>
+                                        </div>
+
+                                        <div class="item-body">
+                                            <div class="item-description">
+                                                <div class="item-description-row">
+                                                    <div class="item-description-column text-column">
+                                                        <div class="column-title">
+                                                            Эмоция / Чувство
+                                                        </div>
+
+                                                        <div class="column-value">
+                                                            {{ image.emotion }}
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="item-description-column text-column">
+                                                        <div class="column-title">
+                                                            Расположение
+                                                        </div>
+
+                                                        <div class="column-value">
+                                                            {{ image.location }}
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="item-description-column text-column">
+                                                        <div class="column-title">
+                                                            Характеристики
+                                                        </div>
+
+                                                        <div class="column-value">
+                                                            {{ image.characteristic }}
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="item-description-row">
+                                                    <div class="item-description-column checkbox-column">
+                                                        <div class="column-title">
+                                                            Моё
+                                                        </div>
+
+                                                        <div class="column-value">
+                                                            <svg *ngIf="image.isMine" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <g clip-path="url(#clip0)">
+                                                                    <path d="M6.12669 13.9774C5.97396 14.131 5.76558 14.2167 5.54913 14.2167C5.33267 14.2167 5.1243 14.131 4.97157 13.9774L0.359012 9.36408C-0.119671 8.8854 -0.119671 8.10919 0.359012 7.6314L0.936573 7.05369C1.4154 6.57501 2.19072 6.57501 2.6694 7.05369L5.54913 9.93357L13.3306 2.15198C13.8094 1.6733 14.5855 1.6733 15.0634 2.15198L15.641 2.72969C16.1196 3.20837 16.1196 3.98444 15.641 4.46237L6.12669 13.9774Z" fill="#389A71"/>
+                                                                </g>
+
+                                                                <defs>
+                                                                    <clipPath id="clip0">
+                                                                        <rect width="16" height="16" fill="white"/>
+                                                                    </clipPath>
+                                                                </defs>
+                                                            </svg>
+
+                                                            <svg *ngIf="!image.isMine" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M8 0C3.58887 0 0 3.58887 0 8C0 12.4111 3.58887 16 8 16C12.4111 16 16 12.4111 16 8C16 3.58887 12.4111 0 8 0ZM8 14C4.69172 14 2 11.3083 2 8C2 6.73731 2.38281 5.54362 3.11069 4.52506L11.4749 12.8893C10.4564 13.6172 9.26269 14 8 14ZM12.8893 11.4749L4.52506 3.11069C5.54362 2.38281 6.73731 2 8 2C11.3083 2 14 4.69172 14 8C14 9.26269 13.6172 10.4564 12.8893 11.4749Z" fill="#B6C5BC"/>
+                                                            </svg>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="item-description-column checkbox-column">
+                                                        <div class="column-title">
+                                                            Я сделал
+                                                        </div>
+
+                                                        <div class="column-value">
+                                                            <svg *ngIf="image.isIDo" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <g clip-path="url(#clip0)">
+                                                                    <path d="M6.12669 13.9774C5.97396 14.131 5.76558 14.2167 5.54913 14.2167C5.33267 14.2167 5.1243 14.131 4.97157 13.9774L0.359012 9.36408C-0.119671 8.8854 -0.119671 8.10919 0.359012 7.6314L0.936573 7.05369C1.4154 6.57501 2.19072 6.57501 2.6694 7.05369L5.54913 9.93357L13.3306 2.15198C13.8094 1.6733 14.5855 1.6733 15.0634 2.15198L15.641 2.72969C16.1196 3.20837 16.1196 3.98444 15.641 4.46237L6.12669 13.9774Z" fill="#389A71"/>
+                                                                </g>
+
+                                                                <defs>
+                                                                    <clipPath id="clip0">
+                                                                        <rect width="16" height="16" fill="white"/>
+                                                                    </clipPath>
+                                                                </defs>
+                                                            </svg>
+
+                                                            <svg *ngIf="!image.isIDo" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M8 0C3.58887 0 0 3.58887 0 8C0 12.4111 3.58887 16 8 16C12.4111 16 16 12.4111 16 8C16 3.58887 12.4111 0 8 0ZM8 14C4.69172 14 2 11.3083 2 8C2 6.73731 2.38281 5.54362 3.11069 4.52506L11.4749 12.8893C10.4564 13.6172 9.26269 14 8 14ZM12.8893 11.4749L4.52506 3.11069C5.54362 2.38281 6.73731 2 8 2C11.3083 2 14 4.69172 14 8C14 9.26269 13.6172 10.4564 12.8893 11.4749Z" fill="#B6C5BC"/>
+                                                            </svg>                                                            
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="item-description-column checkbox-column">
+                                                        <div class="column-title">
+                                                            Пусть будет всегда
+                                                        </div>
+
+                                                        <div class="column-value">
+                                                            <svg *ngIf="image.isForever" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <g clip-path="url(#clip0)">
+                                                                    <path d="M6.12669 13.9774C5.97396 14.131 5.76558 14.2167 5.54913 14.2167C5.33267 14.2167 5.1243 14.131 4.97157 13.9774L0.359012 9.36408C-0.119671 8.8854 -0.119671 8.10919 0.359012 7.6314L0.936573 7.05369C1.4154 6.57501 2.19072 6.57501 2.6694 7.05369L5.54913 9.93357L13.3306 2.15198C13.8094 1.6733 14.5855 1.6733 15.0634 2.15198L15.641 2.72969C16.1196 3.20837 16.1196 3.98444 15.641 4.46237L6.12669 13.9774Z" fill="#389A71"/>
+                                                                </g>
+
+                                                                <defs>
+                                                                    <clipPath id="clip0">
+                                                                        <rect width="16" height="16" fill="white"/>
+                                                                    </clipPath>
+                                                                </defs>
+                                                            </svg>
+
+                                                            <svg *ngIf="!image.isForever" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M8 0C3.58887 0 0 3.58887 0 8C0 12.4111 3.58887 16 8 16C12.4111 16 16 12.4111 16 8C16 3.58887 12.4111 0 8 0ZM8 14C4.69172 14 2 11.3083 2 8C2 6.73731 2.38281 5.54362 3.11069 4.52506L11.4749 12.8893C10.4564 13.6172 9.26269 14 8 14ZM12.8893 11.4749L4.52506 3.11069C5.54362 2.38281 6.73731 2 8 2C11.3083 2 14 4.69172 14 8C14 9.26269 13.6172 10.4564 12.8893 11.4749Z" fill="#B6C5BC"/>
+                                                            </svg>                                                            
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="item-description-column relation-column" *ngIf="getImageRelation(image)">
+                                                        <div class="column-title">
+                                                            Убрать
+                                                        </div>
+                                                        
+                                                        <div class="column-value">
+                                                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M8 0C3.58887 0 0 3.58887 0 8C0 12.4111 3.58887 16 8 16C12.4111 16 16 12.4111 16 8C16 3.58887 12.4111 0 8 0ZM8 14C4.69172 14 2 11.3083 2 8C2 6.73731 2.38281 5.54362 3.11069 4.52506L11.4749 12.8893C10.4564 13.6172 9.26269 14 8 14ZM12.8893 11.4749L4.52506 3.11069C5.54362 2.38281 6.73731 2 8 2C11.3083 2 14 4.69172 14 8C14 9.26269 13.6172 10.4564 12.8893 11.4749Z" fill="#B6C5BC"/>
+                                                            </svg>
+                                                            
+                                                            <div class="related-image">
+                                                                <div class="text">
+                                                                    Зависит от “{{ getImageRelation(image).title }}”
+                                                                </div>
+
+                                                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                    <path d="M10.9389 5.85205L7.81395 2.72706C7.73257 2.64567 7.60073 2.64567 7.51936 2.72706C7.43798 2.80844 7.43798 2.94028 7.51936 3.02164L10.2887 5.79102H1.20834C1.09318 5.79102 1 5.8842 1 5.99936C1 6.11451 1.09318 6.20769 1.20834 6.20769H10.2887L7.51936 8.97705C7.43798 9.05843 7.43798 9.19027 7.51936 9.27163C7.56005 9.31232 7.61337 9.33267 7.66667 9.33267C7.71997 9.33267 7.77327 9.31232 7.81397 9.27163L10.939 6.14664C11.0203 6.06527 11.0203 5.93344 10.9389 5.85205Z" fill="#B6C5BC" stroke="#B6C5BC" stroke-width="0.5"/>
+                                                                </svg>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="item-description-column relation-column" *ngIf="!getImageRelation(image) && image.parentImage && !image.parentImage.isHidden">
+                                                        <div class="column-title">
+                                                            Убрать
+                                                        </div>
+                                                        
+                                                        <div class="column-value">
+                                                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M8 0C3.58887 0 0 3.58887 0 8C0 12.4111 3.58887 16 8 16C12.4111 16 16 12.4111 16 8C16 3.58887 12.4111 0 8 0ZM8 14C4.69172 14 2 11.3083 2 8C2 6.73731 2.38281 5.54362 3.11069 4.52506L11.4749 12.8893C10.4564 13.6172 9.26269 14 8 14ZM12.8893 11.4749L4.52506 3.11069C5.54362 2.38281 6.73731 2 8 2C11.3083 2 14 4.69172 14 8C14 9.26269 13.6172 10.4564 12.8893 11.4749Z" fill="#B6C5BC"/>
+                                                            </svg>
+                                                            
+                                                            <div class="related-image">
+                                                                <div class="text">
+                                                                    Влияет на “{{ image.parentImage.title }}”
+                                                                </div>
+
+                                                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                    <path d="M10.9389 5.85205L7.81395 2.72706C7.73257 2.64567 7.60073 2.64567 7.51936 2.72706C7.43798 2.80844 7.43798 2.94028 7.51936 3.02164L10.2887 5.79102H1.20834C1.09318 5.79102 1 5.8842 1 5.99936C1 6.11451 1.09318 6.20769 1.20834 6.20769H10.2887L7.51936 8.97705C7.43798 9.05843 7.43798 9.19027 7.51936 9.27163C7.56005 9.31232 7.61337 9.33267 7.66667 9.33267C7.71997 9.33267 7.77327 9.31232 7.81397 9.27163L10.939 6.14664C11.0203 6.06527 11.0203 5.93344 10.9389 5.85205Z" fill="#B6C5BC" stroke="#B6C5BC" stroke-width="0.5"/>
+                                                                </svg>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="tab-content" *ngIf="activeTab == 'resources'">
+                                <div class="resources-list">
+                                    <div class="resources-list-item" *ngFor="let resource of assets.resources">
+                                        <div class="item-head">
+                                            <div class="item-title">
+                                                <div class="item-date">
+                                                    <div class="day">{{ resource.session.date | date: 'd' }}</div>
+                                                    <div class="month">{{ normalizeMonth(resource.session.date | date: 'MMM') }}</div>
+                                                </div>
+
+                                                <div class="item-name">
+                                                    <div class="name">
+                                                        {{ resource.title }}
+                                                    </div>
+                                                    
+                                                    <div class="like-score">
+                                                        <div class="like-score-section" [ngClass]="{'filled': resource.likeScore > 0}"></div>
+                                                        <div class="like-score-section" [ngClass]="{'filled': resource.likeScore > 1}"></div>
+                                                        <div class="like-score-section" [ngClass]="{'filled': resource.likeScore > 2}"></div>
+                                                        <div class="like-score-section" [ngClass]="{'filled': resource.likeScore > 3}"></div>
+                                                        <div class="like-score-section" [ngClass]="{'filled': resource.likeScore > 4}"></div>
+                                                        <div class="like-score-section" [ngClass]="{'filled': resource.likeScore > 5}"></div>
+                                                        <div class="like-score-section" [ngClass]="{'filled': resource.likeScore > 6}"></div>
+                                                        <div class="like-score-section" [ngClass]="{'filled': resource.likeScore > 7}"></div>
+                                                        <div class="like-score-section" [ngClass]="{'filled': resource.likeScore > 8}"></div>
+                                                        <div class="like-score-section" [ngClass]="{'filled': resource.likeScore > 9}"></div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="item-specialist">
+                                                    <div class="specialist-photo">
+                                                        <img [src]="resource.session.specialist.user.photo.url" />
+                                                    </div>
+
+                                                    <div class="specialist-name">
+                                                        {{ resource.session.specialist.user.firstName }} {{ resource.session.specialist.user.lastName }}
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="item-actions">
+                                                
+                                            </div>
+                                        </div>
+
+                                        <div class="item-body">
+                                            <div class="item-description">
+                                                <div class="item-description-block">
+                                                    <div class="item-description-row">
+                                                        <div class="row-title">
+                                                            Эмоция / Ресурс
+                                                        </div>
+                                                        
+                                                        <div class="row-value">
+                                                            {{ resource.emotion }}
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="item-description-row">
+                                                        <div class="row-title">
+                                                            Расположение
+                                                        </div>
+                                                        
+                                                        <div class="row-value">
+                                                            {{ resource.location }}
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="item-description-row">
+                                                        <div class="row-title">
+                                                            Характеристики
+                                                        </div>
+                                                        
+                                                        <div class="row-value">
+                                                            {{ resource.characteristic }}
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="item-description-row">
+                                                        <div class="row-title">
+                                                            На что влияет
+                                                        </div>
+                                                        
+                                                        <div class="row-value">
+                                                            {{ resource.influence }}
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="item-description-block">
+                                                    <div class="item-description-row">
+                                                        <div class="row-title">
+                                                            Что хочется сделать
+                                                        </div>
+                                                        
+                                                        <div class="row-value">
+                                                            <div class="num-list">
+                                                                <div class="num-list-item" *ngFor="let task of resource.tasks; let index = index" [ngClass]="{'checked': task.isDone}">
+                                                                    <div class="num-item-title">
+                                                                        <div class="num-item-index">
+                                                                            {{ index + 1 }}
+                                                                        </div>
+                                                                        
+                                                                        {{ task.title }}
+                                                                    </div>
+
+                                                                    <div class="num-item-checked">
+                                                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                            <g clip-path="url(#clip0)">
+                                                                                <path d="M5.77381 13.6245L5.77279 13.6256C5.71474 13.6839 5.63417 13.7177 5.54913 13.7177C5.46409 13.7177 5.38351 13.6839 5.32547 13.6256L5.32446 13.6246L0.711906 9.01125L0.711877 9.01122C0.427893 8.72723 0.42837 8.26724 0.711546 7.9846L0.711923 7.98422L1.28938 7.40661C1.28942 7.40658 1.28945 7.40654 1.28948 7.40651C1.57348 7.12271 2.03279 7.12282 2.31653 7.40655C2.31653 7.40655 2.31654 7.40655 2.31654 7.40656L5.19625 10.2864L5.54912 10.6393L5.902 10.2864L13.6834 2.5049C13.6834 2.50488 13.6834 2.50486 13.6834 2.50484C13.9676 2.22084 14.4275 2.22134 14.7103 2.50457L14.7105 2.5048L15.288 3.08251L15.2881 3.08256C15.572 3.36651 15.5716 3.82639 15.2884 4.10923L15.2881 4.10952L5.77381 13.6245Z" fill="#389A71" stroke="#389A71" stroke-width="0.998053"/>
+                                                                            </g>
+
+                                                                            <defs>
+                                                                                <clipPath id="clip0">
+                                                                                    <rect width="16" height="16" fill="white"/>
+                                                                                </clipPath>
+                                                                            </defs>
+                                                                        </svg>                                                                                
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="tab-content" *ngIf="activeTab == 'sessions'">
+                                <div class="sessions-list" *ngIf="sessions">
+                                    <div class="sessions-list-item" *ngFor="let session of sessions">
+                                        <div class="sessions-list-item-inner">
+
+                                            <div class="item-title">
+                                                <div class="item-date">
+                                                    <div class="day">{{ session.date | date: 'd' }}</div>
+                                                    <div class="month">{{ normalizeMonth(session.date | date: 'MMM') }}</div>
+                                                </div>
+
+                                                <div class="item-specialist">
+                                                    <div class="specialist-photo">
+                                                        <img [src]="session.specialist.user.photo.url" />
+                                                    </div>
+
+                                                    <div class="specialist-name" [routerLink]="['/specialists', session.specialist.id]">
+                                                        {{ session.specialist.user.firstName }} {{ session.specialist.user.lastName }}
+                                                    </div>
+
+                                                    <div class="specialist-rating">
+                                                        <app-rating [score]="session.specialist.rating" [single]="true" [size]="18"></app-rating>
+
+                                                        <div class="rating-score">
+                                                            {{ session.specialist.rating }}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="item-rating">
+                                                <div class="item-score">
+                                                    <div class="title">
+                                                        Оценка
+                                                    </div>
+
+                                                    <div class="score">
+                                                        <app-review-score [score]="session.reviewScore"></app-review-score>
+                                                    </div>
+                                                </div>
+
+                                                <div class="item-review" (click)="routeToReview(session)">
+                                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M3 2.5H13C13.5515 2.5 14 2.9485 14 3.5V9.5C14 10.0515 13.5515 10.5 13 10.5H12.5V12.7495C12.5 13.046 12.3328 13.307 12.0633 13.431C11.9613 13.478 11.854 13.5007 11.7477 13.5007C11.5732 13.5007 11.4015 13.4387 11.2615 13.3185C11.255 13.313 11.2485 13.3073 11.2422 13.3012L8.3 10.5H3C2.4485 10.5 2 10.0515 2 9.5V3.5C2 2.9485 2.4485 2.5 3 2.5ZM3 9.5H8.5C8.6285 9.5 8.75175 9.54925 8.84475 9.638L11.5 12.1657V10C11.5 9.724 11.724 9.5 12 9.5H13V3.5H3V9.5Z" fill="#89A195"/>
+                                                    </svg>
+                                                    
+                                                    Отзыв
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- <div class="session-info">
+                                            <div class="session-date">
+                                                <div class="day">
+                                                    {{ session.date | date: 'd' }}
+                                                </div>
+
+                                                <div class="month">
+                                                    {{ normalizeMonth(session.date | date: 'MMM') }}
+                                                </div>
+                                            </div>
+
+                                            <div class="session-specialist">
+                                                <div class="specialist-photo">
+                                                    <img [src]="session.specialist.user.photo.url" />
+                                                </div>
+
+                                                <div class="specialist-name-rating">
+                                                    <div class="specialist-name">
+                                                        {{ session.specialist.user.firstName }} {{ session.specialist.user.lastName }}
+                                                    </div>
+    
+                                                    <div class="specialist-rating">
+                                                        <app-rating [score]="session.specialist.rating" [single]="true" [size]="18"></app-rating>
+    
+                                                        {{ session.specialist.rating }}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="session-review">
+                                            <div class="session-score">
+                                                <div class="title">
+                                                    Оценка
+                                                </div>
+
+                                                <div class="score">
+                                                    <img src="../../../../assets/images/star.svg" />
+                                                    <img src="../../../../assets/images/star.svg" />
+                                                    <img src="../../../../assets/images/star.svg" />
+                                                    <img src="../../../../assets/images/star.svg" />
+                                                    <img src="../../../../assets/images/star.svg" />
+                                                </div>
+                                            </div>
+
+                                            <div class="session-review-button">
+                                                <button type="button">
+                                                    <div class="icon">
+                                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M3 2.5H13C13.5515 2.5 14 2.9485 14 3.5V9.5C14 10.0515 13.5515 10.5 13 10.5H12.5V12.7495C12.5 13.046 12.3328 13.307 12.0633 13.431C11.9613 13.478 11.854 13.5007 11.7477 13.5007C11.5732 13.5007 11.4015 13.4387 11.2615 13.3185C11.255 13.313 11.2485 13.3073 11.2422 13.3012L8.3 10.5H3C2.4485 10.5 2 10.0515 2 9.5V3.5C2 2.9485 2.4485 2.5 3 2.5ZM3 9.5H8.5C8.6285 9.5 8.75175 9.54925 8.84475 9.638L11.5 12.1657V10C11.5 9.724 11.724 9.5 12 9.5H13V3.5H3V9.5Z" fill="#89A195"/>
+                                                        </svg>
+                                                    </div>
+
+                                                    Отзыв
+                                                </button>
+                                            </div>
+                                        </div> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </content>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <app-footer></app-footer>
+</div>

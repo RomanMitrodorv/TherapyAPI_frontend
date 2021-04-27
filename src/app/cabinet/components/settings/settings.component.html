@@ -1,0 +1,91 @@
+<div class="page-wrapper">
+
+    <!-- Header -->
+    <profile-header [userChanged]="changeUserSubject"></profile-header>
+
+    <div class="container">
+        <div class="content-wrapper">
+            <profile-sidebar></profile-sidebar>
+
+            <content>
+                <div class="content-wrapper" *ngIf="user">
+                    <div class="page-head-mobile">
+                        Настройки
+                    </div>
+
+                    <div class="avatar-block">
+                        <div class="avatar-block-inner avatar-empty" *ngIf="!settingsForm.value['avatar']" draggable="true" ngClass="{{dragAreaClass}}">
+                            <div class="upload-button-block" (click)="avatar.click()">
+                                <div class="icon">
+                                    <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M32 64C24.4231 64 17.0742 61.3045 11.3071 56.4099C9.953 55.2614 8.68275 53.988 7.532 52.6255C2.67462 46.868 0 39.5434 0 32C0 23.4524 3.3285 15.4165 9.3725 9.3725C15.4165 3.3285 23.4524 0 32 0C40.5476 0 48.5835 3.3285 54.6275 9.3725C60.6715 15.4165 64 23.4524 64 32C64 39.5435 61.3254 46.8681 56.4686 52.6247C55.3172 53.988 54.047 55.2614 52.6925 56.4103C46.9258 61.3045 39.5769 64 32 64ZM32 4C16.5607 4 4 16.5607 4 32C4 38.6006 6.33987 45.0093 10.5886 50.0454C11.5961 51.2383 12.7088 52.3536 13.895 53.3599C18.9405 57.6419 25.3701 60 32 60C38.6299 60 45.0595 57.6419 50.1046 53.3601C51.2913 52.3536 52.4039 51.2381 53.412 50.0445C57.6601 45.0094 60 38.6007 60 32C60 16.5607 47.4393 4 32 4Z" fill="#DEE7E2"/>
+                                        <path d="M32 32C25.3831 32 20 26.6169 20 20C20 13.3831 25.3831 8 32 8C38.6169 8 44 13.3831 44 20C44 26.6169 38.6169 32 32 32ZM32 12C27.5887 12 24 15.5887 24 20C24 24.4113 27.5887 28 32 28C36.4113 28 40 24.4113 40 20C40 15.5887 36.4113 12 32 12Z" fill="#DEE7E2"/>
+                                        <path d="M51.4002 56.8855C51.239 56.8855 51.0753 56.8659 50.9118 56.8249C49.8405 56.556 49.19 55.4695 49.4589 54.3981C49.8179 52.9677 50 51.488 50 50C50 40.2144 42.0443 32.1418 32.2634 32.0013L32 32L31.7366 32.0013C21.9558 32.1418 14 40.2144 14 50C14 51.488 14.1821 52.9677 14.5411 54.3981C14.81 55.4695 14.1595 56.556 13.0883 56.8249C12.017 57.0937 10.9304 56.4434 10.6615 55.372C10.2225 53.6234 10 51.816 10 50C10 44.1777 12.2521 38.6896 16.3415 34.5462C20.4269 30.407 25.8771 28.0827 31.6882 28.0015C31.6976 28.0014 31.7069 28.0014 31.7162 28.0014L32 28L32.2837 28.0012C32.2931 28.0012 32.3024 28.0013 32.3117 28.0014C38.1229 28.0825 43.5731 30.4069 47.6585 34.5461C51.7479 38.6896 54 44.1777 54 50C54 51.816 53.7775 53.6234 53.3385 55.372C53.1106 56.2797 52.2956 56.8854 51.4002 56.8855Z" fill="#DEE7E2"/>
+                                    </svg>                                        
+                                </div>
+
+                                <div class="text">
+                                    Загрузить аватар
+                                </div>
+
+                                <input type="file" #avatar (input)="setPreviewImage($event.target.files)" />
+                            </div>
+                        </div>
+
+                        <div class="avatar-block-inner avatar-exist" *ngIf="settingsForm.value['avatar']">
+                            <div class="photo">
+                                <img [src]="settingsForm.value['avatar']" />
+                            </div>
+
+                            <div class="delete-button" (click)="deletePhoto()">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M13.25 2H10.5V1.5C10.5 0.672906 9.82709 0 9 0H7C6.17291 0 5.5 0.672906 5.5 1.5V2H2.75C2.06075 2 1.5 2.56075 1.5 3.25V5C1.5 5.27612 1.72387 5.5 2 5.5H2.27325L2.70522 14.5713C2.74338 15.3725 3.4015 16 4.2035 16H11.7965C12.5985 16 13.2567 15.3725 13.2948 14.5713L13.7268 5.5H14C14.2761 5.5 14.5 5.27612 14.5 5V3.25C14.5 2.56075 13.9392 2 13.25 2ZM6.5 1.5C6.5 1.22431 6.72431 1 7 1H9C9.27569 1 9.5 1.22431 9.5 1.5V2H6.5V1.5ZM2.5 3.25C2.5 3.11216 2.61216 3 2.75 3H13.25C13.3878 3 13.5 3.11216 13.5 3.25V4.5C13.3459 4.5 3.13853 4.5 2.5 4.5V3.25ZM12.2959 14.5238C12.2832 14.7908 12.0638 15 11.7965 15H4.2035C3.93616 15 3.71678 14.7908 3.70409 14.5238L3.27437 5.5H12.7256L12.2959 14.5238Z" fill="white"/>
+                                    <path d="M8 14C8.27613 14 8.5 13.7761 8.5 13.5V7C8.5 6.72387 8.27613 6.5 8 6.5C7.72387 6.5 7.5 6.72387 7.5 7V13.5C7.5 13.7761 7.72384 14 8 14Z" fill="white"/>
+                                    <path d="M10.5 14C10.7761 14 11 13.7761 11 13.5V7C11 6.72387 10.7761 6.5 10.5 6.5C10.2239 6.5 10 6.72387 10 7V13.5C10 13.7761 10.2238 14 10.5 14Z" fill="white"/>
+                                    <path d="M5.5 14C5.77613 14 6 13.7761 6 13.5V7C6 6.72387 5.77613 6.5 5.5 6.5C5.22387 6.5 5 6.72387 5 7V13.5C5 13.7761 5.22384 14 5.5 14Z" fill="white"/>
+                                </svg>                                    
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="settings-block">
+                        <div class="block-head">
+                            Настройки
+                        </div>
+
+                        <div class="block-content">
+                            <div class="settings-form">
+                                <form [formGroup]="settingsForm" (ngSubmit)="saveSettings(settingsForm)">
+                                    <div class="form-group">
+                                        <input type="text" #firstName formControlName="firstName" required [ngClass]="{
+                                            'error': settingsForm.controls['firstName'].invalid && settingsForm.controls['firstName'].touched
+                                        }" />
+                                        <label (click)="labelClick('firstName')">Имя</label>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <input type="text" #lastName formControlName="lastName" required [ngClass]="{
+                                            'error': settingsForm.controls['lastName'].invalid && settingsForm.controls['lastName'].touched
+                                        }" />
+                                        <label (click)="labelClick('lastName')">Фамилия</label>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <button type="submit" *ngIf="!isLoading" class="button-green" [ngClass]="{'button-disabled': !isFormValid()}" [disabled]="!isFormValid()">Сохранить</button>
+                    
+                                        <button *ngIf="isLoading" class="button-green" disabled>
+                                            <mat-spinner [diameter]="40"></mat-spinner>
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </content>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <app-footer [userChanged]="changeUserSubject"></app-footer>
+</div>

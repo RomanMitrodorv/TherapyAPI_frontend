@@ -1,0 +1,132 @@
+<div class="page-wrapper">
+
+    <!-- Header -->
+    <profile-header></profile-header>
+
+    <div class="container">
+        <div class="content-wrapper">
+            <profile-sidebar></profile-sidebar>
+
+            <content>
+                <div class="button-back">
+                    <button type="button" (click)="prevRoute()">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16.875 10.625H4.40656L9.18094 15.1725C9.43094 15.4106 9.44063 15.8063 9.2025 16.0563C8.96469 16.3059 8.56906 16.3159 8.31875 16.0778L2.86625 10.8841C2.63031 10.6478 2.5 10.3341 2.5 10C2.5 9.66625 2.63031 9.35219 2.87719 9.10563L8.31906 3.9225C8.44 3.80719 8.595 3.75 8.75 3.75C8.915 3.75 9.08 3.815 9.20281 3.94406C9.44094 4.19406 9.43125 4.58938 9.18125 4.8275L4.38688 9.375H16.875C17.22 9.375 17.5 9.655 17.5 10C17.5 10.345 17.22 10.625 16.875 10.625Z" fill="#5BAA89"/>
+                        </svg>                            
+
+                        Назад
+                    </button>
+                </div>
+
+                <!-- Page Head -->
+                <div class="page-head">
+
+                    <!-- Title -->
+                    <div class="page-title">
+                        <h2>Выбор специалиста</h2>
+                    </div>
+
+                    <!-- Filters -->
+                    <div class="page-filters">
+                        <div class="filter count">
+                            <div class="filter-title">На странице</div>
+
+                            <div class="filter-values">
+                                <div (click)="setPageSize(6)" [ngClass]="{'active': pageSize == 6}">6</div>
+                                <div (click)="setPageSize(12)" [ngClass]="{'active': pageSize == 12}">12</div>
+                                <div (click)="setPageSize(24)" [ngClass]="{'active': pageSize == 24}">24</div>
+                                <div (click)="setPageSize(48)" [ngClass]="{'active': pageSize == 48}">48</div>
+                            </div>
+                        </div>
+
+                        <div class="filter sorter">
+                            <div class="filter-values">
+                                <div [ngClass]="{'active': sorter == 2}" (click)="setSorter(2)">
+                                    Рейтинг
+
+                                    <svg *ngIf="sorter == 2 && sortBy == 1" width="16" height="16" viewBox="0 0 16 16"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M8.49988 13.5L8.49988 3.52525L12.1379 7.34475C12.3284 7.54475 12.6449 7.5525 12.8449 7.362C13.0446 7.17175 13.0526 6.85525 12.8621 6.655L8.70713 2.293C8.51813 2.10425 8.26713 2 7.99988 2C7.73288 2 7.48163 2.10425 7.28438 2.30175L3.13788 6.65525C3.04563 6.752 2.99988 6.876 2.99988 7C2.99988 7.132 3.05188 7.264 3.15513 7.36225C3.35513 7.55275 3.67138 7.545 3.86188 7.345L7.49988 3.5095L7.49988 13.5C7.49988 13.776 7.72388 14 7.99988 14C8.27588 14 8.49988 13.776 8.49988 13.5Z"
+                                            fill="#005264" />
+                                    </svg>
+
+                                    <svg *ngIf="sorter == 2 && sortBy == 2" style="transform: rotate(180deg);"
+                                        width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M8.49988 13.5L8.49988 3.52525L12.1379 7.34475C12.3284 7.54475 12.6449 7.5525 12.8449 7.362C13.0446 7.17175 13.0526 6.85525 12.8621 6.655L8.70713 2.293C8.51813 2.10425 8.26713 2 7.99988 2C7.73288 2 7.48163 2.10425 7.28438 2.30175L3.13788 6.65525C3.04563 6.752 2.99988 6.876 2.99988 7C2.99988 7.132 3.05188 7.264 3.15513 7.36225C3.35513 7.55275 3.67138 7.545 3.86188 7.345L7.49988 3.5095L7.49988 13.5C7.49988 13.776 7.72388 14 7.99988 14C8.27588 14 8.49988 13.776 8.49988 13.5Z"
+                                            fill="#005264" />
+                                    </svg>
+                                </div>
+
+                                <div [ngClass]="{'active': sorter == 3}" (click)="setSorter(3)">
+                                    Проведено
+
+                                    <svg *ngIf="sorter == 3 && sortBy == 1" width="16" height="16" viewBox="0 0 16 16"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M8.49988 13.5L8.49988 3.52525L12.1379 7.34475C12.3284 7.54475 12.6449 7.5525 12.8449 7.362C13.0446 7.17175 13.0526 6.85525 12.8621 6.655L8.70713 2.293C8.51813 2.10425 8.26713 2 7.99988 2C7.73288 2 7.48163 2.10425 7.28438 2.30175L3.13788 6.65525C3.04563 6.752 2.99988 6.876 2.99988 7C2.99988 7.132 3.05188 7.264 3.15513 7.36225C3.35513 7.55275 3.67138 7.545 3.86188 7.345L7.49988 3.5095L7.49988 13.5C7.49988 13.776 7.72388 14 7.99988 14C8.27588 14 8.49988 13.776 8.49988 13.5Z"
+                                            fill="#005264" />
+                                    </svg>
+
+                                    <svg *ngIf="sorter == 3 && sortBy == 2" style="transform: rotate(180deg);"
+                                        width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M8.49988 13.5L8.49988 3.52525L12.1379 7.34475C12.3284 7.54475 12.6449 7.5525 12.8449 7.362C13.0446 7.17175 13.0526 6.85525 12.8621 6.655L8.70713 2.293C8.51813 2.10425 8.26713 2 7.99988 2C7.73288 2 7.48163 2.10425 7.28438 2.30175L3.13788 6.65525C3.04563 6.752 2.99988 6.876 2.99988 7C2.99988 7.132 3.05188 7.264 3.15513 7.36225C3.35513 7.55275 3.67138 7.545 3.86188 7.345L7.49988 3.5095L7.49988 13.5C7.49988 13.776 7.72388 14 7.99988 14C8.27588 14 8.49988 13.776 8.49988 13.5Z"
+                                            fill="#005264" />
+                                    </svg>
+                                </div>
+
+                                <div [ngClass]="{'active': sorter == 1}" (click)="setSorter(1)">
+                                    Цена
+
+                                    <svg *ngIf="sorter == 1 && sortBy == 1" width="16" height="16" viewBox="0 0 16 16"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M8.49988 13.5L8.49988 3.52525L12.1379 7.34475C12.3284 7.54475 12.6449 7.5525 12.8449 7.362C13.0446 7.17175 13.0526 6.85525 12.8621 6.655L8.70713 2.293C8.51813 2.10425 8.26713 2 7.99988 2C7.73288 2 7.48163 2.10425 7.28438 2.30175L3.13788 6.65525C3.04563 6.752 2.99988 6.876 2.99988 7C2.99988 7.132 3.05188 7.264 3.15513 7.36225C3.35513 7.55275 3.67138 7.545 3.86188 7.345L7.49988 3.5095L7.49988 13.5C7.49988 13.776 7.72388 14 7.99988 14C8.27588 14 8.49988 13.776 8.49988 13.5Z"
+                                            fill="#005264" />
+                                    </svg>
+
+                                    <svg *ngIf="sorter == 1 && sortBy == 2" style="transform: rotate(180deg);"
+                                        width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M8.49988 13.5L8.49988 3.52525L12.1379 7.34475C12.3284 7.54475 12.6449 7.5525 12.8449 7.362C13.0446 7.17175 13.0526 6.85525 12.8621 6.655L8.70713 2.293C8.51813 2.10425 8.26713 2 7.99988 2C7.73288 2 7.48163 2.10425 7.28438 2.30175L3.13788 6.65525C3.04563 6.752 2.99988 6.876 2.99988 7C2.99988 7.132 3.05188 7.264 3.15513 7.36225C3.35513 7.55275 3.67138 7.545 3.86188 7.345L7.49988 3.5095L7.49988 13.5C7.49988 13.776 7.72388 14 7.99988 14C8.27588 14 8.49988 13.776 8.49988 13.5Z"
+                                            fill="#005264" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Page Content -->
+                <div class="page-content">
+                    <div class="specialists-loader" [ngClass]="{'visible': isLoading}">
+                        <div class="loader-wrapper">
+                            <mat-spinner [diameter]="80"></mat-spinner>
+                        </div>
+                    </div>
+
+                    <div class="specialists-list" *ngIf="specialists">
+                        <div class="flex-row">
+                            <app-specialist-card *ngFor="let specialist of specialists" [specialist]="specialist" (choosed)="chooseSpecialist($event)">
+                            </app-specialist-card>
+                        </div>
+                    </div>
+
+                    <!-- Pagination -->
+                    <div class="specialists-pagination">
+                        <app-pagination [currentPage]="pageNumber" [totalPages]="totalPages"
+                            (onChanged)="setPageNumber($event)"></app-pagination>
+                    </div>
+                </div>
+            </content>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <app-footer></app-footer>
+</div>

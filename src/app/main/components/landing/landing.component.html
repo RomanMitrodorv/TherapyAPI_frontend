@@ -1,0 +1,872 @@
+<div class="main-banner">
+    <landing-header></landing-header>
+    <div class="scroll-down wow"></div>
+    <div class="container">
+        <div class="flex-row">
+            <div class="main-banner-left">
+                <div class="event-row wow fadeInUp" data-wow-delay="0.6s">
+                    <div class="event-title">
+                        Бесплатный вебинар
+                    </div>
+
+                    <div class="event-date">
+                        <div class="event-day">
+                            2
+                        </div>
+
+                        <div class="event-month">
+                            апр
+                        </div>
+                    </div>
+
+                    <div class="event-time">
+                        <div class="event-hour">
+                            20:00
+                        </div>
+
+                        <div class="event-timezone">
+                            по Москве
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event-row-mobile wow fadeInUp" data-wow-delay="0.6s">
+                    <div class="event-title">
+                        Бесплатный вебинар
+                    </div>
+
+                    <div class="event-datetime">
+                        <div class="event-date">
+                            <div class="event-day">
+                                2
+                            </div>
+    
+                            <div class="event-month">
+                                апр
+                            </div>
+                        </div>
+    
+                        <div class="event-time">
+                            <div class="event-hour">
+                                20:00
+                            </div>
+    
+                            <div class="event-timezone">
+                                по Москве
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="banner-text wow fadeInUp" data-wow-delay="0.4s">
+                    <div class="text-top">
+                        Как получить востребованную удалённую профессию
+                    </div>
+
+                    <div class="text-main">
+                        Консультант по Корневой “Терапии”
+                    </div>
+
+                    <div class="text-bottom">
+                        Сделайте помощь людям своей профессией, работайте удалённо из любой точки мира и достойно зарабатывайте, просто разговаривая с людьми
+                    </div>
+                </div>
+
+                <div class="banner-button wow fadeInUp" data-wow-delay="0.6s">
+                    <button type="button" class="button-green button-icon modal-button" (click)="showWebinarDialog($event)">
+                        <img class="icon" src="../../../../assets/images/icon-check.svg" />
+                        Зарегистрироваться на вебинар
+                    </button>
+                </div>
+
+                <div class="banner-button-mobile wow fadeInUp" data-wow-delay="0.6s">
+                    <button type="button" class="button-green button-icon modal-button" (click)="showWebinarDialog($event)">
+                        <img class="icon" src="../../../../assets/images/icon-check.svg" />
+                        Зарегистрироваться
+                    </button>
+                </div>
+
+                <div class="main-banner-present-mobile wow fadeInUp" data-wow-delay="0.6s">
+                    <div class="present-text">
+                        <div class="head"> 
+                            Подарок при регистрации: запись мастер–класса
+                        </div>
+        
+                        <div class="content">
+                            «Как консультанту сделать денежный поток регулярным и постоянным»
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="main-banner-right">
+                <img class="girl wow fadeInRight" src="../../../../assets/images/girl.svg" />
+
+                <div class="main-banner-present wow tada fadeInDown" data-wow-delay="1.5s" [ngClass] = "{
+                    'mainBannerPresentShow': isShowMainBannerPresent,
+                    'mainBannerPresentHidden': !isShowMainBannerPresent
+                }">
+                    <div class="file-info">
+                        <div class="icon">
+                            <img src="../../../../assets/images/icon-mp4.svg" alt="MP4" />
+                        </div>
+        
+                        <div class="size">
+                            238 MB
+                        </div>
+        
+                        <div class="length">
+                            01:45:14
+                        </div>
+                    </div>
+        
+                    <div class="present-text">
+                        <div class="head">
+                            Подарок при регистрации: запись мастер–класса
+                        </div>
+        
+                        <div class="content">
+                            «Как консультанту сделать денежный поток
+                            <br />
+                            регулярным и постоянным»
+                        </div>
+                    </div>
+        
+                    <div class="submit-button" (click)="hideMainBannerPresent()">
+                        <a>OK</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="main-banner-mobile">
+                <img src="../../../../assets/images/girl-mobile.svg" />
+            </div>
+        </div>
+    </div>
+
+    <div class="main-banner-laptop">
+        <div class="container">
+            <div class="main-banner-present" [ngClass] = "{
+                'mainBannerPresentShow': isShowMainBannerPresent,
+                'mainBannerPresentHidden': !isShowMainBannerPresent
+            }">
+                <div class="file-info">
+                    <div class="icon">
+                        <img src="../../../../assets/images/icon-mp4.svg" alt="MP4" />
+                    </div>
+    
+                    <div class="size">
+                        238 MB
+                    </div>
+    
+                    <div class="length">
+                        01:45:14
+                    </div>
+                </div>
+    
+                <div class="present-text">
+                    <div class="head">
+                        Подарок при регистрации: запись мастер–класса
+                    </div>
+    
+                    <div class="content">
+                        «Как консультанту сделать денежный поток
+                        <br />
+                        регулярным и постоянным»
+                    </div>
+                </div>
+    
+                <div class="submit-button">
+                    <a (click)="hideMainBannerPresent()">OK</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="girl-wrapper">
+            <img src="../../../../assets/images/girl-mobile.svg" />
+        </div>
+    </div>
+</div>
+
+<div class="what-is">
+    <div class="container">
+        <div class="flex-row wow fadeInUp" data-wow-offset="150">
+            <div class="illustration">
+                <img src="../../../../assets/images/what-is.svg" alt="Что такое Корневая Терапия?" />
+            </div>
+
+            <div class="what-is-text">
+                <div class="what-is-text-head">
+                    Что такое<br />Корневая Терапия?
+                </div>
+
+                <div class="what-is-text-bottom">
+                    Это соединение самых эффективных методик консультирования,
+                    Она направлена на работу с психически здоровыми людьми, 
+                    которые запутались в своих проблемах и переживаниях
+                </div>
+            </div>
+        </div>
+
+        <div class="illustration-laptop">
+            <img src="../../../../assets/images/what-is.svg" alt="Что такое Корневая Терапия?" />
+        </div>
+    </div>
+</div>
+
+<div class="idea">
+    <div class="container">
+        <div class="flex-row">
+            <div class="col-6 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="idea-block">
+                    <div class="idea-block-head">
+                        <img src="../../../../assets/images/icon-light.svg" style="position: relative; top: -2px;" />
+
+                        Базовая идея
+                    </div>
+
+                    <div class="idea-block-text">
+                        В основе Корневой «терапии» заложена идея о том, что с определённой поддержкой любой человек способен не только разобраться со всеми своими жизненными трудностями, но и достичь желаемых целей.
+                        <br />
+                        <br />
+                        Сделать это самостоятельно мешает негативное состояние, из-за которого человек не видит решения проблемы или не может его реализовать.
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 wow fadeInUp" data-wow-delay="0.6s">
+                <div class="idea-block">
+                    <div class="idea-block-head">
+                        <img src="../../../../assets/images/icon-presentation.svg" />
+
+                        Результат
+                    </div>
+
+                    <div class="idea-block-text">
+                        После консультации по Корневой «Терапии» качественно меняется состояние человека. Теперь ему будто всё по плечу: он видит и использует те решения, которых не замечал раньше из-за своего негативного состояния. Как следствие — человек легко справляется с трудностями и проблемами.
+                        <br />
+                        <br />
+                        Всего одна консультация приводит к результату, на достижение которого в классической психотерапии требуется минимум несколько месяцев или даже лет работы.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="profession">
+    <div class="container">
+        <div class="profession-head wow fadeInUp" data-wow-delay="0.1s">
+            Кому подходит эта профессия?
+        </div>
+
+        <div class="profession-head-mobile wow fadeInUp" data-wow-delay="0.1s">
+            Кому подходит
+            <br />
+            эта профессия?
+        </div>
+
+        <div class="profession-blocks">
+            <div class="flex-row">
+                <div class="col-3">
+                    <div class="profession-block wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="icon">
+                            <img src="../../../../assets/images/icon-relations.svg" />
+                        </div>
+
+                        <div class="profession-block-head">
+                            Психологам и коучам
+                        </div>
+
+                        <div class="profession-block-text">
+                            Вы получите доступ к системе, которая действительно работает и дает результат оперативно, а не через 5 лет терапии. 
+                        </div>
+
+                        <div class="profession-block-bottom">
+                            <a (click)="showWebinarDialog($event)">Зарегистрироваться</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-3">
+                    <div class="profession-block wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="icon">
+                            <img src="../../../../assets/images/icon-embrace.svg" />
+                        </div>
+
+                        <div class="profession-block-head">
+                            Мамам с детьми
+                        </div>
+
+                        <div class="profession-block-text">
+                            Вы можете быть успешной, независимой и обеспеченной женщиной, при этом иметь счастливую семью. 
+                        </div>
+
+                        <div class="profession-block-bottom">
+                            <a (click)="showWebinarDialog($event)">Приходите на вебинар<br />и узнайте как это сделать</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-3">
+                    <div class="profession-block wow fadeInUp" data-wow-delay="0.7s">
+                        <div class="icon">
+                            <img src="../../../../assets/images/icon-briefcase.svg" />
+                        </div>
+
+                        <div class="profession-block-head">
+                            Специалистам<br />в других областях
+                        </div>
+
+                        <div class="profession-block-text">
+                            Хотите помогать людям и реализоваться в новом направлении?
+                        </div>
+
+                        <div class="profession-block-bottom">
+                            <a (click)="showWebinarDialog($event)">Тогда добро пожаловать на вебинар!</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-3">
+                    <div class="profession-block wow fadeInUp" data-wow-delay="0.9s">
+                        <div class="icon">
+                            <img src="../../../../assets/images/icon-trophy.svg" />
+                        </div>
+
+                        <div class="profession-block-head">
+                            Тем, кто ищет призвание
+                        </div>
+
+                        <div class="profession-block-text">
+                            Корневая терапия — сфера, которая позволит раскрыть ваш потенциал и способности.
+                        </div>
+
+                        <div class="profession-block-bottom">
+                            <a (click)="showWebinarDialog($event)">Зарегистрироваться</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="profession-blocks-mobile">
+            <div class="flex-row">
+                <div class="profession-block wow fadeInUp" data-wow-delay="1.1s">
+                    <div class="icon">
+                        <img src="../../../../assets/images/icon-relations.svg" />
+                    </div>
+    
+                    <div class="profession-block-head">
+                        Психологам и коучам
+                    </div>
+    
+                    <div class="profession-block-text">
+                        Вы получите доступ к системе,
+                        <br />
+                        которая действительно работает и
+                        <br />
+                        дает результат оперативно, а не
+                        <br />
+                        через 5 лет терапии. 
+                    </div>
+    
+                    <div class="profession-block-bottom">
+                        <a (click)="showWebinarDialog($event)">Зарегистрироваться</a>
+                    </div>
+                </div>
+    
+                <div class="profession-block wow fadeInUp" data-wow-delay="1.3s">
+                    <div class="icon">
+                        <img src="../../../../assets/images/icon-embrace.svg" />
+                    </div>
+
+                    <div class="profession-block-head">
+                        Мамам с детьми
+                    </div>
+
+                    <div class="profession-block-text">
+                        Вы можете быть успешной,
+                        <br />
+                        независимой и обеспеченной
+                        <br />
+                        женщиной, при этом иметь
+                        <br />
+                        счастливую семью. 
+                    </div>
+
+                    <div class="profession-block-bottom">
+                        <a (click)="showWebinarDialog($event)">Приходите на вебинар<br />и узнайте как это сделать</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex-row">
+                <div class="profession-block wow fadeInUp" data-wow-delay="1.5s">
+                    <div class="icon">
+                        <img src="../../../../assets/images/icon-briefcase.svg" />
+                    </div>
+
+                    <div class="profession-block-head">
+                        Специалистам<br />в других областях
+                    </div>
+
+                    <div class="profession-block-text">
+                        Хотите помогать людям и
+                        <br />
+                        реализоваться в новом
+                        <br />
+                        направлении?
+                    </div>
+
+                    <div class="profession-block-bottom">
+                        <a (click)="showWebinarDialog($event)">Тогда добро пожаловать на вебинар!</a>
+                    </div>
+                </div>
+    
+                <div class="profession-block wow fadeInUp" data-wow-delay="1.7s">
+                    <div class="icon">
+                        <img src="../../../../assets/images/icon-trophy.svg" />
+                    </div>
+
+                    <div class="profession-block-head">
+                        Тем, кто ищет призвание
+                    </div>
+
+                    <div class="profession-block-text">
+                        Корневая терапия — сфера,
+                        <br />
+                        которая позволит раскрыть ваш
+                        <br />
+                        потенциал и способности.
+                    </div>
+
+                    <div class="profession-block-bottom">
+                        <a (click)="showWebinarDialog($event)">Зарегистрироваться</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="webinar-checklist">
+    <div class="container">
+        <div class="webinar-checklist-image-mobile">
+            <img src="../../../../assets/images/webinar-checklist-image-mobile.svg" />
+        </div>
+
+        <div class="webinar-checklist-head wow fadeInUp" data-wow-delay="0.1s">
+            На вебинаре Вы:
+        </div>
+
+        <div class="webinar-checklist-content">
+            <div class="flex-row">
+                <div class="list-left">
+                    <div class="list-item wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="icon">
+                            <img src="../../../../assets/images/icon-check-2.svg" />
+                        </div>
+
+                        <div class="text">
+                            Поймете подходит ли вам эта профессия и
+                            <br />
+                            сможете ли вы стать успешным консультантом
+                        </div>
+                    </div>
+
+                    <div class="list-item wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="icon">
+                            <img src="../../../../assets/images/icon-check-2.svg" />
+                        </div>
+
+                        <div class="text">
+                            Получите стратегию выхода на
+                            <br />
+                            стабильный доход в консультировании
+                        </div>
+                    </div>
+
+                    <div class="list-item wow fadeInUp" data-wow-delay="0.4s">
+                        <div class="icon">
+                            <img src="../../../../assets/images/icon-check-2.svg" />
+                        </div>
+
+                        <div class="text">
+                            Узнаете, как сформировать свою экспертность, стать
+                            <br />
+                            высокооплачиваемым и востребованным консультантом
+                        </div>
+                    </div>
+
+                    <div class="list-item wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="icon">
+                            <img src="../../../../assets/images/icon-check-2.svg" />
+                        </div>
+
+                        <div class="text">
+                            Получите пошаговый план привлечения клиентов,
+                            <br />
+                            которые хотят консультироваться именно у вас
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="list-right">
+                    <div class="list-item wow fadeInUp" data-wow-delay="0.6s">
+                        <div class="icon">
+                            <img src="../../../../assets/images/icon-check-2.svg" />
+                        </div>
+
+                        <div class="text">
+                            Узнаете, как делать продажи без продаж. Когда клиенты
+                            <br />
+                            сами платят, записывают отзывы и рекомендуют вас
+                        </div>
+                    </div>
+
+                    <div class="list-item wow fadeInUp" data-wow-delay="0.7s">
+                        <div class="icon">
+                            <img src="../../../../assets/images/icon-check-2.svg" />
+                        </div>
+
+                        <div class="text">
+                            Поймете, как создать солидный дополнительный
+                            <br />
+                            доход, уделяя этому несколько часов в день
+                        </div>
+                    </div>
+
+                    <div class="list-item wow fadeInUp" data-wow-delay="0.8s">
+                        <div class="icon">
+                            <img src="../../../../assets/images/icon-check-2.svg" />
+                        </div>
+
+                        <div class="text">
+                            Поймете, как применять метод Корневой «терапии»
+                            <br />
+                            на себе и близких, а также на профессиональном
+                            <br />
+                            уровне оказывать помощь окружающим
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="webinar-checklist-button wow fadeInUp" data-wow-delay="0.9s">
+                <button type="button" class="button-green button-icon" (click)="showWebinarDialog($event)">
+                    <img class="icon" src="../../../../assets/images/icon-check.svg" />
+                    Зарегистрироваться на вебинар
+                </button>
+            </div>
+        </div>
+
+        <div class="webinar-checklist-content-mobile">
+            <div class="list-item wow fadeInUp" data-wow-delay="0.1s">
+                <img class="icon" src="../../../../assets/images/icon-check-2.svg" />
+
+                <div class="text">
+                    Поймете подходит ли вам эта профессия и сможете ли вы стать успешным консультантом
+                </div>
+            </div>
+
+            <div class="list-item wow fadeInUp" data-wow-delay="0.2s">
+                <img class="icon" src="../../../../assets/images/icon-check-2.svg" />
+
+                <div class="text">
+                    Получите стратегию выхода на стабильный доход в консультировании
+                </div>
+            </div>
+
+            <div class="list-item wow fadeInUp" data-wow-delay="0.3s">
+                <img class="icon" src="../../../../assets/images/icon-check-2.svg" />
+
+                <div class="text">
+                    Узнаете, как сформировать свою экспертность, стать высокооплачиваемым и востребованным консультантом
+                </div>
+            </div>
+
+            <div class="list-item wow fadeInUp" data-wow-delay="0.4s">
+                <img class="icon" src="../../../../assets/images/icon-check-2.svg" />
+
+                <div class="text">
+                    Получите пошаговый план привлечения клиентов, которые хотят консультироваться именно у вас
+                </div>
+            </div>
+
+            <div class="list-item wow fadeInUp" data-wow-delay="0.5s">
+                <img class="icon" src="../../../../assets/images/icon-check-2.svg" />
+
+                <div class="text">
+                    Узнаете, как делать продажи без продаж. Когда клиенты сами платят, записывают отзывы и рекомендуют вас
+                </div>
+            </div>
+
+            <div class="list-item wow fadeInUp" data-wow-delay="0.6s">
+                <img class="icon" src="../../../../assets/images/icon-check-2.svg" />
+
+                <div class="text">
+                    Поймете, как создать солидный дополнительный доход, уделяя этому несколько часов в день
+                </div>
+            </div>
+
+            <div class="list-item wow fadeInUp" data-wow-delay="0.7s">
+                <img class="icon" src="../../../../assets/images/icon-check-2.svg" />
+
+                <div class="text">
+                    Поймете, как применять метод Корневой «терапии» на себе и близких, а также на профессиональном уровне оказывать помощь окружающим
+                </div>
+            </div>
+
+            <div class="webinar-checklist-button wow fadeInUp" data-wow-delay="0.8s">
+                <button type="button" class="button-green button-icon" (click)="showWebinarDialog($event)">
+                    <img class="icon" src="../../../../assets/images/icon-check.svg" />
+                    Зарегистрироваться на вебинар
+                </button>
+            </div>
+
+            <div class="webinar-checklist-button-mobile wow fadeInUp" data-wow-delay="0.8s" (click)="showWebinarDialog($event)">
+                <button type="button" class="button-green button-icon">
+                    <img class="icon" src="../../../../assets/images/icon-check.svg" />
+                    Зарегистрироваться
+                </button>
+            </div>
+        </div>
+
+        <div class="webinar-checklist-image wow fadeInRight" data-wow-delay="0.3s">
+            <img src="../../../../assets/images/webinar-checklist-image.svg" />
+        </div>
+
+        <div class="webinar-checklist-image-laptop wow fadeInRight" data-wow-delay="0.3s">
+            <img src="../../../../assets/images/webinar-checklist-image-laptop.svg" />
+        </div>
+    </div>
+</div>
+
+<div class="webinar-presenter">
+    <div class="container">
+        <div class="webinar-presenter-head wow fadeInUp" data-wow-delay="0.1s">
+            Кто ведет вебинар?
+        </div>
+
+        <div class="flex-row">
+            <div class="webinar-presenter-checklist">
+                <div class="list-wrapper">
+                    <div class="list-item wow fadeInUp" data-wow-delay="0.3s">
+                        <img  class="icon" src="../../../../assets/images/icon-check-2.svg" />
+        
+                        <div class="text">
+                            Самый популярный психолог Санкт-Петербурга по количеству ТВ эфиров, 36 шт
+                        </div>
+                    </div>
+    
+                    <div class="list-item wow fadeInUp" data-wow-delay="0.4s">
+                        <img  class="icon" src="../../../../assets/images/icon-check-2.svg" />
+        
+                        <div class="text">
+                            Сертифицированный коуч-консультант, тренер популярных обучающих программ. 
+                        </div>
+                    </div>
+    
+                    <div class="list-item wow fadeInUp" data-wow-delay="0.5s">
+                        <img  class="icon" src="../../../../assets/images/icon-check-2.svg" />
+        
+                        <div class="text">
+                            Создатель первых в мире трансформационных онлайн-тренингов.
+                        </div>
+                    </div>
+                    <div class="list-item wow fadeInUp" data-wow-delay="0.6s">
+                        <img  class="icon" src="../../../../assets/images/icon-check-2.svg" />
+        
+                        <div class="text">
+                            Клиенты с 5 континентов и 42 стран, в том числе – управленцы компаний из списка Forbes, владельцы малого, среднего и крупного бизнеса, госслужащие.
+                        </div>
+                    </div>
+    
+                    <div class="list-item wow fadeInUp" data-wow-delay="0.7s">
+                        <img  class="icon" src="../../../../assets/images/icon-check-2.svg" />
+        
+                        <div class="text">
+                            За последние 5 лет повлиял на жизнь более 150 000 человек.
+                        </div>
+                    </div>
+    
+                    <div class="list-item wow fadeInUp" data-wow-delay="0.8s">
+                        <img  class="icon" src="../../../../assets/images/icon-check-2.svg" />
+        
+                        <div class="text">
+                            Автор книги-бестселлера по версии Озон «12 встреч меняющих судьбу».
+                        </div>
+                    </div>
+                </div>
+
+                <div class="webinar-presenter-card wow fadeInUp" data-wow-delay="0.9s">
+                    <div class="card-image">
+                        <img src="../../../../assets/images/chernakov-card.png" />
+                    </div>
+        
+                    <div class="card-content">
+                        <div class="card-head">
+                            Денис Чернаков
+                        </div>
+        
+                        <div class="card-text">
+                            Психолог, постоянный эксперт на ТВ.
+                            <br />
+                            Автор книг и популярных тренингов о жизни и бизнесе.
+                        </div>
+
+                        <div class="card-text-mobile">
+                            Психолог, постоянный эксперт на ТВ.
+                            Автор книг и популярных тренингов о жизни и бизнесе.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="webinar-presenter-videos">
+                <div class="video-wrapper wow fadeInUp" data-wow-delay="0.4s">
+                    <iframe style="width: 100%; height: 100%;" srcdoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=https://www.youtube.com/embed/u0wJU3lhWoI?autoplay=1><img src=https://img.youtube.com/vi/u0wJU3lhWoI/hqdefault.jpg alt='Video The Dark Knight Rises: What Went Wrong? – Wisecrack Edition'><span>▶</span></a>" src="https://www.youtube.com/embed/u0wJU3lhWoI" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+
+                <div class="video-wrapper wow fadeInUp" data-wow-delay="0.6s">
+                    <iframe style="width: 100%; height: 100%;" srcdoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=https://www.youtube.com/embed/l3EBaUCcCv0?autoplay=1><img src=https://img.youtube.com/vi/l3EBaUCcCv0/hqdefault.jpg alt='Video The Dark Knight Rises: What Went Wrong? – Wisecrack Edition'><span>▶</span></a>" src="https://www.youtube.com/embed/l3EBaUCcCv0" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="reviews">
+    <div class="container">
+        <div class="reviews-head wow fadeInUp" data-wow-delay="0.1s">
+            Отзывы учеников
+        </div>
+
+        <div class="video-reviews">
+            <div class="flex-row">
+                <!-- <div class="video-review-player">
+                    <a href="#" class="play-button">
+                        <img src="../../../../assets/images/icon-play.svg" />
+                    </a>
+
+                    <img class="video-image" src="../../../../assets/images/video-review-1.png" />
+                </div> -->
+
+                <div class="video-review-player wow fadeInUp" data-wow-delay="0.3s" [innerHtml]="activeReview.videoLink"></div>
+
+                <div class="review-content">
+                    <div class="reviews-switcher wow fadeInUp" data-wow-delay="0.6s">
+                        <nav>
+                            <ul>
+                                <li *ngFor="let review of reviews" [ngClass]="{ 'active': review == activeReview }" (click)="switchReview(review)">
+                                    <img src="{{ review.image }}" />
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+
+                    <div class="review-text wow fadeInUp" data-wow-delay="0.7s">
+                        <div class="reviewer-specialization">
+                            Корневой терапевт
+                        </div>
+
+                        <div class="reviewer-name">
+                            {{ activeReview.name }}
+                        </div>
+
+                        <div class="review-text">
+                            {{ activeReview.text }}
+                        </div>
+                    </div>
+
+                    <div class="consultations-counter">
+                        <div class="title">
+                            Проведено консультаций
+                        </div>
+
+                        <div class="title-mobile">
+                            Консультаций
+                        </div>
+
+                        <div class="counter">
+                            281
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="license">
+    <div class="container">
+        <div class="coat-of-arms wow fadeInUp" data-wow-delay="0.3s">
+            <img src="../../../../assets/images/coat-of-arms.svg" />
+        </div>
+
+        <div class="license-head wow fadeInUp" data-wow-delay="0.5s">
+            Наша программа прошла
+            <br />
+            государственную аккредитацию
+        </div>
+
+        <div class="license-image wow fadeInUp" data-wow-delay="0.6s">
+            <img src="../../../../assets/images/license.png" />
+        </div>
+
+        <div class="license-bottom wow fadeInUp" data-wow-delay="0.5s">
+            Выпускники получают свидетельство
+            <br />
+            о переподготовке государственного образца
+        </div>
+    </div>
+</div>
+
+<div class="present">
+    <div class="container">
+        <div class="flex-row">
+            <div class="present-image wow fadeInUp" data-wow-delay="0.2s">
+                <div class="present-icon">
+                    <img src="../../../../assets/images/icon-present.svg" />
+                </div>
+
+                <img src="../../../../assets/images/present.png" />
+            </div>
+
+            <div class="present-info">
+                <div class="present-head wow fadeInUp" data-wow-delay="0.4s">
+                    Зарегистрируйтесь
+                    <br />
+                    на вебинар и получите подарок:
+                </div>
+
+                <div class="present-subhead wow fadeInUp" data-wow-delay="0.5s">
+                    Запись мастер–класса
+                </div>
+
+                <div class="present-text wow fadeInUp" data-wow-delay="0.6s">
+                    «Как консультанту сделать денежный поток регулярным и постоянным»
+                </div>
+
+                <div class="present-button wow fadeInUp" data-wow-delay="0.7s">
+                    <button type="button" class="button-green button-icon" (click)="showWebinarDialog($event)">
+                        <img class="icon" src="../../../../assets/images/icon-check.svg" />
+                        Зарегистрироваться и получить подарок
+                    </button>
+                </div>
+
+                <div class="present-button-mobile wow fadeInUp" data-wow-delay="0.7s">
+                    <button type="button" class="button-green button-icon" (click)="showWebinarDialog($event)">
+                        <img class="icon" src="../../../../assets/images/icon-check.svg" />
+                        Зарегистрироваться
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<landing-footer></landing-footer>
+
+<webinar-modal></webinar-modal>

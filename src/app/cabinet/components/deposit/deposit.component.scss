@@ -1,0 +1,338 @@
+.content-wrapper {
+    display: flex;
+    margin-top: 19px;
+
+    content {
+        width: 954px;
+        height: 100%;
+        background: #ffffff;
+        margin-left: 30px;
+        padding-top: 24px;
+        border-radius: 14px;
+
+        .button-back {
+            margin-left: 24px;
+
+            > button {
+                border: 0.5px solid rgba(56, 154, 113, 0.5);
+                box-sizing: border-box;
+                border-radius: 10px;
+                background: transparent;
+                display: flex;
+                align-items: center;
+                font-weight: 500;
+                font-size: 12px;
+                line-height: 140%;
+                text-transform: uppercase;
+                color: #5BAA89;
+                height: 34px;
+                padding-top: 0;
+                padding-bottom: 0;
+                padding-left: 8px;
+                padding-right: 12px;
+                cursor: pointer;
+                outline: none;
+
+                > svg {
+                    margin-right: 8px;
+                }
+            }
+        }
+
+        .page-head {
+            font-weight: normal;
+            font-size: 24px;
+            line-height: 140%;
+            color: #005264;
+            margin-top: 10px;
+            padding-left: 24px;
+            padding-right: 24px;
+        }
+
+        .page-content {
+            margin-top: 16px;
+            padding-bottom: 24px;
+
+            .deposit-form {
+                padding-left: 24px;
+                padding-right: 24px;
+
+                form {
+                    .form-group {
+                        display: flex;
+                        align-items: center;
+
+                        input {
+                            width: 243px;
+                            padding-top: 21px;
+                            padding-bottom: 11px;
+                            padding-left: 16px;
+                            font-weight: normal;
+                            font-size: 16px;
+                            line-height: 16px;
+                            color: #273736;
+                            background: #F6FBF8;
+                            border: 1px solid #D1E2DB;
+                            box-sizing: border-box;
+                            border-radius: 10px;
+                            outline: none;
+                            -moz-appearance: textfield;
+
+                            &::placeholder {
+                                color: #BDD2D1;
+                            }
+
+                            &::-webkit-outer-spin-button,
+                            &::-webkit-inner-spin-button {
+                                -webkit-appearance: none;
+                                margin: 0;
+                            }
+                        }
+
+                        label {
+                            margin-left: 16px;
+                            font-weight: normal;
+                            font-size: 16px;
+                            line-height: 100%;
+                            align-self: flex-start;
+                            margin-top: 23px;
+                            color: #273736;
+                        }
+                    }
+                }
+            }
+
+            .deposit-info {
+                padding-left: 24px;
+                padding-right: 24px;
+                padding-top: 24px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                .deposit-actions {
+                    display: flex;
+                    align-items: center;
+                    
+                    .pay-button {
+                        > button {
+                            width: 243px;
+                            height: 65px;
+                            border-radius: 10px;
+                            padding: 0;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            letter-spacing: 0.135em;
+                            line-height: 121.5%;
+
+                            svg {
+                                margin-left: 16px;
+                            }
+                        }
+                    }
+                }
+
+                .specialist-info {
+                    display: flex;
+                    align-items: center;
+
+                    .specialist-photo {
+                        width: 43px;
+                        height: 43px;
+                        border-radius: 24px;
+
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                            border-radius: 24px;
+                            border: 1px solid #32A776;
+                            padding: 3px;
+                        }
+                    }
+
+                    .specialist-content {
+                        margin-left: 10px;
+
+                        .specialist-name {
+                            display: flex;
+                            align-items: center;
+                            font-weight: 500;
+                            font-size: 16px;
+                            line-height: 16px;
+                            color: #005264;
+
+                            .rating {
+                                margin-left: 10px;
+                                display: flex;
+                                align-items: center;
+                                font-weight: normal;
+                                font-size: 14px;
+                                line-height: 14px;
+                                color: #DEBA39;
+
+                                img {
+                                    width: 18px;
+                                    height: 18px;
+                                }
+                            }
+                        }
+
+                        .specialist-price {
+                            margin-top: 6px;
+                        }
+                    }
+                }
+            }
+
+            .paysystems-links {
+                margin-top: 32px;
+                padding-left: 24px;
+                padding-right: 24px;
+
+                .paysystem-links-list {
+                    display: flex;
+                    align-items: center;
+
+                    .paysystems-list-item {
+                        margin-left: 16px;
+
+                        &:first-child {
+                            margin-left: 0;
+                        }
+
+                        > span {
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+
+            .paysystem-text {
+                margin-top: 32px;
+                padding-left: 24px;
+                padding-right: 24px;
+                max-width: 588px;
+
+                > p {
+                    font-size: 12px;
+                    line-height: 140%;
+                    color: #C2D0C9;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1199px) {
+    .content-wrapper {
+        flex-direction: column;
+
+        content {
+            width: 100%;
+            margin-left: 0;
+            margin-top: 16px;
+        }
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .content-wrapper {
+        content {
+            .page-head {
+                line-height: 100%;
+                margin-top: 16px;
+            }
+
+            .page-content {
+                .deposit-info {
+                    padding-top: 16px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .container {
+        width: 100%;
+        padding-left: 35px;
+        padding-right: 35px;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .container {
+        width: 100%;
+        padding-left: 19px;
+        padding-right: 19px;
+    }
+
+    .content-wrapper {
+        content {
+            .page-content {
+                .deposit-form {
+                    form {
+                        .form-group {
+                            input {
+                                width: 206px;
+                            }
+
+                            label {
+                                align-self: center;
+                                margin-top: 0;
+                            }
+                        }
+                    }
+                }
+                
+                .deposit-info {
+                    .deposit-actions {
+                        flex-direction: column;
+                        justify-content: flex-start;
+                        align-items: flex-start;
+
+                        .pay-button {
+                            > button {
+                                //width: 211px;
+                                padding-left: 24px;
+                                padding-right: 24px;
+
+                                svg {
+                                    display: none;
+                                }
+                            }
+                        }
+
+                        .bank-logo {
+                            margin-left: 0;
+                            margin-top: 29px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.price-badge {
+    width: 67px;
+    height: 27px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    box-sizing: border-box;
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    border-radius: 100px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    color: #32A776;
+}

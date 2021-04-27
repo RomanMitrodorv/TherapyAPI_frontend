@@ -1,0 +1,55 @@
+<div class="modal" [ngClass]="{'hidden': !isOpen}">
+    <div class="upload-preview">
+        <form (submit)="submitUploadFile()">
+            <div class="modal-header" *ngIf="file && (file.type == 'image/jpeg' || file.type == 'image/jpg' || file.type == 'image/png' || file.type == 'image/svg+xml')">
+                Загрузить изображение
+            </div>
+    
+            <div class="modal-header" *ngIf="file && (file.type == 'video/mp4' || file.type == 'video/quicktime' || file.type == 'video/mpeg')">
+                Загрузить видео
+            </div>
+    
+            <div class="close-button" (click)="close()">
+                <div class="md"></div>
+                <div class="mdiv"></div>
+            </div>
+    
+            <div class="image-wrapper" *ngIf="file && (file.type == 'image/jpeg' || file.type == 'image/jpg' || file.type == 'image/png' || file.type == 'image/svg+xml')">
+                <img [src]="getPreviewUrl()" style="width: 100%; max-height: 436px; object-fit: cover; border-radius: 6px;" />
+            </div>
+    
+            <div class="video-wrapper" *ngIf="file && (file.type == 'video/mp4' || file.type == 'video/quicktime' || file.type == 'video/mpeg')">
+                <video [src]="getPreviewUrl()" 
+                    style="width: 100%; max-height: 436px; border-radius: 6px; background: #000000;" 
+                    controls="controls" preload="metadata">
+                </video>
+            </div>
+    
+            <div class="file-info" *ngIf="file">
+                <div class="file-info-block">
+                    <div class="title">
+                        Название
+                    </div>
+    
+                    <div class="value">
+                        {{ file.name }}
+                    </div>
+                </div>
+    
+                <div class="file-info-block">
+                    <div class="title">
+                        Расширение
+                    </div>
+    
+                    <div class="value">
+                        {{ getFileTypeStr() }}
+                    </div>
+                </div>
+            </div>
+    
+            <button type="submit" class="button-green">Сохранить</button>
+        </form>
+    </div>
+</div>
+
+<div class="modal-background" [ngClass]="{'hidden': !isOpen}"></div>

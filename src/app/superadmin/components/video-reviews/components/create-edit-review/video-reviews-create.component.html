@@ -1,0 +1,85 @@
+<div class="page-wrapper">
+
+    <!-- Header -->
+    <app-header></app-header>
+
+    <div class="container">
+        <div class="content-wrapper">
+            <superadmin-sidebar></superadmin-sidebar>
+
+            <content>
+                <div class="page-top">
+                    <div class="button-back">
+                        <button class="button-transparent" (click)="prevRoute()">
+                            <div class="icon">
+                                <img src="../../../../assets/images/icon-arrow-left.svg" />
+                            </div>
+            
+                            Назад
+                        </button>
+                    </div>
+
+                    <div class="page-head">
+                        <h2 *ngIf="!editingReviewID">Новый видеоотзыв</h2>
+                        <h2 *ngIf="editingReviewID">Отзыв от {{ review.fullName }}</h2>
+                    </div>
+                </div>
+
+                <div class="page-content" *ngIf="createVideoReviewForm">
+                    <div class="create-review-form">
+                        <form [formGroup]="createVideoReviewForm" (ngSubmit)="submit(createVideoReviewForm)">
+
+                            <div class="form-inner">
+                                <div class="form-block">
+                                    <div class="form-group">
+                                        <input placeholder="Имя и Фамилия" type="text" name="fullName" formControlName="fullName" required />
+                                    </div>
+
+                                    <div class="form-group form-group-double">
+                                        <div class="review-text">
+                                            <div class="form-group">
+                                                <textarea placeholder="Текст отзыва... (макс. 150 симв.)" name="text" formControlName="text" required></textarea>
+                                            </div>
+                                        </div>
+
+                                        <div class="review-video">
+                                            <div class="choose-review-button" *ngIf="!reviewVideo">
+                                                <button type="button" (click)="openChooseDialog()">Выбрать видео</button>
+                                            </div>
+
+                                            <div class="choose-review-button choosed" *ngIf="reviewVideo">
+                                                {{ reviewVideo.name }}
+
+                                                <svg (click)="cancelChoosedVideo()" width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <g clip-path="url(#clip0)">
+                                                    <path d="M4.44754 5.00001L0.114408 0.666859C-0.0381498 0.514301 -0.0381498 0.266957 0.114408 0.114419C0.266967 -0.03812 0.51431 -0.0381396 0.666849 0.114419L5 4.44757L9.33314 0.114419C9.4857 -0.0381396 9.73304 -0.0381396 9.88558 0.114419C10.0381 0.266977 10.0381 0.51432 9.88558 0.666859L5.55245 5L9.88558 9.33315C10.0381 9.48571 10.0381 9.73305 9.88558 9.88559C9.80931 9.96186 9.70933 9.99999 9.60935 9.99999C9.50937 9.99999 9.40941 9.96186 9.33312 9.88559L5 5.55245L0.666868 9.88559C0.590599 9.96186 0.490619 9.99999 0.390638 9.99999C0.290658 9.99999 0.190698 9.96186 0.114408 9.88559C-0.0381498 9.73303 -0.0381498 9.48569 0.114408 9.33315L4.44754 5.00001Z" fill="#25A46E"/>
+                                                    </g>
+                                                    <defs>
+                                                    <clipPath id="clip0">
+                                                    <rect width="10" height="10" fill="white" transform="matrix(-1 0 0 1 10 0)"/>
+                                                    </clipPath>
+                                                    </defs>
+                                                </svg>                                                    
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="submit-block">
+                                <button type="submit" class="button-green">
+                                    Сохранить
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </content>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <app-footer></app-footer>
+</div>
+
+<choose-review-dialog #chooseDialog></choose-review-dialog>

@@ -1,0 +1,97 @@
+<div class="auth-wrapper" style="height: auto;">
+    <header>
+        <div class="logo">
+            <img src="../../../assets/images/logo-white.svg" alt="Корневая Терапия" [routerLink]="['/']" />
+        </div>
+    </header>
+    
+    <div class="form-wrapper">
+        <div class="form-inner">
+            <form [formGroup]="signUpForm" (ngSubmit)="submit(signUpForm)" autocomplete="off">
+                <div class="form-header">
+                    <h1>Регистрация</h1>
+                </div>
+    
+                <div class="form-group">
+                    <input type="text" formControlName="firstName" pattern="^[А-Яа-яЁё\s]+$" maxlength="12" #firstName required />
+                    <label (click)="labelClick('firstName')">Имя</label>
+                </div>
+    
+                <div class="form-group">
+                    <input type="text" formControlName="lastName" pattern="^[А-Яа-яЁё\s]+$" maxlength="12" #lastName required />
+                    <label (click)="labelClick('lastName')">Фамилия</label>
+                </div>
+    
+                <div class="form-group">
+                    <input #phoneNumber id="phoneNumber" type="text" formControlName="phoneNumber" (keyup)="inputEvent('phoneNumber' ,$event)" prefix="+7 " mask="(000) 000-00-00" required />
+                    <label (click)="labelClick('phoneNumber')">Телефон</label>
+                </div>
+    
+                <div class="form-group">
+                    <input type="email" formControlName="email" #email required />
+                    <label (click)="labelClick('email')">E-Mail</label>
+                </div>
+    
+                <div class="form-group">
+                    <textarea formControlName="description" #description required></textarea>
+                    <label (click)="labelClick('description')">Текст на странице</label>
+                </div>
+
+                <div class="form-group" style="margin-top: 11px;">
+                    <re-captcha (resolved)="captchaResolved($event)" siteKey="6Lduc-0UAAAAAN4Bgly8rhT2jx_eLySr8iacjYBh"></re-captcha>
+                    <!-- <div class="g-recaptcha" data-sitekey="6Lduc-0UAAAAAN4Bgly8rhT2jx_eLySr8iacjYBh"></div> -->
+                </div>
+
+                <div class="form-group" style="margin-top: 13px;">
+                    <div class="checkbox">
+                        <input type="checkbox" #privacy formControlName="privacy" required />
+
+                        <div class="checkbox-wrapper">
+                            <div class="custom-checkbox" [ngClass]="{'checked': signUpForm.value['privacy']}" (click)="togglePrivacy()">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M12.3996 4.39967C12.5666 4.54435 12.5846 4.79697 12.4399 4.96392L7.92394 10.1747C7.54386 10.6132 6.87151 10.6372 6.46115 10.2269L3.99964 7.76535C3.84343 7.60914 3.84343 7.35588 3.99964 7.19967C4.15585 7.04346 4.40912 7.04346 4.56532 7.19967L6.4193 9.05364C6.82966 9.46401 7.50201 9.44002 7.8821 9.00147L11.8354 4.43997C11.9801 4.27303 12.2327 4.25498 12.3996 4.39967Z" fill="#33F7A5" stroke="#33F6A5"/>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <div class="text-wrapper">
+                            Нажимая на кнопку ниже – я принимаю <a [routerLink]="['/privacy']">Политику конфиденциальности</a> сайта
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="form-group">
+                    <button type="submit" *ngIf="!isLoading" [ngClass]="{'button-disabled': !isFormValid()}" [disabled]="!isFormValid()">Продолжить</button>
+
+                    <button *ngIf="isLoading">
+                        <mat-spinner [diameter]="40"></mat-spinner>
+                    </button>
+                </div>
+    
+                <div class="form-footer">
+                    <span> Уже есть аккаунт? <a [routerLink]="['/sign-in']">Войти</a></span>
+                </div>
+            </form>
+
+            <div class="error-block" [ngClass]="{'active': isError}">
+                <div class="icon">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0)">
+                            <path d="M17.7131 14.3997L10.833 2.48308C10.4504 1.82045 9.7652 1.4248 8.99999 1.4248C8.23482 1.4248 7.54955 1.82045 7.16698 2.48308L0.286954 14.3996C-0.0956512 15.0623 -0.0956512 15.8536 0.286954 16.5162C0.669558 17.1789 1.35475 17.5745 2.11996 17.5745H15.88C16.6452 17.5745 17.3304 17.1789 17.7131 16.5163C18.0957 15.8536 18.0957 15.0623 17.7131 14.3997ZM16.7998 15.989C16.6078 16.3215 16.264 16.52 15.88 16.52H2.11996C1.73599 16.52 1.39216 16.3215 1.20021 15.989C1.00825 15.6565 1.00825 15.2595 1.20021 14.927L8.08031 3.01038C8.27226 2.67788 8.61609 2.47938 9.00003 2.47938C9.38393 2.47938 9.72779 2.67788 9.91975 3.01038L16.7998 14.927C16.9917 15.2595 16.9917 15.6565 16.7998 15.989Z" fill="white"/>
+                            <path d="M9.5272 6.6875H8.47266V11.9603H9.5272V6.6875Z" fill="white"/>
+                            <path d="M8.99993 13.0156C8.61226 13.0156 8.29688 13.331 8.29688 13.7187C8.29688 14.1063 8.61226 14.4217 8.99993 14.4217C9.38757 14.4217 9.70299 14.1063 9.70299 13.7187C9.70299 13.331 9.3876 13.0156 8.99993 13.0156Z" fill="white"/>
+                        </g>
+
+                        <defs>
+                            <clipPath id="clip0">
+                                <rect width="18" height="18" fill="white" transform="translate(0 0.5)"/>
+                            </clipPath>
+                        </defs>
+                    </svg>                        
+                </div>
+
+                {{ errorText }}
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,333 @@
+.content-wrapper {
+    display: flex;
+    margin-top: 19px;
+
+    content {
+        width: 954px;
+        height: 100%;
+        background: #ffffff;
+        margin-left: 30px;
+        padding-top: 24px;
+        border-radius: 14px;
+
+        .button-back {
+            margin-left: 24px;
+
+            > button {
+                border: 0.5px solid rgba(56, 154, 113, 0.5);
+                box-sizing: border-box;
+                border-radius: 10px;
+                background: transparent;
+                display: flex;
+                align-items: center;
+                font-weight: 500;
+                font-size: 12px;
+                line-height: 140%;
+                text-transform: uppercase;
+                color: #5BAA89;
+                height: 34px;
+                padding-top: 0;
+                padding-bottom: 0;
+                padding-left: 8px;
+                padding-right: 12px;
+                cursor: pointer;
+                outline: none;
+
+                > svg {
+                    margin-right: 8px;
+                }
+            }
+        }
+
+        .page-head {
+            font-weight: normal;
+            font-size: 24px;
+            line-height: 24px;
+            color: #005264;
+            margin-top: 10px;
+            padding-left: 24px;
+            padding-right: 24px;
+        }
+
+        .page-content {
+            margin-top: 12px;
+            padding-bottom: 32px;
+
+            .deposit-text {
+                font-weight: normal;
+                font-size: 16px;
+                line-height: 140%;
+                color: #005264;
+                padding-left: 24px;
+                padding-right: 24px;
+                padding-bottom: 27px;
+                border-bottom: 1px solid #E2F1EA;
+            }
+
+            .deposit-info {
+                padding-left: 24px;
+                padding-right: 24px;
+                padding-top: 29px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                .deposit-actions {
+                    display: flex;
+                    align-items: center;
+                    
+                    .pay-button {
+                        > button {
+                            width: 243px;
+                            height: 65px;
+                            border-radius: 10px;
+                            padding: 0;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            letter-spacing: 0.135em;
+
+                            .icon {
+                                width: 16px;
+                                height: 16px;
+                                margin-left: 16px;
+                            }
+                        }
+                    }
+                }
+
+                .specialist-info {
+                    display: flex;
+                    align-items: center;
+
+                    .specialist-photo {
+                        width: 43px;
+                        height: 43px;
+                        border-radius: 24px;
+
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                            border-radius: 24px;
+                            border: 1px solid #32A776;
+                            padding: 3px;
+                        }
+                    }
+
+                    .specialist-content {
+                        margin-left: 10px;
+
+                        .specialist-name {
+                            display: flex;
+                            align-items: center;
+
+                            .name {
+                                font-weight: 500;
+                                font-size: 16px;
+                                line-height: 100%;
+                                color: #005264;
+                                width: 142px;
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+                                white-space: nowrap;
+                            }
+
+                            .rating {
+                                margin-left: 10px;
+                                display: flex;
+                                align-items: center;
+
+                                .rating-count {
+                                    margin-left: 3px;
+                                    font-weight: normal;
+                                    font-size: 14px;
+                                    line-height: 14px;
+                                    color: #DEBA39;
+                                }
+                            }
+                        }
+
+                        .specialist-price {
+                            margin-top: 6px;
+                        }
+                    }
+                }
+            }
+
+            .paysystems-links {
+                margin-top: 32px;
+                padding-left: 24px;
+                padding-right: 24px;
+
+                .paysystem-links-list {
+                    display: flex;
+                    align-items: center;
+
+                    .paysystems-list-item {
+                        margin-left: 16px;
+
+                        &:first-child {
+                            margin-left: 0;
+                        }
+
+                        > span {
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+
+            .paysystem-text {
+                margin-top: 32px;
+                padding-left: 24px;
+                padding-right: 24px;
+                max-width: 588px;
+
+                > p {
+                    font-size: 12px;
+                    line-height: 140%;
+                    color: #C2D0C9;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1199px) {
+    .content-wrapper {
+        flex-direction: column;
+
+        content {
+            width: 100%;
+            margin-left: 0;
+            margin-top: 16px;
+
+            .page-head {
+                margin-top: 20px;
+            }
+
+            .page-content {
+                margin-top: 22px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .container {
+        > .content-wrapper {
+            margin-top: 24px;
+        }
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .content-wrapper {
+        content {
+            .page-content {
+                .deposit-text {
+                    border-bottom: 0;
+                    padding-bottom: 0;
+                }
+
+                .deposit-info {
+                    padding-top: 0;
+                    //padding-bottom: 24px;
+                    margin-top: 20px;
+                    flex-direction: column;
+                    justify-content: flex-start;
+                    align-items: flex-start;
+
+                    .specialist-info {
+                        margin-top: 20px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .container {
+        width: 100%;
+        padding-left: 35px;
+        padding-right: 35px;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .container {
+        width: 100%;
+        padding-left: 19px;
+        padding-right: 19px;
+    }
+
+    .content-wrapper {
+        content {
+            padding: 16px;
+            padding-top: 24px;
+
+            .button-back {
+                margin-left: 8px;
+            }
+
+            .page-head {
+                margin-top: 16px;
+                padding-left: 8px;
+                padding-right: 8px;
+            }
+
+            .page-content {
+                margin-top: 16px;
+                padding-bottom: 24px;
+
+                .deposit-text {
+                    padding-left: 8px;
+                    padding-right: 8px;
+                }
+                
+                .deposit-info {
+                    margin-top: 16px;
+                    padding-left: 8px;
+                    padding-right: 8px;
+                    padding-bottom: 8px;
+
+                    .deposit-actions {
+                        flex-direction: column;
+                        align-items: flex-start;
+
+                        .pay-button {
+                            > button {
+                                //width: 211px;
+
+                                .icon {
+                                    display: none;
+                                }
+                            }
+                        }
+
+                        .bank-logo {
+                            margin-left: 0;
+                            margin-top: 29px;
+                        }
+                    }
+
+                    .specialist-info {
+                        margin-top: 29px;
+                    }
+                }
+
+                .paysystems-links {
+                    padding-left: 8px;
+                    padding-right: 8px;
+                }
+
+                .paysystem-text {
+                    padding-left: 8px;
+                    padding-right: 8px;
+                }
+            }
+        }
+    }
+}
