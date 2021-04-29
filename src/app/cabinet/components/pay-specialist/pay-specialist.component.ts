@@ -4,6 +4,28 @@ import { AuthService, PatientService, SpecialistsService, UsersWalletsService, P
 import { Problem, Specialist, UserWallet, Session } from 'src/app/common/models';
 import { PaymentType } from 'src/app/common/enums';
 import { Location } from '@angular/common';
+import { RegisterDOWebhookRequest } from 'src/app/common/models/request/create-payment-request.model';
+
+
+declare var cp: any;
+
+function loadWidget(amount, regReqDO, paymentsService){
+    const widget = new cp.CloudPayments();
+    widget.charge({
+            publicId: 'pk_432aafdd1ec52bfa05acf1380a292',
+            amount: amount, //сумма
+            invoiceId : regReqDO.orderId,
+            currency: "RUB",
+            skin: 'classic'
+        },
+        function (options) { // success
+            paymentsService.successPayment(regReqDO);
+        },
+        function (reason, options) { // fail
+            paymentsService.failPayments(regReqDO.orderId);
+        });
+}
+
 
 @Component({
     selector: 'cabinet-pay-specialist',
@@ -105,8 +127,11 @@ export class CabinetPaySpecialistComponent implements OnInit {
             if (!res.success) {
                 return;
             }
-
-            window.location.href = res.redirectUrl;
+            const regReqDO: RegisterDOWebhookRequest = {
+                orderId : res.orderId,
+                sessionId : this.activeSession.id
+             };
+            loadWidget(this.amountToDeposit(), regReqDO, this.paymentsService);
         });
     }
 

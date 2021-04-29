@@ -5,3 +5,8 @@ export class CreatePaymentRequest {
     public type: PaymentType;
     public sessionID?: number;
 }
+
+export class RegisterDOWebhookRequest {
+    public sessionId?: number;
+    public orderId: string;
+}

@@ -2,9 +2,28 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService, PatientService, PaymentsService, RouterExtService } from 'src/app/common/services';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { CreatePaymentRequest } from 'src/app/common/models/request';
+import { CreatePaymentRequest, RegisterDOWebhookRequest } from 'src/app/common/models/request';
 import { PaymentType } from 'src/app/common/enums';
 import { Location } from '@angular/common';
+
+declare var cp: any;
+
+function loadWidget(amount, regReqDO, paymentsService){
+    const widget = new cp.CloudPayments();
+    widget.charge({
+            publicId: 'pk_432aafdd1ec52bfa05acf1380a292',
+            amount: amount, //сумма
+            invoiceId : regReqDO.orderId,
+            currency: "RUB",
+            skin: 'classic'
+        },
+        function (options) { // success
+            paymentsService.successPayment(regReqDO).subscribe(res => window.location.href = res.redirectUrl);
+        },
+        function (reason, options) { // fail
+            paymentsService.failPayments(regReqDO.orderId).subscribe();
+        });
+}
 
 @Component({
 	selector: 'cabinet-deposit',
@@ -41,6 +60,7 @@ export class CabinetDepositComponent implements OnInit {
 		this.location.back();
 	}
 
+  
     private initDepositForm() {
         this.depositForm = new FormGroup({
             amount: new FormControl(null, [Validators.required])
@@ -56,6 +76,7 @@ export class CabinetDepositComponent implements OnInit {
             return;
         }
 
+        
         this.isLoading = true;
 
         const request: CreatePaymentRequest = {
@@ -68,8 +89,12 @@ export class CabinetDepositComponent implements OnInit {
                 if (!res.success) {
                     return;
                 }
-
-                window.location.href = res.redirectUrl;
+             const regReqDO: RegisterDOWebhookRequest = {
+                orderId : res.orderId,
+                sessionId : 0
+             };
+             loadWidget(parseInt(this.depositForm.value['amount']), regReqDO, this.paymentsService);
+             this.isLoading = false;
             });
     }
 }
